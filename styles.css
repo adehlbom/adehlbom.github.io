@@ -1,36 +1,64 @@
 body, html {
     height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
 }
 
 .container {
-    background-image: url('glitterdalens_vaggvisa.png'); /* Update this path if the image is in a different directory */
+    background-image: url('/glitterdalens_vaggvisa.png');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.content {
     text-align: center;
     color: white;
+    max-width: 600px; /* Adjust based on your preference */
+    margin: 0 auto;
 }
 
 h1 {
-    margin: 0 0 20px;
-    font-size: 3em; /* Adjust size as needed */
-    text-shadow: 2px 2px 4px #000000;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-a {
-    color: #1DB954; /* Spotify green color */
+.spotify-link {
+    display: inline-block;
+    background-color: #1DB954;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
     text-decoration: none;
-    font-size: 1.5em; /* Adjust size as needed */
-    text-shadow: 1px 1px 3px #000000;
+    font-size: 1.5rem;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    transition: background-color 0.3s ease;
 }
 
-a:hover {
-    text-decoration: underline;
+.spotify-link:hover {
+    background-color: #1ed760;
+}
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+    .content {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .spotify-link {
+        padding: 8px 16px;
+        font-size: 1.2rem;
+    }
 }
