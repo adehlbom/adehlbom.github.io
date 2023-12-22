@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 10px 0;
+}
+
+#logo {
+    width: 200px; /* Adjust as needed */
+}
+
+main {
+    margin: 20px;
+}
+
+#music-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+#music-links li {
+    margin: 10px 0;
+}
+
+#music-links a {
+    text-decoration: none;
+    color: #1db954; /* Spotify green, adjust for other platforms */
+    font-weight: bold;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
