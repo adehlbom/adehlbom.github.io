@@ -1,66 +1,162 @@
-body, html {
-    height: 100%;
+/* Overall Page Styles */
+body {
+    font-family: 'Quicksand', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Caveat', cursive;
-
+    background: linear-gradient(to right, #fff7f1 0%, #fff7f1 20%, #ffffff 20%, #ffffff 80%, #fff7f1 80%, #fff7f1 100%);
+    text-align: center;
 }
 
-.container {
-    background-image: url('/glitterdalens_vaggvisa.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
+/* Center Container */
+.landing-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Logo Section */
+.logo-container img {
+    max-width: 60%;
+    margin: 0 auto 20px;
+    display: block;
+}
+/* Signup Section */
+
+.signup-section {
+    background: #ffffff;
+    border: 1px solid #f5a9c3;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.signup-section h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.8rem;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+}
+
+.signup-section form {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    gap: 10px;
 }
 
-.content {
-    text-align: center;
-    color: white;
-    max-width: 600px; /* Adjust based on your preference */
-    margin: 0 auto;
+.signup-section input[type="email"] {
+    width: 60%;
+    padding: 12px;
+    border: 2px solid #f5a9c3;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
 }
 
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    font-family: 'Caveat', cursive;
+.signup-section button {
+    background-color: #f5a9c3;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-family: 'Fredoka', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.spotify-link {
-    display: inline-block;
-    background-color: #3069a6;
+.signup-section button:hover {
+    background-color: #b8a8d1;
+    transform: translateY(-2px);
+}
+
+.signup-section .privacy-note {
+    font-size: 0.8rem;
+    color: #4a4a4a;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+
+/* Social Section */
+.social-section {
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+.social-section h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.8rem;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+}
+
+.social-buttons .btn {
+    background-color: #f5a9c3;
     color: white;
     padding: 10px 20px;
     border-radius: 20px;
+    margin: 10px;
     text-decoration: none;
-    font-size: 1.5rem;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-    transition: background-color 0.3s ease;
 }
 
-.spotify-link:hover {
-    background-color: #1ed760;
+.social-buttons .btn:hover {
+    background-color: #b8a8d1;
 }
 
-/* Add media queries for responsiveness */
-@media (max-width: 768px) {
-    .content {
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    .spotify-link {
-        padding: 8px 16px;
-        font-size: 1.2rem;
-    }
+/* Music Section */
+.music-section {
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
 }
+.music-section h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.8rem;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+}
+
+.iframe-wrapper {
+    background-color: #fff7f1; /* Match the background of the site */
+    border: 1px solid #f5a9c3; /* Optional pastel pink border for design consistency */
+    border-radius: 12px;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 400px; /* Adjust width for responsiveness */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+
+/* Hidden Success Section */
+.hidden {
+    display: none;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #fff7f1;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #4a4a4a;
+    border-top: 1px solid #f5a9c3;
+    margin-top: 40px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer a {
+    color: #f5a9c3;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer a:hover {
+    color: #b8a8d1;
+}
+
