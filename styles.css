@@ -30,6 +30,23 @@ body {
     display: block;
 }
 
+/* Welcome Section Styles */
+
+.welcome-section h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2rem; /* Slightly larger headline */
+    color: #4a4a4a;
+    margin-bottom: 15px;
+}
+
+.welcome-section p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2rem; /* Increased font size for readability */
+    color: #4a4a4a;
+    line-height: 1.6; /* Better spacing between lines */
+    margin-bottom: 20px;
+}
+
 /* Signup Section */
 .signup-section {
     background: #ffffff;
