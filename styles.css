@@ -1,10 +1,18 @@
-/* Overall Page Styles */
+/* General Reset for Box Sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* General Body Fix */
 body {
     font-family: 'Quicksand', sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(to right, #fff7f1 0%, #fff7f1 20%, #ffffff 20%, #ffffff 80%, #fff7f1 80%, #fff7f1 100%);
     text-align: center;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Center Container */
@@ -12,6 +20,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    overflow-x: hidden; /* Prevent content overflow */
 }
 
 /* Logo Section */
@@ -20,15 +29,16 @@ body {
     margin: 0 auto 20px;
     display: block;
 }
-/* Signup Section */
 
+/* Signup Section */
 .signup-section {
     background: #ffffff;
     border: 1px solid #f5a9c3;
     border-radius: 12px;
-    padding: 30px;
-    margin-bottom: 30px;
+    padding: 20px;
+    margin: 20px auto;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 90%; /* Prevent section from exceeding body width */
 }
 
 .signup-section h2 {
@@ -40,13 +50,12 @@ body {
 
 .signup-section form {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column; /* Stacks elements on mobile */
+    gap: 15px;
 }
 
 .signup-section input[type="email"] {
-    width: 60%;
+    width: 100%;
     padding: 12px;
     border: 2px solid #f5a9c3;
     border-radius: 5px;
@@ -55,10 +64,11 @@ body {
 }
 
 .signup-section button {
+    width: 100%;
     background-color: #f5a9c3;
     color: #fff;
     border: none;
-    padding: 12px 20px;
+    padding: 12px;
     border-radius: 8px;
     font-size: 1.2rem;
     font-family: 'Fredoka', sans-serif;
@@ -77,7 +87,6 @@ body {
     margin-top: 15px;
     font-style: italic;
 }
-
 
 /* Social Section */
 .social-section {
@@ -128,6 +137,10 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
 }
 
+.iframe-wrapper iframe {
+    width: 100%;
+    border-radius: 12px;
+}
 
 /* Hidden Success Section */
 .hidden {
@@ -160,30 +173,93 @@ body {
     color: #b8a8d1;
 }
 
-/* Responsive Design */
+/* General Mobile Styles */
 @media (max-width: 768px) {
+    body {
+        background: linear-gradient(to right, #fff7f1 0%, #fff7f1 10%, #ffffff 20%);
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    .landing-container {
+        max-width: 100%; /* Ensure it spans the viewport width */
+        padding: 15px;
+        margin: 0 auto; /* Center the container */
+    }
+
     .logo-container img {
-        max-width: 80%;
+        max-width: 70%;
+        margin-bottom: 10px;
     }
 
     .signup-section {
-        padding: 20px;
-        max-width: 90%;
+        width: 100%;
+        padding: 15px;
+        margin: 0 auto 20px;
+        background: #ffffff; /* Ensure a clean background */
+        border-radius: 12px;
+    }
+
+    .signup-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .signup-section form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .signup-section input[type="email"] {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .signup-section button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .social-section {
+        padding: 15px;
+        margin: 0 auto 20px;
+        width: 100%;
+        background: #ffffff; /* Ensure white background */
+        border-radius: 12px;
+    }
+
+    .social-section h2 {
+        font-size: 1.5rem;
     }
 
     .social-buttons .btn {
-        display: block;
+        width: 90%;
         margin: 10px auto;
-        width: 80%;
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .music-section {
+        padding: 15px;
+        margin: 0 auto 20px;
+        width: 100%;
+        background: #ffffff; /* Ensure seamless background */
+        border-radius: 12px;
     }
 
     .iframe-wrapper iframe {
-        height: 300px;
+        height: 250px;
+        width: 100%;
     }
 
     .footer {
+        width: 100%;
+        padding: 10px 0;
         font-size: 0.8rem;
+        background: #ffffff;
+        border-top: 1px solid #f5a9c3;
+        margin-top: 20px;
     }
 }
-
-
