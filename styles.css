@@ -160,3 +160,30 @@ body {
     color: #b8a8d1;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo-container img {
+        max-width: 80%;
+    }
+
+    .signup-section {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .social-buttons .btn {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+    }
+
+    .iframe-wrapper iframe {
+        height: 300px;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+    }
+}
+
+

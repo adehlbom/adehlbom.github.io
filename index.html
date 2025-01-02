@@ -2,122 +2,105 @@
 <html lang="sv">
 <head>
     <!-- Metadata for Glitterdalen -->
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Glitterdalen - En Magisk Värld för Barn och Vuxna</title>
-<meta name="description" content="Upptäck Glitterdalen, en magisk värld fylld med fantasi, musik och förtrollande äventyr. Följ oss för de senaste uppdateringarna!" />
-<meta name="keywords" content="Glitterdalen, fantasi, magi, musik, äventyr, Instagram, YouTube, Spotify, barnberättelser, sånger, äventyrsberättelser" />
-<meta name="author" content="Glitterdalen Team" />
-<meta name="robots" content="index, follow" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glitterdalen - En Magisk Värld för Barn och Vuxna</title>
+    <meta name="description" content="Upptäck Glitterdalen, en magisk värld fylld med fantasi, musik och förtrollande äventyr. Följ oss för de senaste uppdateringarna!" />
+    <meta name="keywords" content="Glitterdalen, fantasi, magi, musik, äventyr, Instagram, YouTube, Spotify, barnberättelser, sånger, äventyrsberättelser" />
+    <meta name="author" content="Glitterdalen Team" />
+    <meta name="robots" content="index, follow" />
 
-<!-- Open Graph Metadata -->
-<meta property="og:title" content="Glitterdalen - En Magisk Värld" />
-<meta property="og:description" content="Följ med in i Glitterdalen, en förtrollande plats full av skimrande äventyr och unika berättelser. Se våra videos på YouTube, lyssna på vår musik på Spotify och följ våra glimtar på Instagram!" />
-<meta property="og:image" content="https://www.glitterdalen.se/glitterdalen_logo.png" />
-<meta property="og:url" content="https://www.glitterdalen.se" />
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="sv_SE" />
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Glitterdalen - En Magisk Värld" />
+    <meta property="og:description" content="Följ med in i Glitterdalen, en förtrollande plats full av skimrande äventyr och unika berättelser. Se våra videos på YouTube, lyssna på vår musik på Spotify och följ våra glimtar på Instagram!" />
+    <meta property="og:image" content="https://www.glitterdalen.se/glitterdalen_logo.png" />
+    <meta property="og:url" content="https://www.glitterdalen.se" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="sv_SE" />
 
-<!-- Favicon -->
-<link rel="icon" href="https://www.glitterdalen.se/favicon.ico" />
+    <!-- Favicon -->
+    <link rel="icon" href="https://www.glitterdalen.se/favicon.ico" />
 
-    
-  <title>Glitterdalen</title>
+    <!-- Preconnect & Load Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
 
-  <!-- Preconnect & Load Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="styles.css" />
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="landing-container">
-    <!-- Logo -->
-    <div class="logo-container">
-      <img src="glitterdalen_logo.png" alt="Glitterdalen Logo" class="logo">
+    <div class="landing-container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="glitterdalen_logo.png" alt="Glitterdalen Logo" class="logo">
+        </div>
+
+        <!-- Signup Section -->
+        <div id="signup-section" class="signup-section">
+            <h2>Var först med nyheter från Glitterdalen!</h2>
+            <form id="signup-form" action="https://assets.mailerlite.com/jsonp/1255993/forms/142396205183272375/subscribe" method="post">
+                <input id="email" type="email" name="fields[email]" placeholder="Skriv in din e-postadress" required />
+                <button type="submit">Ja tack!</button>
+            </form>
+            <p class="privacy-note"><em>Vi samlar endast in din e-postadress för att kunna skicka nyheter och information om Glitterdalen. Vi delar aldrig din information med tredje part. Du kan när som helst avregistrera dig från våra utskick via länken i e-postmeddelandet.</em></p>
+        </div>
+
+        <!-- Success Section (Hidden Initially) -->
+        <div id="success-section" class="signup-section hidden">
+            <h2>Tack!</h2>
+            <p>Din e-postadress är nu registrerad för nyheter från Glitterdalen. Du kommer nu att vara först med nya uppdateringar!</p>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="social-section">
+            <h2>Följ oss på sociala medier</h2>
+            <div class="social-buttons">
+                <a class="btn" href="https://www.youtube.com/@Glitterdalen" target="_blank">YouTube</a>
+                <a class="btn" href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd?si=d26c7821aa654469" target="_blank">Spotify</a>
+                <a class="btn" href="https://www.instagram.com/glitterdalen/" target="_blank">Instagram</a>
+            </div>
+        </div>
+
+        <!-- Music Section -->
+        <div class="music-section">
+            <h2>Lyssna på musiken</h2>
+            <div class="iframe-wrapper">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/35x1x7RZaz5GPlIS4axyCd?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
     </div>
 
-    <!-- Signup Section -->
-    <div id="signup-section" class="signup-section">
-      <h2>Var först med nyheter från Glitterdalen!</h2>
-      <form id="signup-form" action="https://assets.mailerlite.com/jsonp/1255993/forms/142396205183272375/subscribe" method="post">
-        <input id="email" type="email" name="fields[email]" placeholder="Skriv in din e-postadress" required />
-        <button type="submit">Ja tack!</button>
-      </form>
-      <p class="privacy-note"><em>Vi samlar endast in din e-postadress för att kunna skicka nyheter och information om Glitterdalen. Vi delar aldrig din information med tredje part. Du kan när som helst avregistrera dig från våra utskick via länken i e-postmeddelandet.
-    </em></p>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 Glitterdalen. Alla rättigheter förbehållna.</p>
+            <a href="mailto:info@glitterdalen.se">info@glitterdalen.se</a>
+        </div>
+    </footer>
 
-    </div>
+    <script>
+        document.getElementById("signup-form").addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const email = document.getElementById("email").value;
 
-    <!-- Success Section (Hidden Initially) -->
-    <div id="success-section" class="signup-section hidden">
-      <h2>Tack!</h2>
-      <p>Din e-postadress är nu registrerad för nyheter från Glitterdalen. Du kommer nu att vara först med nya uppdateringar!. </p>
-    </div>
+            try {
+                const response = await fetch(this.action, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams({ "fields[email]": email, "ml-submit": "1" }),
+                });
 
-    <!-- Social Media Section -->
-    <div class="social-section">
-      <h2>Följ oss på sociala medier</h2>
-      <div class="social-buttons">
-        <a class="btn" href="https://www.youtube.com/@Glitterdalen" target="_blank">YouTube</a>
-        <a class="btn" href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd?si=d26c7821aa654469" target="_blank">Spotify</a>
-        <a class="btn" href="https://www.instagram.com/glitterdalen/" target="_blank">Instagram</a>
-      </div>
-    </div>
-
-    <!-- Music Section -->
-    <div class="music-section">
-      <h2>Lyssna på musiken</h2>
-      <div class="iframe-wrapper">
-        <iframe 
-    style="border-radius:12px" 
-    src="https://open.spotify.com/embed/artist/35x1x7RZaz5GPlIS4axyCd?utm_source=generator&theme=0" 
-    width="100%" 
-    height="352" 
-    frameBorder="0" 
-    allowfullscreen="" 
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-    loading="lazy">
-  </iframe>
-      </div>
-    </div>
-  </div>
-  <!-- Footer Section -->
-<footer class="footer">
-    <div class="footer-content">
-      <p>© 2025 Glitterdalen. Alla rättigheter förbehållna.</p>
-      <a href="mailto:info@glitterdalen.se">info@glitterdalen.se</a>
-    </div>
-  </footer>
-  
-
-  <script>
-    document.getElementById("signup-form").addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const email = document.getElementById("email").value;
-
-      try {
-        const response = await fetch(this.action, {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams({ "fields[email]": email, "ml-submit": "1" }),
+                const result = await response.json();
+                if (result.success) {
+                    document.getElementById("signup-section").classList.add("hidden");
+                    document.getElementById("success-section").classList.remove("hidden");
+                } else {
+                    alert("Något gick fel. Försök igen.");
+                }
+            } catch {
+                alert("Något gick fel. Försök igen.");
+            }
         });
-
-        const result = await response.json();
-        if (result.success) {
-          document.getElementById("signup-section").classList.add("hidden");
-          document.getElementById("success-section").classList.remove("hidden");
-        } else {
-          alert("Något gick fel. Försök igen.");
-        }
-      } catch {
-        alert("Något gick fel. Försök igen.");
-      }
-    });
-  </script>
+    </script>
 </body>
 </html>
