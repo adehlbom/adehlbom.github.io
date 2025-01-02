@@ -2,14 +2,26 @@
 <html lang="sv">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7JHKJS027S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7JHKJS027S');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7JHKJS027S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+    
+      // Check for Consent
+      document.addEventListener("DOMContentLoaded", () => {
+        const consent = localStorage.getItem("cookie-consent");
+    
+        if (consent === "accepted") {
+          initializeGoogleAnalytics();
+        }
+      });
+    
+      function initializeGoogleAnalytics() {
+        gtag('js', new Date());
+        gtag('config', 'G-7JHKJS027S');
+      }
+    </script>
+    
     <!-- Metadata for Glitterdalen -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -39,6 +51,14 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+    <div id="cookie-banner" class="cookie-banner">
+        <p>Vi använder cookies för att analysera trafik och förbättra din upplevelse. Genom att klicka på "Acceptera" godkänner du användningen av cookies.</p>
+        <button id="accept-cookies" class="cookie-btn">Acceptera</button>
+        <button id="decline-cookies" class="cookie-btn">Avvisa</button>
+        <a href="/integritetspolicy" target="_blank" class="cookie-link">Läs mer</a>
+      </div>
+      
+    
     <div class="landing-container">
         <!-- Logo -->
         <div class="logo-container">
@@ -94,6 +114,9 @@
         <div class="footer-content">
             <p>© 2025 Glitterdalen. Alla rättigheter förbehållna.</p>
             <a href="mailto:info@glitterdalen.se">info@glitterdalen.se</a>
+            <br>
+            <button id="manage-cookies" class="footer-btn">Hantera Cookies</button>
+
         </div>
     </footer>
 
@@ -121,5 +144,39 @@
             }
         });
     </script>
+
+<script>
+    document.getElementById("manage-cookies").addEventListener("click", () => {
+      localStorage.removeItem("cookie-consent");
+      document.getElementById("cookie-banner").style.display = "block";
+    });
+  </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cookieBanner = document.getElementById("cookie-banner");
+      const consent = localStorage.getItem("cookie-consent");
+  
+      // Show banner if no consent is given
+      if (!consent) {
+        cookieBanner.style.display = "block";
+      }
+  
+      // Accept Cookies
+      document.getElementById("accept-cookies").addEventListener("click", () => {
+        localStorage.setItem("cookie-consent", "accepted");
+        cookieBanner.style.display = "none";
+        initializeGoogleAnalytics();
+      });
+  
+      // Decline Cookies
+      document.getElementById("decline-cookies").addEventListener("click", () => {
+        localStorage.setItem("cookie-consent", "declined");
+        cookieBanner.style.display = "none";
+      });
+    });
+  </script>
+  
+  
 </body>
 </html>

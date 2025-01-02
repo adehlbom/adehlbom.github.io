@@ -190,6 +190,73 @@ body {
     color: #b8a8d1;
 }
 
+/* Cookie Banner */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f5a9c3;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    z-index: 1000;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Initially hidden */
+}
+
+.cookie-banner p {
+    margin: 0 0 10px;
+    font-size: 0.9rem;
+}
+
+.cookie-btn {
+    background-color: white;
+    color: #f5a9c3;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cookie-btn:hover {
+    background-color: #e09db3;
+    color: white;
+}
+
+.cookie-link {
+    color: white;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+/* Footer Button Styles */
+.footer-btn {
+    background-color: #f5a9c3; /* Match the website's color scheme */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-family: 'Fredoka', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 15px; /* Add some spacing from other footer content */
+    display: inline-block; /* Ensure proper alignment in the footer */
+}
+
+.footer-btn:hover {
+    background-color: #b8a8d1; /* Slightly darker for hover */
+    transform: translateY(-2px); /* Hover effect */
+    color: white;
+}
+
+
+
+
 /* General Mobile Styles */
 @media (max-width: 768px) {
     body {
