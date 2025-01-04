@@ -250,7 +250,35 @@ body {
   text-decoration: underline;
   font-size: 0.9rem;
 }
-
+@media (max-width: 1280px) {
+  body {
+    background: #fff7f1;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  .signup-section {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto 20px;
+    background: #ffffff; /* Ensure a clean background */
+    border-radius: 12px;
+  }
+  .social-section {
+    padding: 20px;
+    margin: 20px auto;
+    width: 100%;
+    background: #ffffff; /* Ensure white background */
+    border-radius: 12px;
+  }
+  .music-section {
+    padding: 20px;
+    margin: 20px auto;
+    width: 100%;
+    background: #ffffff; /* Ensure seamless background */
+    border-radius: 12px;
+  }
+}
 
 /* General Mobile Styles */
 @media (max-width: 768px) {
