@@ -269,60 +269,60 @@ body {
 
   .logo-container img {
     max-width: 70%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   .signup-section {
     width: 100%;
-    padding: 15px;
+    padding: 20px;
     margin: 0 auto 20px;
     background: #ffffff; /* Ensure a clean background */
     border-radius: 12px;
   }
 
   .signup-section h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .signup-section form {
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
   }
 
   .signup-section input[type="email"] {
     width: 100%;
     font-size: 1rem;
-    padding: 10px;
+    padding: 15px;
   }
 
   .signup-section button {
     width: 100%;
     font-size: 1rem;
-    padding: 10px;
+    padding: 15px;
   }
 
   .social-section {
-    padding: 60px;
-    margin: 10px;
+    padding: 20px;
+    margin: 20px auto;
     width: 100%;
     background: #ffffff; /* Ensure white background */
     border-radius: 12px;
   }
 
   .social-section h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .social-buttons .btn {
     width: 90%;
     margin: 10px auto;
-    font-size: 1rem;
-    padding: 12px;
+    font-size: 1.2rem;
+    padding: 15px;
   }
 
   .music-section {
-    padding: 15px;
-    margin: 0 auto 20px;
+    padding: 20px;
+    margin: 20px auto;
     width: 100%;
     background: #ffffff; /* Ensure seamless background */
     border-radius: 12px;
@@ -335,10 +335,41 @@ body {
 
   .footer {
     width: 100%;
-    padding: 10px 0;
-    font-size: 0.8rem;
+    padding: 20px 0;
+    font-size: 0.9rem;
     background: #ffffff;
     border-top: 1px solid #f5a9c3;
     margin-top: 20px;
   }
+
+  .footer-content {
+    padding: 10px;
+  }
+  .social-buttons {
+    display: flex;
+    justify-content: center; /* Center align buttons */
+    gap: 15px; /* Add spacing between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line if needed */
+  }
+  
+  .social-buttons .btn {
+    flex: 1 1 calc(30% - 10px); /* Make each button occupy 30% of the row with spacing */
+    max-width: 100px; /* Optional: Limit button width */
+    text-align: center;
+    padding: 12px;
+    background-color: #f5a9c3;
+    color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: "Fredoka", sans-serif;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .social-buttons .btn:hover {
+    background-color: #b8a8d1;
+    transform: translateY(-2px);
+  }
+  
 }
