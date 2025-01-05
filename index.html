@@ -96,10 +96,11 @@
           Glitterdalen är en magisk värld fylld av musik, lek och fantasi —
           skapad för barn i alla åldrar (och nyfikna vuxna!). <br /><br />
           Möt våra glittrande karaktärer: <strong>Lumi</strong> (den
-          stjärnstoftsprudlande kaninen), <strong>Zippy</strong> (den uppfinningsrika
-          flugan med astronautdrömmar), <strong>Illian</strong> (den
-          envisa enstöringen) och <strong>Rixa</strong> (den äventyrslystna skattjaktsälskande räven) — som tillsammans
-          lockar till skratt, dans och äventyr!
+          stjärnstoftsprudlande kaninen), <strong>Zippy</strong> (den
+          uppfinningsrika flugan med astronautdrömmar),
+          <strong>Illian</strong> (den envisa enstöringen) och
+          <strong>Rixa</strong> (den äventyrslystna skattjaktsälskande räven) —
+          som tillsammans lockar till skratt, dans och äventyr!
         </p>
         <p>
           Upptäck nya <strong>låtar</strong>, följ
@@ -111,11 +112,11 @@
       <!-- Characters Section -->
       <div class="characters-section">
         <h2>Möt karaktärerna i Glitterdalen</h2>
-        <p>Håll muspekaren över varje kort för att se mer information!</p>
+        <p>Klicka/håll över varje kort för att få veta mer</p>
 
         <div class="characters-grid">
           <!-- Lumi Flip Card -->
-          <div class="character-card">
+          <div class="character-card" onclick="toggleCard(this)">
             <div class="character-card-inner">
               <!-- Front -->
               <div class="character-card-front">
@@ -138,7 +139,7 @@
           </div>
 
           <!-- Rixa Flip Card -->
-          <div class="character-card">
+          <div class="character-card" onclick="toggleCard(this)">
             <div class="character-card-inner">
               <!-- Front -->
               <div class="character-card-front">
@@ -160,7 +161,7 @@
             </div>
           </div>
           <!-- Zippy Flip Card -->
-          <div class="character-card">
+          <div class="character-card" onclick="toggleCard(this)">
             <div class="character-card-inner">
               <!-- Front -->
               <div class="character-card-front">
@@ -183,7 +184,7 @@
             </div>
           </div>
           <!-- Illian Flip Card -->
-          <div class="character-card">
+          <div class="character-card" onclick="toggleCard(this)">
             <div class="character-card-inner">
               <!-- Front -->
               <div class="character-card-front">
@@ -367,8 +368,20 @@
         const infoDiv = document.getElementById(infoId);
         infoDiv.classList.toggle("hidden");
       }
+      // ------- Flip Card on Mobile -------
+      function toggleCard(card) {
+        // Remove active state from all other cards
+        document
+          .querySelectorAll(".character-card.active")
+          .forEach((activeCard) => {
+            if (activeCard !== card) {
+              activeCard.classList.remove("active");
+            }
+          });
 
-      
+        // Toggle active state on the clicked card
+        card.classList.toggle("active");
+      }
     </script>
   </body>
 </html>

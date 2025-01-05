@@ -189,18 +189,19 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 100%;
+  top: 100%; /* Start off below the card */
   left: 0;
-  background-color: #ffffff; /* Vit bakgrund */
+  background-color: #ffffff; /* White background */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1rem;
   text-align: center;
-  transition: transform 0.3s ease;
-  z-index: 1;
+  transition: transform 0.3s ease, top 0.3s ease; /* Smooth transition for flipping */
+  z-index: 1; /* Ensure it is behind the front initially */
 }
+
 
 .character-card:hover .character-card-back {
   transform: translateY(-100%);
@@ -208,11 +209,11 @@ body {
 
 /* Klickhantering för mobiler */
 .character-card.active .character-card-front {
-  transform: translateY(-100%);
+  transform: translateY(0%);
 }
 
 .character-card.active .character-card-back {
-  transform: translateY(0);
+  transform: translateY(100%);
 }
 
 .character-card .character-card-back p {
@@ -439,6 +440,7 @@ body {
     padding: 0;
     overflow-x: hidden;
   }
+  
   .signup-section {
     width: 100%;
     padding: 20px;
@@ -446,6 +448,7 @@ body {
     background: #ffffff;
     border-radius: 12px;
   }
+  
   .social-section {
     padding: 20px;
     margin: 20px auto;
@@ -453,12 +456,31 @@ body {
     background: #ffffff;
     border-radius: 12px;
   }
+  
   .music-section {
     padding: 20px;
     margin: 20px auto;
     width: 100%;
     background: #ffffff;
     border-radius: 12px;
+  }
+  
+  .characters-section {
+    padding: 20px;
+    margin: 20px auto;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+  }
+  
+  .characters-grid {
+    gap: 1.5rem; /* Reduce grid spacing for smaller screens */
+    justify-content: center; /* Center-align grid */
+  }
+
+  .character-card {
+    width: 220px; /* Adjust card size */
+    height: 300px;
   }
 }
 
@@ -480,7 +502,18 @@ body {
     max-width: 70%;
     margin-bottom: 20px;
   }
-  
+
+  /* CHARACTERS SECTION */
+  .characters-grid {
+    flex-direction: column; /* Stack cards vertically */
+    gap: 1rem; /* Reduce spacing between cards */
+    align-items: center; /* Center-align cards */
+  }
+  .character-card .character-card-front,
+  .character-card .character-card-back {
+    height: auto; /* Adjust height dynamically */
+  }
+
   /* SIGNUP SECTION */
   .signup-section {
     width: 100%;
@@ -511,6 +544,7 @@ body {
     padding: 15px;
   }
 
+  /* SOCIAL SECTION */
   .social-section {
     padding: 20px;
     margin: 20px auto;
@@ -530,6 +564,7 @@ body {
     padding: 15px;
   }
 
+  /* MUSIC SECTION */
   .music-section {
     padding: 20px;
     margin: 20px auto;
@@ -543,6 +578,7 @@ body {
     width: 100%;
   }
 
+  /* FOOTER */
   .footer {
     width: 100%;
     padding: 20px 0;
@@ -558,9 +594,9 @@ body {
 
   .social-buttons {
     display: flex;
-    justify-content: center; /* Center align buttons */
+    justify-content: center; /* Center-align buttons */
     gap: 15px;
-    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+    flex-wrap: wrap; /* Allow buttons to wrap */
   }
 
   .social-buttons .btn {
