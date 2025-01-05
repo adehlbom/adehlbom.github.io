@@ -33,7 +33,7 @@
     <title>Glitterdalen - En Magisk Värld för Barn och Vuxna</title>
     <meta
       name="description"
-      content="Upptäck Glitterdalen, en magisk värld fylld med fantasi, musik och förtrollande äventyr. Följ oss för de senaste uppdateringarna!"
+      content="Upptäck Glitterdalen – en magisk barnvärld fylld med musik, historier och unika karaktärer. Möt Lumi, Zippy, Illian och Rixa – figurer som bjuder på glädje och äventyr!"
     />
     <meta
       name="keywords"
@@ -60,6 +60,7 @@
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
+
     <!-- Preconnect & Load Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -67,10 +68,11 @@
       rel="stylesheet"
     />
 
-    <!-- Link to external CSS -->
+    <!-- Länk till extern CSS -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Cookie Banner -->
     <div id="cookie-banner" class="cookie-banner">
       <p>
         Vi använder cookies för att analysera trafik och förbättra din
@@ -79,9 +81,6 @@
       </p>
       <button id="accept-cookies" class="cookie-btn">Acceptera</button>
       <button id="decline-cookies" class="cookie-btn">Avvisa</button>
-      <!-- <a href="/integritetspolicy" target="_blank" class="cookie-link"
-        >Läs mer</a -->
-      >
     </div>
 
     <div class="landing-container">
@@ -92,23 +91,129 @@
 
       <!-- Welcome Section -->
       <div class="welcome-section">
-        <h2>En magisk värld för hela familjen!</h2>
+        <h2>Välkommen till Glitterdalen!</h2>
         <p>
-          Glitterdalen är en trygg och inspirerande plats där fantasi möter
-          musik och äventyr. <br />
-          Här hittar du berättelser, sånger och karaktärer som
-          <strong>Lumi</strong>, den glittrande kaninen, och
-          <strong>Zippy</strong>, flugan som drömmer om att bli en astronaut.
-          <br /><br />
-          Upptäck <strong>musiken</strong> och
-          <strong>berättelserna</strong> som väcker fantasin och sprider glädje!
+          Glitterdalen är en magisk värld fylld av musik, lek och fantasi —
+          skapad för barn i alla åldrar (och nyfikna vuxna!). <br /><br />
+          Möt våra glittrande karaktärer: <strong>Lumi</strong> (den
+          stjärnstoftsprudlande kaninen), <strong>Zippy</strong> (den nyfikna
+          flugan med astronautdrömmar), <strong>Illian</strong> (den
+          äventyrslystna upptäckaren) och <strong>Rixa</strong> (den kluriga
+          uppfinnaren). Varje figur bjuder på egna berättelser och sånger som
+          lockar till skratt, dans och äventyr!
+        </p>
+        <p>
+          Upptäck nya <strong>låtar</strong>, följ
+          <strong>spännande berättelser</strong> och låt din fantasi ta fart —
+          här i Glitterdalen!
         </p>
       </div>
+
+      <!-- Characters Section -->
+      <div class="characters-section">
+        <h2>Möt karaktärerna i Glitterdalen</h2>
+        <p>Håll muspekaren över varje kort för att se mer information!</p>
+
+        <div class="characters-grid">
+          <!-- Lumi Flip Card -->
+          <div class="character-card">
+            <div class="character-card-inner">
+              <!-- Front -->
+              <div class="character-card-front">
+                <h3 class="char-name">Lumi</h3>
+                <img
+                  src="public/lumi.png"
+                  alt="Lumi - den glittrande kaninen"
+                />
+                <div class="tagline">Den glittrande kaninen</div>
+              </div>
+              <!-- Back -->
+              <div class="character-card-back">
+                <p>
+                  När Lumi skrattar sprider hon ett magiskt glitter som får hela
+                  Glitterdalen att skimra. Hon bor på Vindklippan och håller
+                  dalen levande med sin glittrande energi!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rixa Flip Card -->
+          <div class="character-card">
+            <div class="character-card-inner">
+              <!-- Front -->
+              <div class="character-card-front">
+                <h3 class="char-name">Rixa</h3>
+                <img
+                  src="public/rixa.png"
+                  alt="Rixa - Den äventyrslystna räven"
+                />
+                <div class="tagline">Den äventyrslystna räven</div>
+              </div>
+              <!-- Back -->
+              <div class="character-card-back">
+                <p>
+                  Hon älskar att gå på skattjakt och bor i Regnbågsgrottan
+                  tillsammans med alla skatter hon samlat. Rixa tvekar aldrig
+                  när det vankas nya äventyr och mystiska kartor.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Zippy Flip Card -->
+          <div class="character-card">
+            <div class="character-card-inner">
+              <!-- Front -->
+              <div class="character-card-front">
+                <h3 class="char-name">Zippy</h3>
+                <img
+                  src="public/zippy.png"
+                  alt="Zippy - Den uppfinningsrika flugan"
+                />
+                <div class="tagline">Den uppfinningsrika flugan</div>
+              </div>
+              <!-- Back -->
+              <div class="character-card-back">
+                <p>
+                  Eftersom han inte kan flyga på egen hand, bygger han
+                  rymdraketer och drömmer om att bli astronaut som Christer
+                  Fuglesang. Han bor vid kanten av Molnfloden och hoppas en dag
+                  lyfta mot stjärnorna!
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Illian Flip Card -->
+          <div class="character-card">
+            <div class="character-card-inner">
+              <!-- Front -->
+              <div class="character-card-front">
+                <h3 class="char-name">Illian</h3>
+                <img
+                  src="public/illian.png"
+                  alt="Illian - Den mystiske enslingen"
+                />
+                <div class="tagline">Den envisa illern</div>
+              </div>
+              <!-- Back -->
+              <div class="character-card-back">
+                <p>
+                  Han är lite missförstådd men trivs bra för sig själv i den
+                  tysta skogen. När andra djur kommer dit och väsnas eller
+                  sprider glitter blir han sur, men kanske är han inte så avig
+                  innerst inne?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Social Media Section -->
       <div class="social-section">
         <h2>Följ oss på sociala medier</h2>
         <div class="social-buttons">
-            <a
+          <a
             class="btn"
             href="https://www.instagram.com/glitterdalen/"
             target="_blank"
@@ -126,8 +231,6 @@
             target="_blank"
             >YouTube</a
           >
-          
-          
         </div>
       </div>
 
@@ -147,6 +250,7 @@
           ></iframe>
         </div>
       </div>
+
       <!-- Signup Section -->
       <div id="signup-section" class="signup-section">
         <h2>Var först med nyheter från Glitterdalen!</h2>
@@ -184,19 +288,19 @@
       </div>
     </div>
 
-    <!-- Footer Section -->
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-content">
         <a href="#" id="manage-cookies" class="footer-btn">Hantera Cookies</a>
         <br />
         <a href="mailto:info@glitterdalen.se">info@glitterdalen.se</a>
         <p>© 2025 Glitterdalen. Alla rättigheter förbehållna.</p>
-
-
       </div>
     </footer>
 
+    <!-- JavaScript -->
     <script>
+      // ------- Form Submit to MailerLite -------
       document
         .getElementById("signup-form")
         .addEventListener("submit", async function (e) {
@@ -226,28 +330,23 @@
             alert("Något gick fel. Försök igen.");
           }
         });
-    </script>
 
-    <script>
+      // ------- Cookies Banner -------
       document
         .getElementById("manage-cookies")
         .addEventListener("click", () => {
           localStorage.removeItem("cookie-consent");
           document.getElementById("cookie-banner").style.display = "block";
         });
-    </script>
 
-    <script>
       document.addEventListener("DOMContentLoaded", () => {
         const cookieBanner = document.getElementById("cookie-banner");
         const consent = localStorage.getItem("cookie-consent");
 
-        // Show banner if no consent is given
         if (!consent) {
           cookieBanner.style.display = "block";
         }
 
-        // Accept Cookies
         document
           .getElementById("accept-cookies")
           .addEventListener("click", () => {
@@ -256,7 +355,6 @@
             initializeGoogleAnalytics();
           });
 
-        // Decline Cookies
         document
           .getElementById("decline-cookies")
           .addEventListener("click", () => {
@@ -264,6 +362,14 @@
             cookieBanner.style.display = "none";
           });
       });
+
+      // ------- Expand/Collapse Characters -------
+      function toggleExpand(infoId) {
+        const infoDiv = document.getElementById(infoId);
+        infoDiv.classList.toggle("hidden");
+      }
+
+      
     </script>
   </body>
 </html>

@@ -1,3 +1,7 @@
+/* ---------------------------------
+   1) GRUNDSTILAR OCH BAKGRUND
+---------------------------------- */
+
 /* General Reset for Box Sizing */
 *,
 *::before,
@@ -31,7 +35,14 @@ body {
   overflow-x: hidden; /* Prevent content overflow */
 }
 
-/* Logo Section */
+/* Hidden Success Section och liknande */
+.hidden {
+  display: none;
+}
+
+/* ---------------------------------
+   2) LOGO-AVSNITT
+---------------------------------- */
 .logo-container {
   background: #ffffff;
   padding: 20px;
@@ -44,7 +55,9 @@ body {
   display: block;
 }
 
-/* Welcome Section Styles */
+/* ---------------------------------
+   3) WELCOME SECTION
+---------------------------------- */
 .welcome-section {
   background: #ffffff;
   padding: 20px;
@@ -66,8 +79,165 @@ body {
   line-height: 1.6; /* Better spacing between lines */
   margin-bottom: 20px;
 }
+/* ---------------------------------
+   3) CHARACTERS SECTION
+---------------------------------- */
+/* SECTION CONTAINER */
+.characters-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 8px; /* Matchar kortens rundning */
+  margin-bottom: 30px;
+}
 
-/* Signup Section */
+.characters-section h2 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 2rem;
+  color: #2c2c2c;
+  margin-bottom: 15px;
+}
+
+.characters-section p {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.2rem;
+  color: #2c2c2c;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* GRID STRUCTURE */
+.characters-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* CARD DESIGN */
+.character-card {
+  position: relative;
+  width: 240px;
+  height: 320px;
+  border-radius: 8px; /* Matchar knappens rundning */
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #ffffff; /* Vit bakgrund */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtil skugga */
+  transition: border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.character-card:hover {
+  border: 2px solid #b8a8d1; /* Lila border */
+  transform: translateY(-2px); /* Lyft kortet vid hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Förstärk skuggan vid hover */
+}
+
+.character-card .character-card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent; /* Transparent för att visa kortets färg */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.6s ease;
+  z-index: 2;
+}
+
+.character-card:hover .character-card-front {
+  transform: translateY(-100%);
+}
+
+.character-card .char-name {
+  margin: 0;
+  padding: 8px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.2rem;
+  color: #4a4a4a; /* Mörk text */
+  background: rgba(245, 245, 245, 1); /* Ljus bakgrund */
+  width: 100%;
+  text-align: center;
+}
+
+.character-card .character-card-front img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  flex: 1;
+}
+
+.character-card .tagline {
+  margin: 0;
+  padding: 10px 0;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #4a4a4a; /* Mörk text */
+  background-color: rgba(245, 245, 245, 1); /* Ljus bakgrund */
+  width: 100%;
+  text-align: center;
+}
+
+.character-card .character-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff; /* Vit bakgrund */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.character-card:hover .character-card-back {
+  transform: translateY(-100%);
+}
+
+/* Klickhantering för mobiler */
+.character-card.active .character-card-front {
+  transform: translateY(-100%);
+}
+
+.character-card.active .character-card-back {
+  transform: translateY(0);
+}
+
+.character-card .character-card-back p {
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #4a4a4a; /* Mörk text */
+  margin-bottom: 10px;
+}
+
+.character-card .character-card-back ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.character-card .character-card-back li {
+  margin-bottom: 5px;
+  font-size: 0.85rem;
+  color: #4a4a4a; /* Mörk text */
+}
+
+/* ---------------------------------
+   5) SIGNUP SECTION
+---------------------------------- */
 .signup-section {
   background: #ffffff;
   border: 1px solid #f5a9c3;
@@ -125,12 +295,15 @@ body {
   font-style: italic;
 }
 
-/* Social Section */
+/* ---------------------------------
+   6) SOCIAL SECTION
+---------------------------------- */
 .social-section {
   padding: 20px;
   border-radius: 12px;
   margin-bottom: 30px;
 }
+
 .social-section h2 {
   font-family: "Fredoka", sans-serif;
   font-size: 1.8rem;
@@ -151,12 +324,15 @@ body {
   background-color: #b8a8d1;
 }
 
-/* Music Section */
+/* ---------------------------------
+   7) MUSIC SECTION
+---------------------------------- */
 .music-section {
   padding: 20px;
   border-radius: 12px;
   margin-bottom: 30px;
 }
+
 .music-section h2 {
   font-family: "Fredoka", sans-serif;
   font-size: 1.8rem;
@@ -177,12 +353,9 @@ body {
   border-radius: 12px;
 }
 
-/* Hidden Success Section */
-.hidden {
-  display: none;
-}
-
-/* Footer Section */
+/* ---------------------------------
+   8) FOOTER
+---------------------------------- */
 .footer {
   background-color: #fff7f1;
   padding: 20px 0;
@@ -198,17 +371,21 @@ body {
   margin: 0 auto;
 }
 
-.footer a, .footer-btn {
+.footer a,
+.footer-btn {
   color: #f5a9c3;
   text-decoration: none;
   font-weight: 600;
 }
 
-.footer a:hover, .footer-btn:hover {
+.footer a:hover,
+.footer-btn:hover {
   color: #b8a8d1;
 }
 
-/* Cookie Banner */
+/* ---------------------------------
+   9) COOKIE BANNER
+---------------------------------- */
 .cookie-banner {
   position: fixed;
   bottom: 0;
@@ -250,61 +427,66 @@ body {
   text-decoration: underline;
   font-size: 0.9rem;
 }
+
+/* ---------------------------------
+   10) MEDIA QUERIES: Tablets och Mobiler
+---------------------------------- */
+
 @media (max-width: 1280px) {
   body {
     background: #fff7f1;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
   }
   .signup-section {
     width: 100%;
     padding: 20px;
     margin: 0 auto 20px;
-    background: #ffffff; /* Ensure a clean background */
+    background: #ffffff;
     border-radius: 12px;
   }
   .social-section {
     padding: 20px;
     margin: 20px auto;
     width: 100%;
-    background: #ffffff; /* Ensure white background */
+    background: #ffffff;
     border-radius: 12px;
   }
   .music-section {
     padding: 20px;
     margin: 20px auto;
     width: 100%;
-    background: #ffffff; /* Ensure seamless background */
+    background: #ffffff;
     border-radius: 12px;
   }
 }
 
-/* General Mobile Styles */
 @media (max-width: 768px) {
   body {
     background: #fff7f1;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
   }
 
   .landing-container {
-    max-width: 100%; /* Ensure it spans the viewport width */
+    max-width: 100%;
     padding: 15px;
-    margin: 0 auto; /* Center the container */
+    margin: 0 auto;
   }
 
   .logo-container img {
     max-width: 70%;
     margin-bottom: 20px;
   }
-
+  
+  /* SIGNUP SECTION */
   .signup-section {
     width: 100%;
     padding: 20px;
     margin: 0 auto 20px;
-    background: #ffffff; /* Ensure a clean background */
+    background: #ffffff;
     border-radius: 12px;
   }
 
@@ -333,7 +515,7 @@ body {
     padding: 20px;
     margin: 20px auto;
     width: 100%;
-    background: #ffffff; /* Ensure white background */
+    background: #ffffff;
     border-radius: 12px;
   }
 
@@ -352,7 +534,7 @@ body {
     padding: 20px;
     margin: 20px auto;
     width: 100%;
-    background: #ffffff; /* Ensure seamless background */
+    background: #ffffff;
     border-radius: 12px;
   }
 
@@ -373,16 +555,17 @@ body {
   .footer-content {
     padding: 10px;
   }
+
   .social-buttons {
     display: flex;
     justify-content: center; /* Center align buttons */
-    gap: 15px; /* Add spacing between buttons */
-    flex-wrap: wrap; /* Allow buttons to wrap to the next line if needed */
+    gap: 15px;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
   }
-  
+
   .social-buttons .btn {
-    flex: 1 1 calc(30% - 10px); /* Make each button occupy 30% of the row with spacing */
-    max-width: 100px; /* Optional: Limit button width */
+    flex: 1 1 calc(30% - 10px);
+    max-width: 100px;
     text-align: center;
     padding: 12px;
     background-color: #f5a9c3;
@@ -394,10 +577,9 @@ body {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, transform 0.2s ease;
   }
-  
+
   .social-buttons .btn:hover {
     background-color: #b8a8d1;
     transform: translateY(-2px);
   }
-  
 }
