@@ -8,6 +8,9 @@
 *::after {
   box-sizing: border-box;
 }
+#mobile-nav {
+  display: none;
+}
 
 /* General Body Fix */
 body {
@@ -88,7 +91,7 @@ body {
   color: #5E432A;
   cursor: pointer;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .node:hover {
@@ -99,7 +102,11 @@ body {
 .node.active {
   background: linear-gradient(145deg, #FFC107, #FFD700);
   box-shadow: 0 10px 30px rgba(255, 223, 0, 0.8);
+  transform: scale(1.15); /* Slightly larger active node */
+
 }
+
+
 
 .path {
   width: 5px;
@@ -131,60 +138,59 @@ body {
 }
 
 
-
-
-/* ---------------------------------
-   3) WELCOME SECTION
----------------------------------- */
-.welcome-section {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
+/* GENERAL SECTION STYLING */
+.section {
+  max-width: 1200px;
+  min-height: 400px; /* Ensures all sections have enough height */
+  margin: 20px auto;
+  text-align: center;
   margin-bottom: 30px;
+  padding: 60px 20px; /* Increased padding for more spacing */
+
 }
 
-.welcome-section h2 {
+/* Headline Styling for All Sections */
+.section h2 {
   font-family: "Fredoka", sans-serif;
-  font-size: 2rem; /* Slightly larger headline */
+  font-size: 2rem;
   color: #4a4a4a;
   margin-bottom: 15px;
 }
 
-.welcome-section p {
+/* Paragraph Styling for All Sections */
+.section p {
   font-family: "Quicksand", sans-serif;
-  font-size: 1.2rem; /* Increased font size for readability */
+  font-size: 1.2rem;
   color: #4a4a4a;
-  line-height: 1.6; /* Better spacing between lines */
+  line-height: 1.6;
   margin-bottom: 20px;
+}
+
+/* ---------------------------------
+   3) WELCOME SECTION
+---------------------------------- */
+/* Welcome Section Modifications */
+.welcome-section h2 {
+  color: #4a4a4a;
+}
+
+.welcome-section p {
+  color: #4a4a4a;
 }
 
 /* ---------------------------------
    3) CHARACTERS SECTION
 ---------------------------------- */
 /* SECTION CONTAINER */
-.characters-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  text-align: center;
-  background: #ffffff;
-  border-radius: 8px; /* Matchar kortens rundning */
-  margin-bottom: 30px;
-}
+/* Characters Section Modifications */
+
 
 .characters-section h2 {
-  font-family: "Fredoka", sans-serif;
-  font-size: 2rem;
   color: #2c2c2c;
-  margin-bottom: 15px;
 }
 
 .characters-section p {
-  font-family: "Quicksand", sans-serif;
-  font-size: 1.2rem;
   color: #2c2c2c;
-  line-height: 1.6;
-  margin-bottom: 20px;
 }
 
 /* GRID STRUCTURE */
@@ -317,23 +323,22 @@ body {
 /* ---------------------------------
    5) SIGNUP SECTION
 ---------------------------------- */
+/* Signup Section Modifications */
 .signup-section {
-  background: #ffffff;
-  border: 1px solid #f5a9c3;
-  border-radius: 12px;
-  padding: 20px;
-  margin: 20px auto;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  max-width: 90%; /* Prevent section from exceeding body width */
+  border: 1px solid #f5a9c3; /* Adds border for signup section */
+  max-width: 90%; /* Prevents exceeding body width */
+  border-radius: 25px;
 }
 
 .signup-section h2 {
-  font-family: "Fredoka", sans-serif;
-  font-size: 1.8rem;
   color: #4a4a4a;
-  margin-bottom: 20px;
 }
 
+.signup-section form {
+  display: flex;
+  flex-direction: column; /* Stacks elements on mobile */
+  gap: 15px;
+}
 .signup-section form {
   display: flex;
   flex-direction: column; /* Stacks elements on mobile */
@@ -377,17 +382,10 @@ body {
 /* ---------------------------------
    6) SOCIAL SECTION
 ---------------------------------- */
-.social-section {
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-}
+/* Social Section Modifications */
 
 .social-section h2 {
-  font-family: "Fredoka", sans-serif;
-  font-size: 1.8rem;
   color: #4a4a4a;
-  margin-bottom: 20px;
 }
 
 .social-buttons .btn {
@@ -406,18 +404,6 @@ body {
 /* ---------------------------------
    7) MUSIC SECTION
 ---------------------------------- */
-.music-section {
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-}
-
-.music-section h2 {
-  font-family: "Fredoka", sans-serif;
-  font-size: 1.8rem;
-  color: #4a4a4a;
-  margin-bottom: 20px;
-}
 
 .iframe-wrapper {
   background-color: #ffffff; /* Match the background of the site */
@@ -586,6 +572,41 @@ body {
   .logo-container img {
     max-width: 70%;
     margin-bottom: 20px;
+  }
+  /* Navigation Line */
+  #navigation-line {
+    display: none; /* Hide vertical navigation on smaller screens */
+  }
+  #mobile-nav {
+    position: fixed;
+    bottom: 0; /* Stick it to the bottom */
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: #fff3c4; /* Light background */
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+
+  .nav-item {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: #5e432a;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .nav-item:hover {
+    color: #ffc107; /* Highlight on hover */
+    transform: scale(1.1); /* Slightly enlarge */
+  }
+
+  .nav-item.active {
+    color: #ffa500; /* Active item color */
   }
 
   /* CHARACTERS SECTION */
