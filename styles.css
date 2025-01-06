@@ -80,7 +80,6 @@ body {
   margin-bottom: 20px;
 }
 
-
 /* ---------------------------------
    3) CHARACTERS SECTION
 ---------------------------------- */
@@ -203,7 +202,6 @@ body {
   transition: transform 0.3s ease, top 0.3s ease; /* Smooth transition for flipping */
   z-index: 1; /* Ensure it is behind the front initially */
 }
-
 
 .character-card:hover .character-card-back {
   transform: translateY(-100%);
@@ -442,7 +440,7 @@ body {
     padding: 0;
     overflow-x: hidden;
   }
-  
+
   .signup-section {
     width: 100%;
     padding: 20px;
@@ -450,7 +448,7 @@ body {
     background: #ffffff;
     border-radius: 12px;
   }
-  
+
   .social-section {
     padding: 20px;
     margin: 20px auto;
@@ -458,7 +456,7 @@ body {
     background: #ffffff;
     border-radius: 12px;
   }
-  
+
   .music-section {
     padding: 20px;
     margin: 20px auto;
@@ -466,7 +464,7 @@ body {
     background: #ffffff;
     border-radius: 12px;
   }
-  
+
   .characters-section {
     padding: 20px;
     margin: 20px auto;
@@ -481,7 +479,7 @@ body {
     background: #ffffff;
     border-radius: 12px;
   }
-  
+
   .characters-grid {
     gap: 1.5rem; /* Reduce grid spacing for smaller screens */
     justify-content: center; /* Center-align grid */
