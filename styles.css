@@ -122,10 +122,10 @@ body {
   position: absolute;
   width: 25px;
   height: 25px;
-  background: radial-gradient(circle, #FF4500, #FF0000); /* Gradient for a magical gem effect */
+  background: radial-gradient(circle, #f5a9c3, #f5a9c3); /* Gradient for a magical gem effect */
   border-radius: 50%;
   left: 120%; /* Position outside the node */
-  box-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
+  box-shadow: 0 0 15px rgba(199, 198, 198, 0.8);
   transition: top 0.6s ease; /* Slow movement for smoother feel */
   z-index: 10;
 }
