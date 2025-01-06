@@ -108,6 +108,74 @@
           här i Glitterdalen!
         </p>
       </div>
+      <!-- Signup Section -->
+      <div id="signup-section" class="signup-section">
+        <h2>Var först med nyheter från Glitterdalen!</h2>
+        <form
+          id="signup-form"
+          action="https://assets.mailerlite.com/jsonp/1255993/forms/142396205183272375/subscribe"
+          method="post"
+        >
+          <input
+            id="email"
+            type="email"
+            name="fields[email]"
+            placeholder="Skriv in din e-postadress"
+            required
+          />
+          <button type="submit">Skicka in!</button>
+        </form>
+        <p class="privacy-note">
+          <em
+            >Vi samlar endast in din e-postadress för att kunna skicka nyheter
+            och information om Glitterdalen. Vi delar aldrig din information med
+            tredje part. Du kan när som helst avregistrera dig från våra utskick
+            via länken i e-postmeddelandet.</em
+          >
+        </p>
+      </div>
+
+      
+      <!-- Social Media Section -->
+      <div class="social-section">
+        <h2>Följ oss på sociala medier</h2>
+        <div class="social-buttons">
+          <a
+            class="btn"
+            href="https://www.instagram.com/glitterdalen/"
+            target="_blank"
+            >Instagram</a
+          >
+          <a
+            class="btn"
+            href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd?si=d26c7821aa654469"
+            target="_blank"
+            >Spotify</a
+          >
+          <a
+            class="btn"
+            href="https://www.youtube.com/@Glitterdalen"
+            target="_blank"
+            >YouTube</a
+          >
+        </div>
+      </div>
+      <!-- Music Section -->
+      <div class="music-section">
+        <h2>Lyssna på musiken</h2>
+        <div class="iframe-wrapper">
+          <iframe
+            style="border-radius: 12px"
+            src="https://open.spotify.com/embed/artist/35x1x7RZaz5GPlIS4axyCd?utm_source=generator&theme=0"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture; fullscreen"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
 
       <!-- Characters Section -->
       <div class="characters-section">
@@ -208,74 +276,80 @@
           </div>
         </div>
       </div>
+      <!-- Locations Section -->
+      <div class="characters-section">
+        <h2>Utforska platserna i Glitterdalen</h2>
+        <p>Klicka/håll över varje kort för att få veta mer</p>
 
-      <!-- Social Media Section -->
-      <div class="social-section">
-        <h2>Följ oss på sociala medier</h2>
-        <div class="social-buttons">
-          <a
-            class="btn"
-            href="https://www.instagram.com/glitterdalen/"
-            target="_blank"
-            >Instagram</a
-          >
-          <a
-            class="btn"
-            href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd?si=d26c7821aa654469"
-            target="_blank"
-            >Spotify</a
-          >
-          <a
-            class="btn"
-            href="https://www.youtube.com/@Glitterdalen"
-            target="_blank"
-            >YouTube</a
-          >
+        <div class="characters-grid">
+          <!-- Flugsvampsskogen Flip Card -->
+          <div class="character-card" onclick="toggleCard(this)">
+            <div class="character-card-inner">
+              <!-- Front -->
+              <div class="character-card-front">
+                <h3 class="char-name">Flugsvampsskogen</h3>
+                <img
+                  src="/public/flugsvampsskogen.png"
+                  alt="Flugsvampsskogen - Den förtrollande skogen"
+                />
+                <div class="tagline">Den förtrollande skogen</div>
+              </div>
+              <!-- Back -->
+              <div class="character-card-back">
+                <p>
+                  En mystisk skog med skimrande svampar som lyser i olika
+                  färger. Här slingrar sig stigar till magiska gömställen och
+                  spännande äventyr, men skogen kräver respekt och försiktighet.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Regnbågsgrottan Flip Card -->
+          <div class="character-card" onclick="toggleCard(this)">
+            <div class="character-card-inner">
+              <!-- Front -->
+              <div class="character-card-front">
+                <h3 class="char-name">Regnbågsgrottan</h3>
+                <img
+                  src="/public/regnbagsgrottan.png"
+                  alt="Regnbågsgrottan - Skattkammaren nära Molnfloden"
+                />
+                <div class="tagline">Grottan nära Molnfloden</div>
+              </div>
+              <!-- Back -->
+              <div class="character-card-back">
+                <p>
+                  Rixas hemliga grotta fylld med hennes fantasirika skatter. Här
+                  förvaras allt från skimrande stenar till andra skatter man kan
+                  hitta i glitterdalen som en gammal stövel.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vindklippan Flip Card -->
+          <div class="character-card" onclick="toggleCard(this)">
+            <div class="character-card-inner">
+              <!-- Front -->
+              <div class="character-card-front">
+                <h3 class="char-name">Vindklippan</h3>
+                <img
+                  src="/public/vindklippan.png"
+                  alt="Vindklippan - Den majestätiska utsiktsplatsen"
+                />
+                <div class="tagline">Den majestätiska klippan</div>
+              </div>
+              <!-- Back -->
+              <div class="character-card-back">
+                <p>
+                  En vidsträckt klippavsats med utsikt över hela Glitterdalen.
+                  Här bor Lumi, och vinden sprider hennes stjärnstoft över hela glitterdalen.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <!-- Music Section -->
-      <div class="music-section">
-        <h2>Lyssna på musiken</h2>
-        <div class="iframe-wrapper">
-          <iframe
-            style="border-radius: 12px"
-            src="https://open.spotify.com/embed/artist/35x1x7RZaz5GPlIS4axyCd?utm_source=generator&theme=0"
-            width="100%"
-            height="352"
-            frameborder="0"
-            allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture; fullscreen"
-            loading="lazy"
-          ></iframe>
-        </div>
-      </div>
-
-      <!-- Signup Section -->
-      <div id="signup-section" class="signup-section">
-        <h2>Var först med nyheter från Glitterdalen!</h2>
-        <form
-          id="signup-form"
-          action="https://assets.mailerlite.com/jsonp/1255993/forms/142396205183272375/subscribe"
-          method="post"
-        >
-          <input
-            id="email"
-            type="email"
-            name="fields[email]"
-            placeholder="Skriv in din e-postadress"
-            required
-          />
-          <button type="submit">Skicka in!</button>
-        </form>
-        <p class="privacy-note">
-          <em
-            >Vi samlar endast in din e-postadress för att kunna skicka nyheter
-            och information om Glitterdalen. Vi delar aldrig din information med
-            tredje part. Du kan när som helst avregistrera dig från våra utskick
-            via länken i e-postmeddelandet.</em
-          >
-        </p>
       </div>
 
       <!-- Success Section (Hidden Initially) -->

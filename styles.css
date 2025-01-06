@@ -79,6 +79,8 @@ body {
   line-height: 1.6; /* Better spacing between lines */
   margin-bottom: 20px;
 }
+
+
 /* ---------------------------------
    3) CHARACTERS SECTION
 ---------------------------------- */
@@ -466,6 +468,13 @@ body {
   }
   
   .characters-section {
+    padding: 20px;
+    margin: 20px auto;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+  }
+  .locations-section {
     padding: 20px;
     margin: 20px auto;
     width: 100%;
