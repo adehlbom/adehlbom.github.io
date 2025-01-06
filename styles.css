@@ -12,6 +12,26 @@
   display: none;
 }
 
+/* Social media icons */
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-btn {
+  font-size: 2rem;
+  color: #f5a9c3; /* Default pink */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-btn:hover {
+  color: #b8a8d1; /* Hover effect with purple */
+  transform: scale(1.2); /* Slight enlargement on hover */
+}
+
+
 /* General Body Fix */
 body {
   font-family: "Quicksand", sans-serif;
@@ -79,64 +99,60 @@ body {
   position: relative;
   width: 90px;
   height: 90px;
-  background: linear-gradient(145deg, #FFD700, #FFC107); /* Shiny treasure theme */
+  background: #ffb3c1; /* Soft Coral Pink */
   border-radius: 50%;
-  border: 3px solid #FFC300;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Fredoka', sans-serif;
+  font-family: "Fredoka", sans-serif;
   font-weight: bold;
   font-size: 16px;
-  color: #5E432A;
+  color: #5e432a; /* Rich brown for contrast */
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, color 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 179, 193, 0.5); /* Pink Glow */
+  transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .node:hover {
   transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 10px 20px rgba(255, 204, 0, 0.8);
+  background: #ff758f; /* Warm Coral */
+  box-shadow: 0 10px 20px rgba(255, 117, 143, 0.8); /* Stronger Pink Glow */
 }
 
 .node.active {
-  background: linear-gradient(145deg, #FFC107, #FFD700);
-  box-shadow: 0 10px 30px rgba(255, 223, 0, 0.8);
+  background: #b39ddb; /* Deeper Lavender */
+  box-shadow: 0 10px 30px rgba(179, 157, 219, 0.8); /* Lavender Glow */
   transform: scale(1.15); /* Slightly larger active node */
-
 }
-
-
 
 .path {
   width: 5px;
   height: 40px;
-  background: #FFD700;
-  border-radius: 20px;
   background: repeating-linear-gradient(
     to bottom,
-    #FFD700,
-    #FFD700 10px,
-    transparent 10px,
-    transparent 20px
-  ); /* Dotted treasure path */
+    #ffb3c1,
+    #ffb3c1 5px,
+    transparent 5px,
+    transparent 10px
+  ); /* Dotted treasure path with modern dots */
+  border-radius: 20px;
 }
-
-
-
 
 #current-location {
   position: absolute;
   width: 25px;
   height: 25px;
-  background: radial-gradient(circle, #f5a9c3, #f5a9c3); /* Gradient for a magical gem effect */
+  background: radial-gradient(
+    circle,
+    #ff758f,
+    #ffb3c1
+  ); /* Magical pink gradient */
   border-radius: 50%;
   left: 120%; /* Position outside the node */
-  box-shadow: 0 0 15px rgba(199, 198, 198, 0.8);
-  transition: top 0.6s ease; /* Slow movement for smoother feel */
+  box-shadow: 0 0 15px rgba(255, 117, 143, 0.8); /* Magical pink glow */
+  transition: top 0.6s ease, transform 0.3s ease; /* Smooth movement */
   z-index: 10;
 }
-
 
 /* GENERAL SECTION STYLING */
 .section {
@@ -146,7 +162,6 @@ body {
   text-align: center;
   margin-bottom: 30px;
   padding: 60px 20px; /* Increased padding for more spacing */
-
 }
 
 /* Headline Styling for All Sections */
@@ -183,7 +198,6 @@ body {
 ---------------------------------- */
 /* SECTION CONTAINER */
 /* Characters Section Modifications */
-
 
 .characters-section h2 {
   color: #2c2c2c;
@@ -388,18 +402,38 @@ body {
   color: #4a4a4a;
 }
 
-.social-buttons .btn {
-  background-color: #f5a9c3;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 20px;
-  margin: 10px;
-  text-decoration: none;
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Space between social items */
+  align-items: center;
 }
 
-.social-buttons .btn:hover {
-  background-color: #b8a8d1;
+.social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
+
+.social-btn {
+  font-size: 2.5rem; /* Icon size */
+  color: #f5a9c3; /* Default pink */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-btn:hover {
+  color: #b8a8d1; /* Hover purple */
+  transform: scale(1.2); /* Slight enlargement */
+}
+
+.social-item p {
+  margin-top: 8px; /* Space between icon and text */
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem; /* Adjust font size */
+  color: #5e432a; /* Text color */
+}
+
 
 /* ---------------------------------
    7) MUSIC SECTION
@@ -582,32 +616,44 @@ body {
     bottom: 0; /* Stick it to the bottom */
     left: 0;
     width: 100%; /* Full width */
-    background-color: #fff3c4; /* Light background */
-    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Soft Coral Pink */
+    box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.1); /* Softer shadow for elevation */
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px 0;
+    padding: 15px 0; /* Increased padding for better touch experience */
     z-index: 1000;
-    height: 80px;
+    height: 70px; /* Optimized for mobile screens */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px; /* Subtle rounding for a modern look */
   }
 
   .nav-item {
-    font-family: 'Fredoka', sans-serif;
+    font-family: "Fredoka", sans-serif;
     font-weight: bold;
-    font-size: 12px;
-    color: #5e432a;
+    font-size: 14px; /* Slightly larger for better readability */
+    color: #5e432a; /* Rich brown for contrast */
     cursor: pointer;
     transition: transform 0.3s ease, color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-item i {
+    font-size: 20px; /* For potential icons */
+    margin-bottom: 5px;
+    color: inherit; /* Match text color */
   }
 
   .nav-item:hover {
-    color: #ffc107; /* Highlight on hover */
-    transform: scale(1.1); /* Slightly enlarge */
+    color: #ff758f; /* Warm Coral on hover */
+    transform: scale(1.1); /* Slightly enlarge for interaction feedback */
   }
 
   .nav-item.active {
-    color: #ffa500; /* Active item color */
+    color: #b39ddb; /* Active color (Deeper Lavender) */
+    transform: scale(1.15); /* Emphasize the active item */
   }
 
   /* CHARACTERS SECTION */
@@ -622,6 +668,14 @@ body {
   }
 
   /* SIGNUP SECTION */
+  .welcome-section {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto 20px;
+    background: #ffffff;
+    border-radius: 12px;
+  }
+
   .signup-section {
     width: 100%;
     padding: 20px;

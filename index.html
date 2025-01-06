@@ -70,6 +70,10 @@
 
     <!-- Länk till extern CSS -->
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Cookie Banner -->
@@ -90,7 +94,7 @@
       </div>
       <div id="navigation-line">
         <!-- Themed Marker -->
-        <div id="current-location" class="compass"></div>
+        <!-- <div id="current-location" class="compass"></div> -->
 
         <!-- Treasure Map Nodes -->
         <div class="node" data-target="welcome-section">Välkommen</div>
@@ -110,7 +114,7 @@
         <div class="nav-item" data-target="characters-section">Karaktärer</div>
         <div class="nav-item" data-target="locations-section">Platser</div>
       </div>
-      
+
       <!-- Welcome Section -->
       <div id="welcome-section" class="welcome-section section">
         <h2>Välkommen till Glitterdalen!</h2>
@@ -157,24 +161,39 @@
         </p>
         <h2>Sociala Medier</h2>
         <div class="social-buttons">
-          <a
-            class="btn"
-            href="https://www.instagram.com/glitterdalen/"
-            target="_blank"
-            >Instagram</a
-          >
-          <a
-            class="btn"
-            href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd?si=d26c7821aa654469"
-            target="_blank"
-            >Spotify</a
-          >
-          <a
-            class="btn"
-            href="https://www.youtube.com/@Glitterdalen"
-            target="_blank"
-            >YouTube</a
-          >
+          <div class="social-item">
+            <a
+              class="social-btn"
+              href="https://www.instagram.com/glitterdalen/"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <p>Instagram</p>
+          </div>
+          <div class="social-item">
+            <a
+              class="social-btn"
+              href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd?si=d26c7821aa654469"
+              target="_blank"
+              aria-label="Spotify"
+            >
+              <i class="fab fa-spotify"></i>
+            </a>
+            <p>Spotify</p>
+          </div>
+          <div class="social-item">
+            <a
+              class="social-btn"
+              href="https://www.youtube.com/@Glitterdalen"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <i class="fab fa-youtube"></i>
+            </a>
+            <p>YouTube</p>
+          </div>
         </div>
       </div>
 
@@ -184,12 +203,12 @@
         <div class="iframe-wrapper">
           <iframe
             style="border-radius: 12px"
-            src="https://open.spotify.com/embed/artist/35x1x7RZaz5GPlIS4axyCd?utm_source=generator&theme=0"
+            src="https://open.spotify.com/embed/artist/35x1x7RZaz5GPlIS4axyCd?utm_source=generator"
             width="100%"
             height="352"
             frameborder="0"
             allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture; fullscreen"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
           ></iframe>
         </div>
@@ -496,6 +515,7 @@
               .getElementById("navigation-line")
               .getBoundingClientRect();
 
+            // Calculate the new top position for the marker
             const newTop =
               nodeRect.top -
               navigationRect.top +
@@ -516,7 +536,7 @@
         sections.forEach((section) => {
           const sectionTop = section.offsetTop;
           const sectionHeight = section.offsetHeight;
-          const scrollPosition = window.scrollY + window.innerHeight / 3; // Adjusted for accuracy
+          const scrollPosition = window.scrollY + window.innerHeight / 3; // Adjusted for better accuracy
 
           // Check if the scroll position is within the section
           if (
@@ -543,12 +563,14 @@
             isScrollingManually = true; // Set flag to disable scroll event logic
             targetSection.scrollIntoView({
               behavior: "smooth",
-              block: "center",
-            }); // Adjust to center
+              block: "start", // Start aligns with the top of the section
+            });
+
+            // Timeout to reset the manual scroll flag
             setTimeout(() => {
               isScrollingManually = false; // Reset flag after scroll completes
               setActiveNode(targetId); // Ensure correct active node after scrolling
-            }, 800); // Adjust timeout to match scroll animation duration
+            }, 800); // Match this timeout with your scroll animation duration
           }
         });
       });
