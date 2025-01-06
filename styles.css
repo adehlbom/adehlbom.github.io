@@ -60,7 +60,7 @@ body {
 
 /* Hidden Success Section och liknande */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /* ---------------------------------
@@ -157,7 +157,7 @@ body {
 
 /* GENERAL SECTION STYLING */
 .section {
-  max-width: 1200px;
+  max-width: 1000px;
   min-height: 400px; /* Ensures all sections have enough height */
   margin: 20px auto;
   text-align: center;
@@ -186,11 +186,11 @@ body {
    3) WELCOME SECTION
 ---------------------------------- */
 /* Welcome Section Modifications */
-.welcome-section h2 {
+.welcome h2 {
   color: #4a4a4a;
 }
 
-.welcome-section p {
+.welcome p {
   color: #4a4a4a;
 }
 
@@ -200,11 +200,11 @@ body {
 /* SECTION CONTAINER */
 /* Characters Section Modifications */
 
-.characters-section h2 {
+.characters h2 {
   color: #2c2c2c;
 }
 
-.characters-section p {
+.characters p {
   color: #2c2c2c;
 }
 
@@ -215,6 +215,7 @@ body {
   gap: 2rem;
   justify-content: center;
   margin-top: 1.5rem;
+
 }
 
 /* CARD DESIGN */
@@ -339,7 +340,7 @@ body {
    5) SIGNUP SECTION
 ---------------------------------- */
 /* Signup Section Modifications */
-.signup-section {
+.signup {
   border: 1px solid #f5a9c3; /* Adds border for signup section */
   max-width: 90%; /* Prevents exceeding body width */
   border-radius: 25px;
@@ -347,22 +348,22 @@ body {
 
 }
 
-.signup-section h2 {
+.signup h2 {
   color: #4a4a4a;
 }
 
-.signup-section form {
+.signup form {
   display: flex;
   flex-direction: column; /* Stacks elements on mobile */
   gap: 15px;
 }
-.signup-section form {
+.signup form {
   display: flex;
   flex-direction: column; /* Stacks elements on mobile */
   gap: 15px;
 }
 
-.signup-section input[type="email"] {
+.signup input[type="email"] {
   width: 100%;
   padding: 12px;
   border: 2px solid #f5a9c3;
@@ -371,7 +372,7 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
-.signup-section button {
+.signup button {
   width: 100%;
   background-color: #f5a9c3;
   color: #fff;
@@ -384,12 +385,12 @@ body {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.signup-section button:hover {
+.signup button:hover {
   background-color: #b8a8d1;
   transform: translateY(-2px);
 }
 
-.signup-section .privacy-note {
+.signup .privacy-note {
   font-size: 0.8rem;
   color: #4a4a4a;
   margin-top: 15px;
@@ -401,7 +402,7 @@ body {
 ---------------------------------- */
 /* Social Section Modifications */
 
-.social-section h2 {
+.social h2 {
   color: #4a4a4a;
 }
 
@@ -569,7 +570,7 @@ body {
     overflow-x: hidden;
   }
 
-  .signup-section {
+  .signup {
     width: 100%;
     padding: 20px;
     margin: 0 auto 20px;
@@ -577,7 +578,7 @@ body {
     border-radius: 12px;
   }
 
-  .social-section {
+  .social {
     padding: 20px;
     margin: 20px auto;
     width: 100%;
@@ -585,7 +586,7 @@ body {
     border-radius: 12px;
   }
 
-  .music-section {
+  .music {
     padding: 20px;
     margin: 20px auto;
     width: 100%;
@@ -593,14 +594,14 @@ body {
     border-radius: 12px;
   }
 
-  .characters-section {
+  .characters {
     padding: 20px;
     margin: 20px auto;
     width: 100%;
     background: #ffffff;
     border-radius: 12px;
   }
-  .locations-section {
+  .locations {
     padding: 20px;
     margin: 20px auto;
     width: 100%;
@@ -699,7 +700,7 @@ body {
   }
 
   /* SIGNUP SECTION */
-  .welcome-section {
+  .welcome {
     width: 100%;
     padding: 20px;
     margin: 0 auto 20px;
@@ -707,7 +708,7 @@ body {
     border-radius: 12px;
   }
 
-  .signup-section {
+  .signup {
     width: 100%;
     padding: 20px;
     margin: 0 auto 20px;
@@ -715,29 +716,29 @@ body {
     border-radius: 12px;
   }
 
-  .signup-section h2 {
+  .signup h2 {
     font-size: 1.6rem;
   }
 
-  .signup-section form {
+  .signup form {
     flex-direction: column;
     gap: 20px;
   }
 
-  .signup-section input[type="email"] {
+  .signup input[type="email"] {
     width: 100%;
     font-size: 1rem;
     padding: 15px;
   }
 
-  .signup-section button {
+  .signup button {
     width: 100%;
     font-size: 1rem;
     padding: 15px;
   }
 
   /* SOCIAL SECTION */
-  .social-section {
+  .social {
     padding: 20px;
     margin: 20px auto;
     width: 100%;
@@ -745,7 +746,7 @@ body {
     border-radius: 12px;
   }
 
-  .social-section h2 {
+  .social h2 {
     font-size: 1.6rem;
   }
 
@@ -757,7 +758,7 @@ body {
   }
 
   /* MUSIC SECTION */
-  .music-section {
+  .music {
     padding: 20px;
     margin: 20px auto;
     width: 100%;
