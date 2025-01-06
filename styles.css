@@ -99,7 +99,7 @@ body {
   position: relative;
   width: 90px;
   height: 90px;
-  background: #ffb3c1; /* Soft Coral Pink */
+  background: #fff; /* Soft Coral Pink */
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -107,7 +107,7 @@ body {
   font-family: "Fredoka", sans-serif;
   font-weight: bold;
   font-size: 16px;
-  color: #5e432a; /* Rich brown for contrast */
+  color: #4a4a4a; /* Rich brown for contrast */
   cursor: pointer;
   box-shadow: 0 5px 15px rgba(255, 179, 193, 0.5); /* Pink Glow */
   transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
@@ -115,14 +115,15 @@ body {
 
 .node:hover {
   transform: translateY(-5px) scale(1.1);
-  background: #ff758f; /* Warm Coral */
   box-shadow: 0 10px 20px rgba(255, 117, 143, 0.8); /* Stronger Pink Glow */
+  border: 1px solid #ff758f; 
 }
 
 .node.active {
-  background: #b39ddb; /* Deeper Lavender */
   box-shadow: 0 10px 30px rgba(179, 157, 219, 0.8); /* Lavender Glow */
   transform: scale(1.15); /* Slightly larger active node */
+  border: 1px solid #b39ddb; 
+
 }
 
 .path {
@@ -162,6 +163,7 @@ body {
   text-align: center;
   margin-bottom: 30px;
   padding: 60px 20px; /* Increased padding for more spacing */
+  background-color: #fff;
 }
 
 /* Headline Styling for All Sections */
@@ -342,6 +344,8 @@ body {
   border: 1px solid #f5a9c3; /* Adds border for signup section */
   max-width: 90%; /* Prevents exceeding body width */
   border-radius: 25px;
+  box-shadow: 0 5px 15px rgba(255, 179, 193, 0.5); /* Pink Glow */
+
 }
 
 .signup-section h2 {
