@@ -135,7 +135,7 @@
         </p>
       </div>
       <!-- Signup Section -->
-      <div id="signup-section" class="signup-section section">
+       <div id="signup-section" class="signup-section section">
         <h2>Få nyheter om nya äventyr i Glitterdalen </h2>
         <form
           id="signup-form"
@@ -143,22 +143,32 @@
           method="post"
         >
           <input
-            id="email"
-            type="email"
-            name="fields[email]"
-            placeholder="Skriv in din e-postadress"
-            required
+        id="email"
+        type="email"
+        name="fields[email]"
+        placeholder="Skriv in din e-postadress"
+        required
           />
           <button type="submit">Anmäl dig nu</button>
         </form>
         <p class="privacy-note">
           <em
-            >Vi samlar endast in din e-postadress för att kunna skicka nyheter
-            och information om Glitterdalen. Vi delar aldrig din information med
-            tredje part. Du kan när som helst avregistrera dig från våra utskick
-            via länken i e-postmeddelandet.</em
+        >Vi samlar endast in din e-postadress för att kunna skicka nyheter
+        och information om Glitterdalen. Vi delar aldrig din information med
+        tredje part. Du kan när som helst avregistrera dig från våra utskick
+        via länken i e-postmeddelandet.</em
           >
         </p>
+      </div>
+
+      <!-- Success Section (Hidden Initially) -->
+      <div id="success-section" class="section signup-section hidden">
+        <h2>Tack!</h2>
+        <p>
+          Din e-postadress är nu registrerad för nyheter från Glitterdalen. 
+        </p>
+      </div>
+        <div id="socials" class="section">
         <h2>Sociala Medier</h2>
         <div class="social-buttons">
           <div class="social-item">
@@ -196,9 +206,10 @@
           </div>
         </div>
       </div>
-
+    </div>
+  </div>
       <!-- Music Section -->
-      <div id="music-section" class="music-section section">
+      <div id="music" class="section">
         <h2>Lyssna på Musiken</h2>
         <div class="iframe-wrapper">
           <iframe
@@ -388,15 +399,6 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Success Section (Hidden Initially) -->
-      <div id="success-section" class="signup-section hidden">
-        <h2>Tack!</h2>
-        <p>
-          Din e-postadress är nu registrerad för nyheter från Glitterdalen. Du
-          kommer nu att vara först med nya uppdateringar!
-        </p>
       </div>
     </div>
     <footer class="footer">
