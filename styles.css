@@ -507,6 +507,33 @@ body {
   margin: 0 0 10px;
   font-size: 0.9rem;
 }
+#accept-cookies {
+  background-color: #fff; /* Bright background */
+  color: #f5a9c3; /* Accent color */
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+#accept-cookies:hover {
+  background-color: #b39ddb; /* Change background to accent color */
+  color: #fff; /* White text */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow */
+}
+
+#decline-cookies {
+    background-color: #fff; /* Bright background */
+    color: #f5a9c3;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+}
+#decline-cookies:hover {
+  background-color: #b39ddb; /* Subtle hover background */
+  color: #fff; /* Maintain text color */
+  border: 1px solid #f5a9c3; /* Add a border on hover */
+}
+
 
 .cookie-btn {
   background-color: white;
@@ -627,7 +654,7 @@ body {
     align-items: center;
     padding: 15px 0; /* Increased padding for better touch experience */
     z-index: 1000;
-    height: 70px; /* Optimized for mobile screens */
+    height: 90px; /* Optimized for mobile screens */
     border-top-left-radius: 12px;
     border-top-right-radius: 12px; /* Subtle rounding for a modern look */
   }
@@ -635,6 +662,7 @@ body {
   .nav-item {
     font-family: "Fredoka", sans-serif;
     font-weight: bold;
+    margin-top: -10px;
     font-size: 14px; /* Slightly larger for better readability */
     color: #5e432a; /* Rich brown for contrast */
     cursor: pointer;
@@ -783,4 +811,8 @@ body {
     background-color: #b8a8d1;
     transform: translateY(-2px);
   }
+  .cookie-banner {
+    bottom: 90px;
+  }
+
 }
