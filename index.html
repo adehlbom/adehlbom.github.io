@@ -88,58 +88,24 @@
       <div class="logo-container">
         <img src="glitterdalen_logo.png" alt="Glitterdalen Logo" class="logo" />
       </div>
+      <div id="navigation-line">
+        <!-- Themed Marker -->
+        <div id="current-location" class="compass"></div>
 
-      <!-- Welcome Section -->
-      <div class="welcome-section">
-        <h2>Välkommen till Glitterdalen!</h2>
-        <p>
-          Glitterdalen är en magisk värld fylld av musik, lek och fantasi —
-          skapad för barn i alla åldrar (och nyfikna vuxna!). <br /><br />
-          Möt våra glittrande karaktärer: <strong>Lumi</strong> (den
-          stjärnstoftsprudlande kaninen), <strong>Zippy</strong> (den
-          uppfinningsrika flugan med astronautdrömmar),
-          <strong>Illian</strong> (den envisa enstöringen) och
-          <strong>Rixa</strong> (den äventyrslystna skattjaktsälskande räven) —
-          som tillsammans lockar till skratt, dans och äventyr!
-        </p>
-        <p>
-          Upptäck nya <strong>låtar</strong>, följ
-          <strong>spännande berättelser</strong> och låt din fantasi ta fart —
-          här i Glitterdalen!
-        </p>
+        <!-- Treasure Map Nodes -->
+        <div class="node" data-target="welcome-section">Välkommen</div>
+        <div class="path"></div>
+        <div class="node" data-target="signup-section">Nyhetsbrev</div>
+        <div class="path"></div>
+        <div class="node" data-target="music-section">Musik</div>
+        <div class="path"></div>
+        <div class="node" data-target="characters-section">Karaktärer</div>
+        <div class="path"></div>
+        <div class="node" data-target="locations-section">Platser</div>
       </div>
-      <!-- Signup Section -->
-      <div id="signup-section" class="signup-section">
-        <h2>Var först med nyheter från Glitterdalen!</h2>
-        <form
-          id="signup-form"
-          action="https://assets.mailerlite.com/jsonp/1255993/forms/142396205183272375/subscribe"
-          method="post"
-        >
-          <input
-            id="email"
-            type="email"
-            name="fields[email]"
-            placeholder="Skriv in din e-postadress"
-            required
-          />
-          <button type="submit">
-            Anmäl dig nu
-          </button>
-        </form>
-        <p class="privacy-note">
-          <em
-            >Vi samlar endast in din e-postadress för att kunna skicka nyheter
-            och information om Glitterdalen. Vi delar aldrig din information med
-            tredje part. Du kan när som helst avregistrera dig från våra utskick
-            via länken i e-postmeddelandet.</em
-          >
-        </p>
-      </div>
-
       <!-- Social Media Section -->
-      <div class="social-section">
-        <h2>Följ oss på sociala medier</h2>
+      <div id="social-section" class="social-section section">
+        <h2>Sociala Medier</h2>
         <div class="social-buttons">
           <a
             class="btn"
@@ -161,8 +127,54 @@
           >
         </div>
       </div>
+      <!-- Welcome Section -->
+      <div id="welcome-section" class="welcome-section section">
+        <h2>Välkommen till Glitterdalen!</h2>
+        <p>
+          Glitterdalen är en magisk värld fylld av musik, lek och fantasi —
+          skapad för barn i alla åldrar (och nyfikna vuxna!). <br /><br />
+          Möt våra glittrande karaktärer: <strong>Lumi</strong> (den
+          stjärnstoftsprudlande kaninen), <strong>Zippy</strong> (den
+          uppfinningsrika flugan med astronautdrömmar),
+          <strong>Illian</strong> (den envisa enstöringen) och
+          <strong>Rixa</strong> (den äventyrslystna skattjaktsälskande räven) —
+          som tillsammans lockar till skratt, dans och äventyr!
+        </p>
+        <p>
+          Upptäck nya <strong>låtar</strong>, följ
+          <strong>spännande berättelser</strong> och låt din fantasi ta fart —
+          här i Glitterdalen!
+        </p>
+      </div>
+      <!-- Signup Section -->
+      <div id="signup-section" class="signup-section section">
+        <h2>Var först med nyheter från Glitterdalen!</h2>
+        <form
+          id="signup-form"
+          action="https://assets.mailerlite.com/jsonp/1255993/forms/142396205183272375/subscribe"
+          method="post"
+        >
+          <input
+            id="email"
+            type="email"
+            name="fields[email]"
+            placeholder="Skriv in din e-postadress"
+            required
+          />
+          <button type="submit">Anmäl dig nu</button>
+        </form>
+        <p class="privacy-note">
+          <em
+            >Vi samlar endast in din e-postadress för att kunna skicka nyheter
+            och information om Glitterdalen. Vi delar aldrig din information med
+            tredje part. Du kan när som helst avregistrera dig från våra utskick
+            via länken i e-postmeddelandet.</em
+          >
+        </p>
+      </div>
+
       <!-- Music Section -->
-      <div class="music-section">
+      <div id="music-section" class="music-section section">
         <h2>Lyssna på Musiken</h2>
         <div class="iframe-wrapper">
           <iframe
@@ -179,7 +191,7 @@
       </div>
 
       <!-- Characters Section -->
-      <div class="characters-section">
+      <div id="characters-section" class="characters-section section">
         <h2>Möt Karaktärerna</h2>
         <p>Klicka/håll över varje kort för att få veta mer</p>
 
@@ -278,7 +290,7 @@
         </div>
       </div>
       <!-- Locations Section -->
-      <div class="characters-section">
+      <div id="locations-section" class="locations-section section">
         <h2>Besök Platserna</h2>
         <p>Klicka/håll över varje kort för att få veta mer</p>
 
@@ -458,6 +470,86 @@
         // Toggle active state on the clicked card
         card.classList.toggle("active");
       }
+
+      // Grab nodes, sections, and the current location marker
+      const nodes = document.querySelectorAll(".node");
+      const sections = document.querySelectorAll(".section");
+      const currentLocation = document.getElementById("current-location");
+
+      // Function to activate a node and move the marker
+      const setActiveNode = (targetId) => {
+        nodes.forEach((node) => {
+          const isActive = node.dataset.target === targetId;
+          node.classList.toggle("active", isActive);
+
+          if (isActive) {
+            const nodeRect = node.getBoundingClientRect();
+            const navigationRect = document
+              .getElementById("navigation-line")
+              .getBoundingClientRect();
+
+            const newTop =
+              nodeRect.top -
+              navigationRect.top +
+              nodeRect.height / 2 -
+              currentLocation.offsetHeight / 2;
+
+            currentLocation.style.top = `${newTop}px`;
+          }
+        });
+      };
+
+      // Function to update the active section on scroll
+      const updateActiveSection = () => {
+        let currentSection = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+          // Check if the scroll position is within the section
+          if (
+            scrollPosition >= sectionTop &&
+            scrollPosition < sectionTop + sectionHeight
+          ) {
+            currentSection = section.id;
+          }
+        });
+
+        if (currentSection) {
+          setActiveNode(currentSection);
+        }
+      };
+
+      // Update active node on scroll
+      window.addEventListener("scroll", updateActiveSection);
+
+      // Initial setup on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        updateActiveSection();
+      });
+
+      // Smooth scrolling on node click
+      nodes.forEach((node) => {
+        node.addEventListener("click", () => {
+          const targetId = node.dataset.target;
+          const targetSection = document.getElementById(targetId);
+
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: "smooth" });
+            setActiveNode(targetId);
+          }
+        });
+      });
+
+      // Update active node on scroll
+      window.addEventListener("scroll", updateActiveSection);
+
+      // Initial setup on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        updateActiveSection();
+      });
     </script>
   </body>
 </html>

@@ -56,6 +56,84 @@ body {
 }
 
 /* ---------------------------------
+   2) Navigation SECTION
+---------------------------------- */
+/* Navigation Line */
+#navigation-line {
+  position: fixed;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Increased gap for a treasure-map look */
+  z-index: 1000;
+}
+
+/* Node Styling */
+.node {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(145deg, #FFD700, #FFC107); /* Shiny treasure theme */
+  border-radius: 50%;
+  border: 3px solid #FFC300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #5E432A;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.node:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 20px rgba(255, 204, 0, 0.8);
+}
+
+.node.active {
+  background: linear-gradient(145deg, #FFC107, #FFD700);
+  box-shadow: 0 10px 30px rgba(255, 223, 0, 0.8);
+}
+
+.path {
+  width: 5px;
+  height: 40px;
+  background: #FFD700;
+  border-radius: 20px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #FFD700,
+    #FFD700 10px,
+    transparent 10px,
+    transparent 20px
+  ); /* Dotted treasure path */
+}
+
+
+
+
+#current-location {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: radial-gradient(circle, #FF4500, #FF0000); /* Gradient for a magical gem effect */
+  border-radius: 50%;
+  left: 120%; /* Position outside the node */
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
+  transition: top 0.6s ease; /* Slow movement for smoother feel */
+  z-index: 10;
+}
+
+
+
+
+/* ---------------------------------
    3) WELCOME SECTION
 ---------------------------------- */
 .welcome-section {
@@ -359,12 +437,12 @@ body {
 ---------------------------------- */
 .footer {
   background-color: #fff7f1;
-  padding: 20px 0;
+  padding: 10px 0;
   text-align: center;
   font-size: 0.9rem;
   color: #4a4a4a;
   border-top: 1px solid #f5a9c3;
-  margin-top: 40px;
+  margin-top: 10%;
 }
 
 .footer-content {
