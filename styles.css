@@ -48,6 +48,8 @@ body {
   );
   text-align: center;
   overflow-x: hidden; /* Prevent horizontal scrolling */
+  padding-bottom: 120px;
+
 }
 
 /* Center Container */
@@ -142,10 +144,10 @@ body {
 /* GENERAL SECTION STYLING */
 .section {
   max-width: 1000px;
-  min-height: 400px; /* Ensures all sections have enough height */
+  min-height: 200px; /* Ensures all sections have enough height */
   margin: 20px auto;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 90px;
   padding: 60px 20px; /* Increased padding for more spacing */
 }
 
@@ -444,14 +446,23 @@ body {
    8) FOOTER
 ---------------------------------- */
 .footer {
+  position: relative; /* Ensure it is part of the normal flow */
   background-color: #fff7f1;
-  padding: 10px 0;
+  padding: 20px 0;
   text-align: center;
   font-size: 0.9rem;
   color: #4a4a4a;
   border-top: 1px solid #f5a9c3;
-  margin-top: 10%;
+  margin-top: 90px; /* Ensure proper spacing from content above */
+  z-index: 0; /* Lower than navbar */
 }
+
+/* Adjust Body Padding */
+body {
+  padding-bottom: 120px; /* Extra padding to ensure footer is visible */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
 
 .footer-content {
   max-width: 1200px;
@@ -562,7 +573,7 @@ body {
     border-radius: 12px;
   }
 
-  .social {
+  #sociala-medier {
     padding: 20px;
     margin: 20px auto;
     width: 100%;
@@ -586,12 +597,12 @@ body {
     border-radius: 12px;
   }
   .platser {
-    padding: 20px;
-    margin: 20px auto;
-    width: 100%;
-    background: #ffffff;
-    border-radius: 12px;
+    margin-top: 90px; /* Pushes the section below the fixed navbar */
+    padding: 20px; /* Adds internal spacing for the content */
+    background: #ffffff; /* Background to match the design */
+    border-radius: 12px; /* Optional for rounded corners */
   }
+  
 
   .karaktarer-grid {
     gap: 1.5rem; /* Reduce grid spacing for smaller screens */
@@ -763,6 +774,7 @@ body {
     background: #ffffff;
     border-top: 1px solid #f5a9c3;
     margin-top: 20px;
+    bottom: 90px
   }
 
   .footer-content {
@@ -795,8 +807,6 @@ body {
     background-color: #b8a8d1;
     transform: translateY(-2px);
   }
-  .cookie-banner {
-    bottom: 90px;
-  }
+
 
 }
