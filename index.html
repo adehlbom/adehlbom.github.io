@@ -97,26 +97,26 @@
         <!-- <div id="current-location" class="compass"></div> -->
 
         <!-- Treasure Map Nodes -->
-        <div class="node" data-target="welcome">Välkommen</div>
+        <div class="node" data-target="valkommen">Välkommen</div>
         <div class="path"></div>
         <div class="node" data-target="signup">Följ oss</div>
         <div class="path"></div>
-        <div class="node" data-target="music">Musik</div>
+        <div class="node" data-target="musik">Musik</div>
         <div class="path"></div>
-        <div class="node" data-target="characters">Karaktärer</div>
+        <div class="node" data-target="karaktarer">Karaktärer</div>
         <div class="path"></div>
-        <div class="node" data-target="locations">Platser</div>
+        <div class="node" data-target="platser">Platser</div>
       </div>
       <div id="mobile-nav" class="mobile-navigation">
-        <div class="nav-item" data-target="welcome">Välkommen</div>
-        <div class="nav-item" data-target="signup">Följ oss</div>
-        <div class="nav-item" data-target="music">Musik</div>
-        <div class="nav-item" data-target="characters">Karaktärer</div>
-        <div class="nav-item" data-target="locations">Platser</div>
+        <div class="nav-item" data-target="valkommen">Välkommen</div>
+        <div class="nav-item" data-target="signup">Bli Medlem</div>
+        <div class="nav-item" data-target="musik">Musik</div>
+        <div class="nav-item" data-target="karaktarer">Karaktärer</div>
+        <div class="nav-item" data-target="platser">Platser</div>
       </div>
 
-      <!-- Welcome Section -->
-      <div id="welcome" class="welcome section">
+      <!-- valkommen Section -->
+      <div id="valkommen" class="valkommen section">
         <h2>Välkommen till Glitterdalen!</h2>
         <p>
           Glitterdalen är en magisk värld fylld av musik, lek och fantasi —
@@ -134,9 +134,10 @@
           här i Glitterdalen!
         </p>
       </div>
-      <!-- Signup Section -->
+      <!-- signup Section -->
        <div id="signup" class="signup section">
-        <h2>Få nyheter om nya äventyr i Glitterdalen </h2>
+        <h2>Gå med i Glitterdalen för att få senaste nyheterna, tips och exklusiva erbjudanden – direkt till din inkorg!
+        </h2>
         <form
           id="signup-form"
           action="https://assets.mailerlite.com/jsonp/1255993/forms/142396205183272375/subscribe"
@@ -168,7 +169,7 @@
           Din e-postadress är nu registrerad för nyheter från Glitterdalen. 
         </p>
       </div>
-        <div id="socials" class="section">
+        <div id="sociala-medier" class="section">
         <h2>Sociala Medier</h2>
         <div class="social-buttons">
           <div class="social-item">
@@ -208,8 +209,8 @@
       </div>
     </div>
   </div>
-      <!-- Music Section -->
-      <div id="music" class="section">
+      <!-- musik Section -->
+      <div id="musik" class="section">
         <h2>Lyssna på Musiken</h2>
         <div class="iframe-wrapper">
           <iframe
@@ -225,17 +226,17 @@
         </div>
       </div>
 
-      <!-- Characters Section -->
-      <div id="characters" class="characters section">
+      <!-- karaktarer Section -->
+      <div id="karaktarer" class="karaktarer section">
         <h2>Möt Karaktärerna</h2>
         <p>Klicka/håll över varje kort för att få veta mer</p>
 
-        <div class="characters-grid">
+        <div class="karaktarer-grid">
           <!-- Lumi Flip Card -->
-          <div class="character-card" onclick="toggleCard(this)">
-            <div class="character-card-inner">
+          <div class="karaktarer-card" onclick="toggleCard(this)">
+            <div class="karaktarer-card-inner">
               <!-- Front -->
-              <div class="character-card-front">
+              <div class="karaktarer-card-front">
                 <h3 class="char-name">Lumi</h3>
                 <img
                   src="public/lumi.png"
@@ -244,7 +245,7 @@
                 <div class="tagline">Den glittrande kaninen</div>
               </div>
               <!-- Back -->
-              <div class="character-card-back">
+              <div class="karaktarer-card-back">
                 <p>
                   När Lumi skrattar sprider hon ett magiskt glitter som får hela
                   Glitterdalen att skimra. Hon bor på Vindklippan och håller
@@ -255,10 +256,10 @@
           </div>
 
           <!-- Rixa Flip Card -->
-          <div class="character-card" onclick="toggleCard(this)">
-            <div class="character-card-inner">
+          <div class="karaktarer-card" onclick="toggleCard(this)">
+            <div class="karaktarer-card-inner">
               <!-- Front -->
-              <div class="character-card-front">
+              <div class="karaktarer-card-front">
                 <h3 class="char-name">Rixa</h3>
                 <img
                   src="public/rixa.png"
@@ -267,7 +268,7 @@
                 <div class="tagline">Den äventyrslystna räven</div>
               </div>
               <!-- Back -->
-              <div class="character-card-back">
+              <div class="karaktarer-card-back">
                 <p>
                   Hon älskar att gå på skattjakt och bor i Regnbågsgrottan
                   tillsammans med alla skatter hon samlat. Rixa tvekar aldrig
@@ -277,10 +278,10 @@
             </div>
           </div>
           <!-- Zippy Flip Card -->
-          <div class="character-card" onclick="toggleCard(this)">
-            <div class="character-card-inner">
+          <div class="karaktarer-card" onclick="toggleCard(this)">
+            <div class="karaktarer-card-inner">
               <!-- Front -->
-              <div class="character-card-front">
+              <div class="karaktarer-card-front">
                 <h3 class="char-name">Zippy</h3>
                 <img
                   src="public/zippy.png"
@@ -289,7 +290,7 @@
                 <div class="tagline">Den uppfinningsrika flugan</div>
               </div>
               <!-- Back -->
-              <div class="character-card-back">
+              <div class="karaktarer-card-back">
                 <p>
                   Eftersom han inte kan flyga på egen hand, bygger han
                   rymdraketer och drömmer om att bli astronaut som Christer
@@ -300,10 +301,10 @@
             </div>
           </div>
           <!-- Illian Flip Card -->
-          <div class="character-card" onclick="toggleCard(this)">
-            <div class="character-card-inner">
+          <div class="karaktarer-card" onclick="toggleCard(this)">
+            <div class="karaktarer-card-inner">
               <!-- Front -->
-              <div class="character-card-front">
+              <div class="karaktarer-card-front">
                 <h3 class="char-name">Illian</h3>
                 <img
                   src="public/illian.png"
@@ -312,7 +313,7 @@
                 <div class="tagline">Den envisa illern</div>
               </div>
               <!-- Back -->
-              <div class="character-card-back">
+              <div class="karaktarer-card-back">
                 <p>
                   Han är lite missförstådd men trivs bra för sig själv i den
                   tysta skogen. När andra djur kommer dit och väsnas eller
@@ -324,17 +325,17 @@
           </div>
         </div>
       </div>
-      <!-- Locations Section -->
-      <div id="locations" class="locations section">
+      <!-- platser Section -->
+      <div id="platser" class="platser section">
         <h2>Besök Platserna</h2>
         <p>Klicka/håll över varje kort för att få veta mer</p>
 
-        <div class="characters-grid">
+        <div class="karaktarer-grid">
           <!-- Flugsvampsskogen Flip Card -->
-          <div class="character-card" onclick="toggleCard(this)">
-            <div class="character-card-inner">
+          <div class="karaktarer-card" onclick="toggleCard(this)">
+            <div class="karaktarer-card-inner">
               <!-- Front -->
-              <div class="character-card-front">
+              <div class="karaktarer-card-front">
                 <h3 class="char-name">Flugsvampsskogen</h3>
                 <img
                   src="/public/flugsvampsskogen.png"
@@ -343,7 +344,7 @@
                 <div class="tagline">Den förtrollande skogen</div>
               </div>
               <!-- Back -->
-              <div class="character-card-back">
+              <div class="karaktarer-card-back">
                 <p>
                   En mystisk skog med skimrande svampar som lyser i olika
                   färger. Här slingrar sig stigar till magiska gömställen och
@@ -354,10 +355,10 @@
           </div>
 
           <!-- Regnbågsgrottan Flip Card -->
-          <div class="character-card" onclick="toggleCard(this)">
-            <div class="character-card-inner">
+          <div class="karaktarer-card" onclick="toggleCard(this)">
+            <div class="karaktarer-card-inner">
               <!-- Front -->
-              <div class="character-card-front">
+              <div class="karaktarer-card-front">
                 <h3 class="char-name">Regnbågsgrottan</h3>
                 <img
                   src="/public/regnbagsgrottan.png"
@@ -366,7 +367,7 @@
                 <div class="tagline">Grottan nära Molnfloden</div>
               </div>
               <!-- Back -->
-              <div class="character-card-back">
+              <div class="karaktarer-card-back">
                 <p>
                   Rixas hemliga grotta fylld med hennes fantasirika skatter. Här
                   förvaras allt från skimrande stenar till andra skatter man kan
@@ -377,10 +378,10 @@
           </div>
 
           <!-- Vindklippan Flip Card -->
-          <div class="character-card" onclick="toggleCard(this)">
-            <div class="character-card-inner">
+          <div class="karaktarer-card" onclick="toggleCard(this)">
+            <div class="karaktarer-card-inner">
               <!-- Front -->
-              <div class="character-card-front">
+              <div class="karaktarer-card-front">
                 <h3 class="char-name">Vindklippan</h3>
                 <img
                   src="/public/vindklippan.png"
@@ -389,7 +390,7 @@
                 <div class="tagline">Den majestätiska klippan</div>
               </div>
               <!-- Back -->
-              <div class="character-card-back">
+              <div class="karaktarer-card-back">
                 <p>
                   En vidsträckt klippavsats med utsikt över hela Glitterdalen.
                   Här bor Lumi, och vinden sprider hennes stjärnstoft över hela
@@ -474,7 +475,7 @@
           });
       });
 
-      // ------- Expand/Collapse Characters -------
+      // ------- Expand/Collapse karaktarer -------
       function toggleExpand(infoId) {
         const infoDiv = document.getElementById(infoId);
         infoDiv.classList.toggle("hidden");
@@ -483,7 +484,7 @@
       function toggleCard(card) {
         // Remove active state from all other cards
         document
-          .querySelectorAll(".character-card.active")
+          .querySelectorAll(".karaktarer-card.active")
           .forEach((activeCard) => {
             if (activeCard !== card) {
               activeCard.classList.remove("active");

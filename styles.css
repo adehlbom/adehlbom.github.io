@@ -139,29 +139,13 @@ body {
   border-radius: 20px;
 }
 
-#current-location {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  background: radial-gradient(
-    circle,
-    #ff758f,
-    #ffb3c1
-  ); /* Magical pink gradient */
-  border-radius: 50%;
-  left: 120%; /* Position outside the node */
-  box-shadow: 0 0 15px rgba(255, 117, 143, 0.8); /* Magical pink glow */
-  transition: top 0.6s ease, transform 0.3s ease; /* Smooth movement */
-  z-index: 10;
-}
-
 /* GENERAL SECTION STYLING */
 .section {
   max-width: 1000px;
   min-height: 400px; /* Ensures all sections have enough height */
   margin: 20px auto;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   padding: 60px 20px; /* Increased padding for more spacing */
 }
 
@@ -183,33 +167,33 @@ body {
 }
 
 /* ---------------------------------
-   3) WELCOME SECTION
+   3) valkommen SECTION
 ---------------------------------- */
-/* Welcome Section Modifications */
-.welcome h2 {
+/* valkommen Section Modifications */
+.valkommen h2 {
   color: #4a4a4a;
 }
 
-.welcome p {
+.valkommen p {
   color: #4a4a4a;
 }
 
 /* ---------------------------------
-   3) CHARACTERS SECTION
+   3) karaktarer SECTION
 ---------------------------------- */
 /* SECTION CONTAINER */
-/* Characters Section Modifications */
+/* karaktarer Section Modifications */
 
-.characters h2 {
+.karaktarer h2 {
   color: #2c2c2c;
 }
 
-.characters p {
+.karaktarer p {
   color: #2c2c2c;
 }
 
 /* GRID STRUCTURE */
-.characters-grid {
+.karaktarer-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -219,7 +203,7 @@ body {
 }
 
 /* CARD DESIGN */
-.character-card {
+.karaktarer-card {
   position: relative;
   width: 240px;
   height: 320px;
@@ -231,13 +215,13 @@ body {
   transition: border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-.character-card:hover {
+.karaktarer-card:hover {
   border: 2px solid #b8a8d1; /* Lila border */
   transform: translateY(-2px); /* Lyft kortet vid hover */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Förstärk skuggan vid hover */
 }
 
-.character-card .character-card-front {
+.karaktarer-card .karaktarer-card-front {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -252,11 +236,11 @@ body {
   z-index: 2;
 }
 
-.character-card:hover .character-card-front {
+.karaktarer-card:hover .karaktarer-card-front {
   transform: translateY(-100%);
 }
 
-.character-card .char-name {
+.karaktarer-card .char-name {
   margin: 0;
   padding: 8px;
   font-family: "Fredoka", sans-serif;
@@ -267,14 +251,14 @@ body {
   text-align: center;
 }
 
-.character-card .character-card-front img {
+.karaktarer-card .karaktarer-card-front img {
   width: 100%;
   height: auto;
   object-fit: cover;
   flex: 1;
 }
 
-.character-card .tagline {
+.karaktarer-card .tagline {
   margin: 0;
   padding: 10px 0;
   font-family: "Fredoka", sans-serif;
@@ -286,7 +270,7 @@ body {
   text-align: center;
 }
 
-.character-card .character-card-back {
+.karaktarer-card .karaktarer-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -303,20 +287,20 @@ body {
   z-index: 1; /* Ensure it is behind the front initially */
 }
 
-.character-card:hover .character-card-back {
+.karaktarer-card:hover .karaktarer-card-back {
   transform: translateY(-100%);
 }
 
 /* Klickhantering för mobiler */
-.character-card.active .character-card-front {
+.karaktarer-card.active .karaktarer-card-front {
   transform: translateY(0%);
 }
 
-.character-card.active .character-card-back {
+.karaktarer-card.active .karaktarer-card-back {
   transform: translateY(100%);
 }
 
-.character-card .character-card-back p {
+.karaktarer-card .karaktarer-card-back p {
   font-family: "Quicksand", sans-serif;
   font-size: 0.9rem;
   line-height: 1.4;
@@ -324,22 +308,22 @@ body {
   margin-bottom: 10px;
 }
 
-.character-card .character-card-back ul {
+.karaktarer-card .karaktarer-card-back ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.character-card .character-card-back li {
+.karaktarer-card .karaktarer-card-back li {
   margin-bottom: 5px;
   font-size: 0.85rem;
   color: #4a4a4a; /* Mörk text */
 }
 
 /* ---------------------------------
-   5) SIGNUP SECTION
+   5) signup SECTION
 ---------------------------------- */
-/* Signup Section Modifications */
+/* signup Section Modifications */
 .signup {
   border: 1px solid #f5a9c3; /* Adds border for signup section */
   max-width: 90%; /* Prevents exceeding body width */
@@ -440,7 +424,7 @@ body {
 
 
 /* ---------------------------------
-   7) MUSIC SECTION
+   7) musik SECTION
 ---------------------------------- */
 
 .iframe-wrapper {
@@ -586,7 +570,7 @@ body {
     border-radius: 12px;
   }
 
-  .music {
+  .musik {
     padding: 20px;
     margin: 20px auto;
     width: 100%;
@@ -594,14 +578,14 @@ body {
     border-radius: 12px;
   }
 
-  .characters {
+  .karaktarer {
     padding: 20px;
     margin: 20px auto;
     width: 100%;
     background: #ffffff;
     border-radius: 12px;
   }
-  .locations {
+  .platser {
     padding: 20px;
     margin: 20px auto;
     width: 100%;
@@ -609,12 +593,12 @@ body {
     border-radius: 12px;
   }
 
-  .characters-grid {
+  .karaktarer-grid {
     gap: 1.5rem; /* Reduce grid spacing for smaller screens */
     justify-content: center; /* Center-align grid */
   }
 
-  .character-card {
+  .karaktarer-card {
     width: 220px; /* Adjust card size */
     height: 300px;
   }
@@ -688,19 +672,19 @@ body {
     transform: scale(1.15); /* Emphasize the active item */
   }
 
-  /* CHARACTERS SECTION */
-  .characters-grid {
+  /* karaktarer SECTION */
+  .karaktarer-grid {
     flex-direction: column; /* Stack cards vertically */
     gap: 1rem; /* Reduce spacing between cards */
     align-items: center; /* Center-align cards */
   }
-  .character-card .character-card-front,
-  .character-card .character-card-back {
+  .karaktarer-card .karaktarer-card-front,
+  .karaktarer-card .karaktarer-card-back {
     height: auto; /* Adjust height dynamically */
   }
 
-  /* SIGNUP SECTION */
-  .welcome {
+  /* signup SECTION */
+  .valkommen {
     width: 100%;
     padding: 20px;
     margin: 0 auto 20px;
@@ -757,8 +741,8 @@ body {
     padding: 15px;
   }
 
-  /* MUSIC SECTION */
-  .music {
+  /* musik SECTION */
+  .musik {
     padding: 20px;
     margin: 20px auto;
     width: 100%;
