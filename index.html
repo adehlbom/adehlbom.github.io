@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv-SE">
   <head>
     <!-- Google tag (gtag.js) -->
     <script
@@ -14,7 +14,12 @@
 
       // Check for Consent
       document.addEventListener("DOMContentLoaded", () => {
-        const consent = localStorage.getItem("cookie-consent");
+        let consent;
+        try {
+          consent = localStorage.getItem("cookie-consent");
+        } catch (e) {
+          consent = null;
+        }
 
         if (consent === "accepted") {
           initializeGoogleAnalytics();
@@ -54,7 +59,7 @@
     />
     <meta property="og:url" content="https://www.glitterdalen.se" />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="sv_SE" />
+    <meta property="og:locale" content="sv-SE" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -412,6 +417,30 @@
     </footer>
     <!-- JavaScript -->
     <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const cookieBanner = document.getElementById("cookie-banner");
+        const consent = localStorage.getItem("cookie-consent");
+
+        if (!consent) {
+          cookieBanner.style.display = "block";
+        }
+
+        document
+          .getElementById("accept-cookies")
+          .addEventListener("click", () => {
+            localStorage.setItem("cookie-consent", "accepted");
+            cookieBanner.style.display = "none";
+            initializeGoogleAnalytics();
+          });
+
+        document
+          .getElementById("decline-cookies")
+          .addEventListener("click", () => {
+            localStorage.setItem("cookie-consent", "declined");
+            cookieBanner.style.display = "none";
+          });
+      });
+
       // ------- Form Submit to MailerLite -------
       document
         .getElementById("signup-form")
@@ -450,30 +479,6 @@
           localStorage.removeItem("cookie-consent");
           document.getElementById("cookie-banner").style.display = "block";
         });
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const cookieBanner = document.getElementById("cookie-banner");
-        const consent = localStorage.getItem("cookie-consent");
-
-        if (!consent) {
-          cookieBanner.style.display = "block";
-        }
-
-        document
-          .getElementById("accept-cookies")
-          .addEventListener("click", () => {
-            localStorage.setItem("cookie-consent", "accepted");
-            cookieBanner.style.display = "none";
-            initializeGoogleAnalytics();
-          });
-
-        document
-          .getElementById("decline-cookies")
-          .addEventListener("click", () => {
-            localStorage.setItem("cookie-consent", "declined");
-            cookieBanner.style.display = "none";
-          });
-      });
 
       // ------- Expand/Collapse karaktarer -------
       function toggleExpand(infoId) {
@@ -567,10 +572,16 @@
             });
 
             // Timeout to reset the manual scroll flag
+            const scrollDuration = parseFloat(
+              getComputedStyle(document.documentElement).scrollBehavior === "smooth"
+                ? getComputedStyle(document.documentElement).getPropertyValue("--scroll-duration") || 800
+                : 0
+            );
+
             setTimeout(() => {
               isScrollingManually = false; // Reset flag after scroll completes
               setActiveNode(targetId); // Ensure correct active node after scrolling
-            }, 800); // Match this timeout with your scroll animation duration
+            }, scrollDuration); // Match this timeout with your scroll animation duration
           }
         });
       });
