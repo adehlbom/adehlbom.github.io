@@ -48,9 +48,9 @@ body {
   );
   text-align: center;
   overflow-x: hidden; /* Prevent horizontal scrolling */
-  padding-bottom: 120px;
 
 }
+
 
 /* Center Container */
 .landing-container {
@@ -457,11 +457,7 @@ body {
   z-index: 0; /* Lower than navbar */
 }
 
-/* Adjust Body Padding */
-body {
-  padding-bottom: 120px; /* Extra padding to ensure footer is visible */
-  overflow-x: hidden; /* Prevent horizontal scroll */
-}
+
 
 
 .footer-content {
