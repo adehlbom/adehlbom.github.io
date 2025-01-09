@@ -513,7 +513,7 @@ body {
 ---------------------------------- */
 .cookie-banner {
   position: fixed;
-  bottom: 0;
+  bottom: 0px;
   left: 0;
   width: 100%;
   background-color: #f5a9c3;
@@ -641,6 +641,9 @@ body {
   .karaktarer-card {
     width: 220px; /* Adjust card size */
     height: 300px;
+  }
+  .cookie-banner {
+   bottom: 83px;
   }
 }
 
