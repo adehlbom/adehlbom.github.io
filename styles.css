@@ -588,7 +588,13 @@ body {
     padding: 0;
     overflow-x: hidden;
   }
-
+  .hem {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto 20px;
+    background: #ffffff;
+    border-radius: 12px;
+  }
   .signup {
     width: 100%;
     padding: 20px;
