@@ -203,14 +203,14 @@ body {
 }
 
 /* ---------------------------------
-   3) valkommen SECTION
+   3) hem SECTION
 ---------------------------------- */
-/* valkommen Section Modifications */
-.valkommen h2 {
+/* hem Section Modifications */
+.hem h2 {
   color: #4a4a4a;
 }
 
-.valkommen p {
+.hem p {
   color: #4a4a4a;
 }
 
@@ -722,7 +722,7 @@ body {
   }
 
   /* signup SECTION */
-  .valkommen {
+  .hem {
     width: 100%;
     padding: 20px;
     margin: 0 auto 20px;
