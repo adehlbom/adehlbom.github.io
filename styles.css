@@ -98,6 +98,7 @@ body {
   z-index: 1000;
   width: 150px; /* Sidebar width */
   margin: 10px;
+  scale: 1.2;
 }
 
 /* Sidebar Items (Nodes) */
