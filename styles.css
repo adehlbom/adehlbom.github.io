@@ -31,7 +31,6 @@
   transform: scale(1.2); /* Slight enlargement on hover */
 }
 
-
 /* General Body Fix */
 body {
   font-family: "Quicksand", sans-serif;
@@ -48,9 +47,7 @@ body {
   );
   text-align: center;
   overflow-x: hidden; /* Prevent horizontal scrolling */
-
 }
-
 
 /* Center Container */
 .landing-container {
@@ -83,62 +80,57 @@ body {
 /* ---------------------------------
    2) Navigation SECTION
 ---------------------------------- */
-/* Navigation Line */
 #navigation-line {
   position: fixed;
+  left: 0; /* Sidebar sticks to the left side */
   top: 50%;
-  left: 5%;
   transform: translateY(-50%);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px; /* Increased gap for a treasure-map look */
+  flex-direction: column; /* Stack navigation items vertically */
+  align-items: flex-start; /* Align items to the left */
+  gap: 15px; /* Space between navigation items */
+  padding: 20px 10px;
+  background-color: #f9f9f9; /* Light gray for the sidebar */
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1),
+    -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphism effect */
   z-index: 1000;
+  width: 150px; /* Sidebar width */
+  margin: 10px;
 }
 
-/* Node Styling */
+/* Sidebar Items (Nodes) */
 .node {
-  position: relative;
-  width: 90px;
-  height: 90px;
-  background: #fff; /* Soft Coral Pink */
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  padding: 10px 15px;
   font-family: "Fredoka", sans-serif;
-  font-weight: bold;
   font-size: 16px;
-  color: #4a4a4a; /* Rich brown for contrast */
+  font-weight: bold;
+  text-align: left;
+  color: #5e432a; /* Neutral brown text */
+  background-color: #f9f9f9; /* Match sidebar background */
+  transition: all 0.3s ease; /* Smooth hover/active transitions */
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(255, 179, 193, 0.5); /* Pink Glow */
-  transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover Effect */
 .node:hover {
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 10px 20px rgba(255, 117, 143, 0.8); /* Stronger Pink Glow */
-  border: 1px solid #ff758f; 
+  background-color: #ffffff; /* Bright white on hover */
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset,
+    -10px -10px 10px white inset;
+  color: #5e432a; /* Keep text neutral brown on hover */
+  border-radius: 5px;
 }
 
+/* Active Node */
 .node.active {
-  box-shadow: 0 10px 30px rgba(179, 157, 219, 0.8); /* Lavender Glow */
-  transform: scale(1.15); /* Slightly larger active node */
-  border: 1px solid #b39ddb; 
-
-}
-
-.path {
-  width: 5px;
-  height: 40px;
-  background: repeating-linear-gradient(
-    to bottom,
-    #ffb3c1,
-    #ffb3c1 5px,
-    transparent 5px,
-    transparent 10px
-  ); /* Dotted treasure path with modern dots */
-  border-radius: 20px;
+  background-color: #ffffff; /* Active state has white background */
+  color: #b39ddb; /* Text changes to purple when active */
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset,
+    -10px -10px 10px white inset;
+  transform: translateX(5px); /* Slight horizontal movement for active node */
+  border-radius: 5px;
 }
 
 /* GENERAL SECTION STYLING */
@@ -201,7 +193,6 @@ body {
   gap: 2rem;
   justify-content: center;
   margin-top: 1.5rem;
-
 }
 
 /* CARD DESIGN */
@@ -331,7 +322,6 @@ body {
   max-width: 90%; /* Prevents exceeding body width */
   border-radius: 25px;
   box-shadow: 0 5px 15px rgba(255, 179, 193, 0.5); /* Pink Glow */
-
 }
 
 .signup h2 {
@@ -419,11 +409,10 @@ body {
 
 .social-item p {
   margin-top: 8px; /* Space between icon and text */
-  font-family: 'Fredoka', sans-serif;
+  font-family: "Fredoka", sans-serif;
   font-size: 1rem; /* Adjust font size */
   color: #5e432a; /* Text color */
 }
-
 
 /* ---------------------------------
    7) musik SECTION
@@ -456,9 +445,6 @@ body {
   margin-top: 90px; /* Ensure proper spacing from content above */
   z-index: 0; /* Lower than navbar */
 }
-
-
-
 
 .footer-content {
   max-width: 1200px;
@@ -513,18 +499,17 @@ body {
 }
 
 #decline-cookies {
-    background-color: #fff; /* Bright background */
-    color: #f5a9c3;
-    padding: 8px 16px;
-    border: 1px solid transparent;
-    border-radius: 8px;
+  background-color: #fff; /* Bright background */
+  color: #f5a9c3;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
 }
 #decline-cookies:hover {
   background-color: #b39ddb; /* Subtle hover background */
   color: #fff; /* Maintain text color */
   border: 1px solid #f5a9c3; /* Add a border on hover */
 }
-
 
 .cookie-btn {
   background-color: white;
@@ -577,28 +562,25 @@ body {
     border-radius: 12px;
   }
 
-  .musik {
+  #musik {
     padding: 20px;
-    margin: 20px auto;
-    width: 100%;
     background: #ffffff;
     border-radius: 12px;
   }
 
-  .karaktarer {
+  #karaktarer {
     padding: 20px;
     margin: 20px auto;
     width: 100%;
     background: #ffffff;
     border-radius: 12px;
   }
-  .platser {
+  #platser {
     margin-top: 90px; /* Pushes the section below the fixed navbar */
     padding: 20px; /* Adds internal spacing for the content */
     background: #ffffff; /* Background to match the design */
     border-radius: 12px; /* Optional for rounded corners */
   }
-  
 
   .karaktarer-grid {
     gap: 1.5rem; /* Reduce grid spacing for smaller screens */
@@ -633,50 +615,57 @@ body {
   #navigation-line {
     display: none; /* Hide vertical navigation on smaller screens */
   }
+  /* Mobile Navigation Container */
   #mobile-nav {
     position: fixed;
-    bottom: 0; /* Stick it to the bottom */
+    bottom: 0; /* Stick to the bottom */
     left: 0;
     width: 100%; /* Full width */
-    background-color: #fff; /* Soft Coral Pink */
-    box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.1); /* Softer shadow for elevation */
+    background-color: #f9f9f9; /* Light background */
+    box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 15px 0; /* Increased padding for better touch experience */
+    padding: 0; /* Remove padding to align items */
     z-index: 1000;
-    height: 90px; /* Optimized for mobile screens */
+    height: 90px; /* Adjust height */
     border-top-left-radius: 12px;
-    border-top-right-radius: 12px; /* Subtle rounding for a modern look */
+    border-top-right-radius: 12px;
   }
 
+  /* Individual Nav Items */
   .nav-item {
-    font-family: "Fredoka", sans-serif;
-    font-weight: bold;
-    margin-top: -10px;
-    font-size: 14px; /* Slightly larger for better readability */
-    color: #5e432a; /* Rich brown for contrast */
-    cursor: pointer;
-    transition: transform 0.3s ease, color 0.3s ease;
+    flex: 1; /* Each item takes equal space */
+    height: 90%; /* Full height of the nav bar */
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    font-family: "Fredoka", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #5e432a; /* Neutral brown */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth hover effect */
+    border-radius: 12px; /* Rounded corners */
+    background-color: #f9f9f9; /* Same as the nav background */
+    box-shadow: none; /* No shadow by default */
   }
 
-  .nav-item i {
-    font-size: 20px; /* For potential icons */
-    margin-bottom: 5px;
-    color: inherit; /* Match text color */
-  }
-
+  /* Hover Effect */
   .nav-item:hover {
-    color: #ff758f; /* Warm Coral on hover */
-    transform: scale(1.1); /* Slightly enlarge for interaction feedback */
+    background-color: #ffffff; /* Bright white background */
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset,
+    -10px -10px 10px white inset;
+    transform: translateY(-3px); /* Slight lift */
   }
 
+  /* Active State */
   .nav-item.active {
-    color: #b39ddb; /* Active color (Deeper Lavender) */
-    transform: scale(1.15); /* Emphasize the active item */
+    background-color: #ffffff; /* White background */
+    color: #b39ddb; /* Purple text */
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset,
+    -10px -10px 10px white inset;
+    transform: translateY(-3px); /* Match hover effect */
   }
 
   /* karaktarer SECTION */
@@ -770,7 +759,7 @@ body {
     background: #ffffff;
     border-top: 1px solid #f5a9c3;
     margin-top: 20px;
-    bottom: 90px
+    bottom: 90px;
   }
 
   .footer-content {
@@ -803,6 +792,4 @@ body {
     background-color: #b8a8d1;
     transform: translateY(-2px);
   }
-
-
 }
