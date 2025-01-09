@@ -65,6 +65,7 @@
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
+    
 
     <!-- Preconnect & Load Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -114,27 +115,48 @@
       <div class="logo-container">
         <img src="glitterdalen_logo.png" alt="Glitterdalen Logo" class="logo" />
       </div>
-      <div id="navigation-line">
-        <!-- Themed Marker -->
-        <!-- <div id="current-location" class="compass"></div> -->
-
-        <!-- Treasure Map Nodes -->
-        <div class="node" data-target="valkommen">Välkommen</div>
-        <div class="node" data-target="signup">Följ oss</div>
-        <div class="node" data-target="musik">Musik</div>
-        <div class="node" data-target="karaktarer">Karaktärer</div>
-        <div class="node" data-target="platser">Platser</div>
+      <!-- Desktop Sidebar -->
+      <div id="desktop-nav">
+        <div class="node" data-target="hem">
+          <i class="fas fa-tree"></i> Hem
+        </div>
+        <div class="node" data-target="signup">
+          <i class="fas fa-hands-helping"></i> Följ oss
+        </div>
+        <div class="node" data-target="musik">
+          <i class="fas fa-guitar"></i> Musik
+        </div>
+        <div class="node" data-target="karaktarer">
+          <i class="fas fa-hat-wizard"></i> Karaktärer
+        </div>
+        <div class="node" data-target="platser">
+          <i class="fas fa-map"></i> Platser
+        </div>
       </div>
+      
+
       <div id="mobile-nav" class="mobile-navigation">
-        <div class="nav-item" data-target="valkommen">Välkommen</div>
-        <div class="nav-item" data-target="signup">Följ oss</div>
-        <div class="nav-item" data-target="musik">Musik</div>
-        <div class="nav-item" data-target="karaktarer">Karaktärer</div>
-        <div class="nav-item" data-target="platser">Platser</div>
+        <div class="nav-item" data-target="hem">
+          <i class="fas fa-tree"></i> Hem
+        </div>
+        <div class="nav-item" data-target="signup">
+          <i class="fas fa-hands-helping"></i> Följ oss
+        </div>
+        <div class="nav-item" data-target="musik">
+          <i class="fas fa-guitar"></i> Musik
+        </div>
+        <div class="nav-item" data-target="karaktarer">
+          <i class="fas fa-hat-wizard"></i> Karaktärer
+        </div>
+        <div class="nav-item" data-target="platser">
+          <i class="fas fa-map"></i> Platser
+        </div>
       </div>
+      
 
-      <!-- valkommen Section -->
-      <div id="valkommen" class="valkommen section">
+
+      <!-- HEM Section -->
+      <div id="hem" class="hem section">
         <h2>Välkommen till Glitterdalen!</h2>
         <p>
           Glitterdalen är en magisk värld fylld av musik, lek och fantasi —
@@ -188,7 +210,7 @@
         </p>
       </div>
         <div id="sociala-medier" class="section">
-        <h2>Sociala Medier</h2>
+        <h2>Sociala medier</h2>
         <div class="social-buttons">
           <div class="social-item">
             <a
@@ -229,7 +251,7 @@
   </div>
       <!-- musik Section -->
       <div id="musik" class="section">
-        <h2>Lyssna på Musiken</h2>
+        <h2>Lyssna på musiken</h2>
         <div class="iframe-wrapper">
           <iframe
             style="border-radius: 12px"
@@ -246,7 +268,7 @@
 
       <!-- karaktarer Section -->
       <div id="karaktarer" class="karaktarer section">
-        <h2>Möt Karaktärerna</h2>
+        <h2>Möt karaktärerna</h2>
         <p>Klicka/håll över varje kort för att få veta mer</p>
 
         <div class="karaktarer-grid">
@@ -345,7 +367,7 @@
       </div>
       <!-- platser Section -->
       <div id="platser" class="platser section">
-        <h2>Besök Platserna</h2>
+        <h2>Besök platserna</h2>
         <p>Klicka/håll över varje kort för att få veta mer</p>
 
         <div class="karaktarer-grid">
@@ -382,7 +404,7 @@
                   src="/public/regnbagsgrottan.png"
                   alt="Regnbågsgrottan - Skattkammaren nära Molnfloden"
                 />
-                <div class="tagline">Grottan nära Molnfloden</div>
+                <div class="tagline">Grottan nära molnfloden</div>
               </div>
               <!-- Back -->
               <div class="karaktarer-card-back">
@@ -530,7 +552,7 @@
           if (isActive && currentLocation) {
             const nodeRect = node.getBoundingClientRect();
             const navigationRect = document
-              .getElementById("navigation-line")
+              .getElementById("desktop-nav")
               .getBoundingClientRect();
 
             // Calculate the new top position for the marker

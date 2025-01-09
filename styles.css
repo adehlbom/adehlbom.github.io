@@ -80,7 +80,7 @@ body {
 /* ---------------------------------
    2) Navigation SECTION
 ---------------------------------- */
-#navigation-line {
+#desktop-nav {
   position: fixed;
   left: 0; /* Sidebar sticks to the left side */
   top: 50%;
@@ -132,6 +132,48 @@ body {
   transform: translateX(5px); /* Slight horizontal movement for active node */
   border-radius: 5px;
 }
+
+/* Text and Icon Alignment */
+.node, .nav-item {
+  display: flex;
+  align-items: center; /* Vertically align text and icon */
+  justify-content: flex-start; /* Align content to the left */
+  gap: 8px; /* Space between icon and text */
+}
+/* Default Icon Styling */
+.node i, .nav-item i {
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 20px; /* Larger size for playful icons */
+  color: #5e432a; /* Default color for fallback */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Icon Colors (Pastel Rainbow) */
+.node[data-target="hem"] i, .nav-item[data-target="hem"] i {
+  color: #e63946; /* Pastel Pink */
+}
+.node[data-target="signup"] i, .nav-item[data-target="signup"] i {
+  color: #f4d03f; /* Pastel Yellow */
+}
+.node[data-target="musik"] i, .nav-item[data-target="musik"] i {
+  color: #1e90ff; /* Pastel Blue */
+}
+.node[data-target="karaktarer"] i, .nav-item[data-target="karaktarer"] i {
+  color: #20c997; /* Pastel Green */
+}
+.node[data-target="platser"] i, .nav-item[data-target="platser"] i {
+  color: #8e44ad; /* Pastel Purple */
+}
+
+/* Hover Effect */
+.node:hover i, .nav-item:hover i {
+  transform: scale(1.2); /* Slightly enlarge icons on hover */
+  filter: brightness(1.2); /* Brighten the color */
+}
+
+
+
+
 
 /* GENERAL SECTION STYLING */
 .section {
@@ -612,7 +654,7 @@ body {
     margin-bottom: 20px;
   }
   /* Navigation Line */
-  #navigation-line {
+  #desktop-nav {
     display: none; /* Hide vertical navigation on smaller screens */
   }
   /* Mobile Navigation Container */
