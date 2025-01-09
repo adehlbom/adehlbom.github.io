@@ -107,7 +107,6 @@ body {
   padding: 10px 15px;
   font-family: "Fredoka", sans-serif;
   font-size: 16px;
-  font-weight: bold;
   text-align: left;
   color: #5e432a; /* Neutral brown text */
   background-color: #f9f9f9; /* Match sidebar background */
@@ -135,14 +134,16 @@ body {
 }
 
 /* Text and Icon Alignment */
-.node, .nav-item {
+.node,
+.nav-item {
   display: flex;
   align-items: center; /* Vertically align text and icon */
   justify-content: flex-start; /* Align content to the left */
   gap: 8px; /* Space between icon and text */
 }
 /* Default Icon Styling */
-.node i, .nav-item i {
+.node i,
+.nav-item i {
   margin-right: 8px; /* Space between icon and text */
   font-size: 20px; /* Larger size for playful icons */
   color: #5e432a; /* Default color for fallback */
@@ -150,31 +151,33 @@ body {
 }
 
 /* Icon Colors (Pastel Rainbow) */
-.node[data-target="hem"] i, .nav-item[data-target="hem"] i {
-  color: #e63946; /* Pastel Pink */
+.node[data-target="hem"] i,
+.nav-item[data-target="hem"] i {
+  color: #f4d03f; /* Pastel Pink */
 }
-.node[data-target="signup"] i, .nav-item[data-target="signup"] i {
-  color: #f4d03f; /* Pastel Yellow */
+.node[data-target="signup"] i,
+.nav-item[data-target="signup"] i {
+  color: #e63946; /* Pastel Yellow */
 }
-.node[data-target="musik"] i, .nav-item[data-target="musik"] i {
+.node[data-target="musik"] i,
+.nav-item[data-target="musik"] i {
   color: #1e90ff; /* Pastel Blue */
 }
-.node[data-target="karaktarer"] i, .nav-item[data-target="karaktarer"] i {
+.node[data-target="karaktarer"] i,
+.nav-item[data-target="karaktarer"] i {
   color: #20c997; /* Pastel Green */
 }
-.node[data-target="platser"] i, .nav-item[data-target="platser"] i {
+.node[data-target="platser"] i,
+.nav-item[data-target="platser"] i {
   color: #8e44ad; /* Pastel Purple */
 }
 
 /* Hover Effect */
-.node:hover i, .nav-item:hover i {
+.node:hover i,
+.nav-item:hover i {
   transform: scale(1.2); /* Slightly enlarge icons on hover */
   filter: brightness(1.2); /* Brighten the color */
 }
-
-
-
-
 
 /* GENERAL SECTION STYLING */
 .section {
@@ -664,57 +667,54 @@ body {
   #desktop-nav {
     display: none; /* Hide vertical navigation on smaller screens */
   }
-  /* Mobile Navigation Container */
+  /* Mobile Navigation Bar */
   #mobile-nav {
     position: fixed;
     bottom: 0; /* Stick to the bottom */
     left: 0;
-    width: 100%; /* Full width */
+    width: 100%; /* Full screen width */
+    height: 80px; /* Slightly taller for better touch targets */
     background-color: #f9f9f9; /* Light background */
-    box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; /* Space out items evenly */
     align-items: center;
-    padding: 0; /* Remove padding to align items */
     z-index: 1000;
-    height: 90px; /* Adjust height */
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
   }
 
   /* Individual Nav Items */
   .nav-item {
-    flex: 1; /* Each item takes equal space */
-    height: 90%; /* Full height of the nav bar */
+    flex: 1; /* Equal space for each item */
     display: flex;
+    flex-direction: column; /* Stack icon and text */
     align-items: center;
     justify-content: center;
     font-family: "Fredoka", sans-serif;
-    font-size: 14px;
+    font-size: 13px; /* Slightly smaller text */
     font-weight: bold;
-    color: #5e432a; /* Neutral brown */
+    color: #5e432a; /* Neutral brown text */
     cursor: pointer;
-    transition: all 0.3s ease; /* Smooth hover effect */
-    border-radius: 12px; /* Rounded corners */
-    background-color: #f9f9f9; /* Same as the nav background */
-    box-shadow: none; /* No shadow by default */
+    padding: 5px; /* Extra padding for touch targets */
+    border-radius: 10px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth hover/active transitions */
+    height: 90%;
   }
 
-  /* Hover Effect */
-  .nav-item:hover {
-    background-color: #ffffff; /* Bright white background */
-    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset,
-    -10px -10px 10px white inset;
-    transform: translateY(-3px); /* Slight lift */
+  /* Icons */
+  .nav-item i {
+    font-size: 20px; /* Adjust icon size for mobile */
+    color: inherit; /* Inherit color from nav item */
   }
 
   /* Active State */
   .nav-item.active {
     background-color: #ffffff; /* White background */
-    color: #b39ddb; /* Purple text */
+    color: #b39ddb; /* Highlight active item with purple text */
     box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset,
     -10px -10px 10px white inset;
-    transform: translateY(-3px); /* Match hover effect */
   }
 
   /* karaktarer SECTION */
