@@ -58,7 +58,7 @@
       content="https://www.glitterdalen.se/glitterdalen_logo.png"
     />
     <meta property="og:image:width" content="2056" />
-<meta property="og:image:height" content="1940" />
+    <meta property="og:image:height" content="1940" />
     <meta property="og:url" content="https://www.glitterdalen.se" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="sv-SE" />
@@ -67,7 +67,6 @@
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
-    
 
     <!-- Preconnect & Load Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -78,27 +77,28 @@
 
     <!-- Länk till extern CSS -->
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="animations.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
     <!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '2354277181586934');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=2354277181586934&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '2354277181586934');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2354277181586934&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
   </head>
   <body>
     <!-- Cookie Banner -->
@@ -108,8 +108,10 @@
         upplevelse. Genom att klicka på "Acceptera" godkänner du användningen av
         cookies.
       </p>
-      <button id="accept-cookies" class="cookie-btn" autofocus>Acceptera</button>
-      <button id="decline-cookies" class="cookie-btn">Avvisa</button>
+      <div class="cookie-buttons">
+        <button id="accept-cookies" class="cookie-btn" autofocus>Acceptera</button>
+        <button id="decline-cookies" class="cookie-btn">Avvisa</button>
+      </div>
     </div>
 
     <div class="landing-container">
@@ -120,7 +122,8 @@
       <!-- Desktop Sidebar -->
       <div id="desktop-nav">
         <div class="node" data-target="hem">
-          <i class="fas fa-house"></i>  Hem </div>
+          <i class="fas fa-house"></i> Hem
+        </div>
         <div class="node" data-target="signup">
           <i class="fas fa-heart"></i> Följ oss
         </div>
@@ -134,7 +137,6 @@
           <i class="fas fa-map"></i> Platser
         </div>
       </div>
-      
 
       <div id="mobile-nav">
         <div class="nav-item active" data-target="hem">
@@ -157,13 +159,9 @@
           Platser
         </div>
       </div>
-      
-      
-      
-
 
       <!-- HEM Section -->
-      <div id="hem" class="hem section">
+      <div id="hem" class="hem section fade-in">
         <h2>Välkommen till Glitterdalen!</h2>
         <p>
           Glitterdalen är en magisk värld fylld av musik, lek och fantasi —
@@ -182,7 +180,7 @@
         </p>
       </div>
       <!-- signup Section -->
-       <div id="signup" class="signup section">
+      <div id="signup" class="signup section">
         <h2>Gå med i Glitterdalen för att få senaste nyheterna och exklusiva erbjudanden – direkt till din inkorg!
         </h2>
         <form
@@ -191,20 +189,20 @@
           method="post"
         >
           <input
-        id="email"
-        type="email"
-        name="fields[email]"
-        placeholder="Skriv in din e-postadress"
-        required
+            id="email"
+            type="email"
+            name="fields[email]"
+            placeholder="Skriv in din e-postadress"
+            required
           />
           <button type="submit">Anmäl dig nu</button>
         </form>
         <p class="privacy-note">
           <em
-        >Vi samlar endast in din e-postadress för att kunna skicka nyheter
-        och information om Glitterdalen. Vi delar aldrig din information med
-        tredje part. Du kan när som helst avregistrera dig från våra utskick
-        via länken i e-postmeddelandet.</em
+          >Vi samlar endast in din e-postadress för att kunna skicka nyheter
+          och information om Glitterdalen. Vi delar aldrig din information med
+          tredje part. Du kan när som helst avregistrera dig från våra utskick
+          via länken i e-postmeddelandet.</em
           >
         </p>
       </div>
@@ -216,7 +214,7 @@
           Din e-postadress är nu registrerad för nyheter från Glitterdalen. 
         </p>
       </div>
-        <div id="sociala-medier" class="section">
+      <div id="sociala-medier" class="section">
         <h2>Sociala medier</h2>
         <div class="social-buttons">
           <div class="social-item">
@@ -255,195 +253,193 @@
         </div>
       </div>
     </div>
-  </div>
-      <!-- musik Section -->
-      <div id="musik" class="section">
-        <h2>Lyssna på musiken</h2>
-        <div class="iframe-wrapper">
-          <iframe
-            style="border-radius: 12px"
-            src="https://open.spotify.com/embed/artist/35x1x7RZaz5GPlIS4axyCd?utm_source=generator"
-            width="100%"
-            height="352"
-            frameborder="0"
-            allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          ></iframe>
-        </div>
+    <!-- musik Section -->
+    <div id="musik" class="section musik fade-in">
+      <h2>Lyssna på musiken</h2>
+      <div class="iframe-wrapper">
+        <iframe
+          style="border-radius: 12px"
+          src="https://open.spotify.com/embed/artist/35x1x7RZaz5GPlIS4axyCd?utm_source=generator"
+          width="100%"
+          height="352"
+          frameborder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
       </div>
+    </div>
 
-      <!-- karaktarer Section -->
-      <div id="karaktarer" class="karaktarer section">
-        <h2>Möt karaktärerna</h2>
-        <p>Klicka/håll över varje kort för att få veta mer</p>
+    <!-- karaktarer Section -->
+    <div id="karaktarer" class="karaktarer section">
+      <h2>Möt karaktärerna</h2>
+      <p>Klicka/håll över varje kort för att få veta mer</p>
 
-        <div class="karaktarer-grid">
-          <!-- Lumi Flip Card -->
-          <div class="karaktarer-card" onclick="toggleCard(this)">
-            <div class="karaktarer-card-inner">
-              <!-- Front -->
-              <div class="karaktarer-card-front">
-                <h3 class="char-name">Lumi</h3>
-                <img
-                  src="public/lumi.png"
-                  alt="Lumi - den glittrande kaninen"
-                />
-                <div class="tagline">Den glittrande kaninen</div>
-              </div>
-              <!-- Back -->
-              <div class="karaktarer-card-back">
-                <p>
-                  När Lumi skrattar sprider hon ett magiskt glitter som får hela
-                  Glitterdalen att skimra. Hon bor på Vindklippan och håller
-                  dalen levande med sin glittrande energi!
-                </p>
-              </div>
+      <div class="karaktarer-grid">
+        <!-- Lumi Flip Card -->
+        <div class="karaktarer-card" onclick="toggleCard(this)">
+          <div class="karaktarer-card-inner">
+            <!-- Front -->
+            <div class="karaktarer-card-front">
+              <h3 class="char-name">Lumi</h3>
+              <img
+                src="public/lumi.png"
+                alt="Lumi - den glittrande kaninen"
+              />
+              <div class="tagline">Den glittrande kaninen</div>
             </div>
-          </div>
-
-          <!-- Riza Flip Card -->
-          <div class="karaktarer-card" onclick="toggleCard(this)">
-            <div class="karaktarer-card-inner">
-              <!-- Front -->
-              <div class="karaktarer-card-front">
-                <h3 class="char-name">Riza</h3>
-                <img
-                  src="public/riza.png"
-                  alt="Riza - Den äventyrslystna räven"
-                />
-                <div class="tagline">Den äventyrslystna räven</div>
-              </div>
-              <!-- Back -->
-              <div class="karaktarer-card-back">
-                <p>
-                  Hon älskar att gå på skattjakt och bor i Regnbågsgrottan
-                  tillsammans med alla skatter hon samlat. Riza tvekar aldrig
-                  när det vankas nya äventyr och mystiska kartor.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- Zippy Flip Card -->
-          <div class="karaktarer-card" onclick="toggleCard(this)">
-            <div class="karaktarer-card-inner">
-              <!-- Front -->
-              <div class="karaktarer-card-front">
-                <h3 class="char-name">Zippy</h3>
-                <img
-                  src="public/zippy.png"
-                  alt="Zippy - Den uppfinningsrika flugan"
-                />
-                <div class="tagline">Den uppfinningsrika flugan</div>
-              </div>
-              <!-- Back -->
-              <div class="karaktarer-card-back">
-                <p>
-                  Eftersom han inte kan flyga på egen hand, bygger han
-                  rymdraketer och drömmer om att bli astronaut som Christer
-                  Fuglesang. Han bor vid kanten av Molnfloden och hoppas en dag
-                  lyfta mot stjärnorna!
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- Illian Flip Card -->
-          <div class="karaktarer-card" onclick="toggleCard(this)">
-            <div class="karaktarer-card-inner">
-              <!-- Front -->
-              <div class="karaktarer-card-front">
-                <h3 class="char-name">Illian</h3>
-                <img
-                  src="public/illian.png"
-                  alt="Illian - Den mystiske enslingen"
-                />
-                <div class="tagline">Den envisa illern</div>
-              </div>
-              <!-- Back -->
-              <div class="karaktarer-card-back">
-                <p>
-                  Han är lite missförstådd men trivs bra för sig själv i den
-                  tysta skogen. När andra djur kommer dit och väsnas eller
-                  sprider glitter blir han sur, men kanske är han inte så avig
-                  innerst inne?
-                </p>
-              </div>
+            <!-- Back -->
+            <div class="karaktarer-card-back">
+              <p>
+                När Lumi skrattar sprider hon ett magiskt glitter som får hela
+                Glitterdalen att skimra. Hon bor på Vindklippan och håller
+                dalen levande med sin glittrande energi!
+              </p>
             </div>
           </div>
         </div>
+
+        <!-- Riza Flip Card -->
+        <div class="karaktarer-card" onclick="toggleCard(this)">
+          <div class="karaktarer-card-inner">
+            <!-- Front -->
+            <div class="karaktarer-card-front">
+              <h3 class="char-name">Riza</h3>
+              <img
+                src="public/riza.png"
+                alt="Riza - Den äventyrslystna räven"
+              />
+              <div class="tagline">Den äventyrslystna räven</div>
+            </div>
+            <!-- Back -->
+            <div class="karaktarer-card-back">
+              <p>
+                Hon älskar att gå på skattjakt och bor i Regnbågsgrottan
+                tillsammans med alla skatter hon samlat. Riza tvekar aldrig
+                när det vankas nya äventyr och mystiska kartor.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Zippy Flip Card -->
+        <div class="karaktarer-card" onclick="toggleCard(this)">
+          <div class="karaktarer-card-inner">
+            <!-- Front -->
+            <div class="karaktarer-card-front">
+              <h3 class="char-name">Zippy</h3>
+              <img
+                src="public/zippy.png"
+                alt="Zippy - Den uppfinningsrika flugan"
+              />
+              <div class="tagline">Den uppfinningsrika flugan</div>
+            </div>
+            <!-- Back -->
+            <div class="karaktarer-card-back">
+              <p>
+                Eftersom han inte kan flyga på egen hand, bygger han
+                rymdraketer och drömmer om att bli astronaut som Christer
+                Fuglesang. Han bor vid kanten av Molnfloden och hoppas en dag
+                lyfta mot stjärnorna!
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Illian Flip Card -->
+        <div class="karaktarer-card" onclick="toggleCard(this)">
+          <div class="karaktarer-card-inner">
+            <!-- Front -->
+            <div class="karaktarer-card-front">
+              <h3 class="char-name">Illian</h3>
+              <img
+                src="public/illian.png"
+                alt="Illian - Den mystiske enslingen"
+              />
+              <div class="tagline">Den envisa illern</div>
+            </div>
+            <!-- Back -->
+            <div class="karaktarer-card-back">
+              <p>
+                Han är lite missförstådd men trivs bra för sig själv i den
+                tysta skogen. När andra djur kommer dit och väsnas eller
+                sprider glitter blir han sur, men kanske är han inte så avig
+                innerst inne?
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- platser Section -->
-      <div id="platser" class="platser section">
-        <h2>Besök platserna</h2>
-        <p>Klicka/håll över varje kort för att få veta mer</p>
+    </div>
+    <!-- platser Section -->
+    <div id="platser" class="platser section">
+      <h2>Besök platserna</h2>
+      <p>Klicka/håll över varje kort för att få veta mer</p>
 
-        <div class="karaktarer-grid">
-          <!-- Flugsvampsskogen Flip Card -->
-          <div class="karaktarer-card" onclick="toggleCard(this)">
-            <div class="karaktarer-card-inner">
-              <!-- Front -->
-              <div class="karaktarer-card-front">
-                <h3 class="char-name">Flugsvampsskogen</h3>
-                <img
-                  src="/public/flugsvampsskogen.png"
-                  alt="Flugsvampsskogen - Den förtrollade skogen"
-                />
-                <div class="tagline">Den förtrollade skogen</div>
-              </div>
-              <!-- Back -->
-              <div class="karaktarer-card-back">
-                <p>
-                  En mystisk skog med skimrande svampar som lyser i olika
-                  färger. Här slingrar sig stigar till magiska gömställen och
-                  spännande äventyr, men skogen kräver respekt och försiktighet.
-                </p>
-              </div>
+      <div class="karaktarer-grid">
+        <!-- Flugsvampsskogen Flip Card -->
+        <div class="karaktarer-card" onclick="toggleCard(this)">
+          <div class="karaktarer-card-inner">
+            <!-- Front -->
+            <div class="karaktarer-card-front">
+              <h3 class="char-name">Flugsvampsskogen</h3>
+              <img
+                src="/public/flugsvampsskogen.png"
+                alt="Flugsvampsskogen - Den förtrollade skogen"
+              />
+              <div class="tagline">Den förtrollade skogen</div>
+            </div>
+            <!-- Back -->
+            <div class="karaktarer-card-back">
+              <p>
+                En mystisk skog med skimrande svampar som lyser i olika
+                färger. Här slingrar sig stigar till magiska gömställen och
+                spännande äventyr, men skogen kräver respekt och försiktighet.
+              </p>
             </div>
           </div>
+        </div>
 
-          <!-- Regnbågsgrottan Flip Card -->
-          <div class="karaktarer-card" onclick="toggleCard(this)">
-            <div class="karaktarer-card-inner">
-              <!-- Front -->
-              <div class="karaktarer-card-front">
-                <h3 class="char-name">Regnbågsgrottan</h3>
-                <img
-                  src="/public/regnbagsgrottan.png"
-                  alt="Regnbågsgrottan - Skattkammaren nära Molnfloden"
-                />
-                <div class="tagline">Grottan nära molnfloden</div>
-              </div>
-              <!-- Back -->
-              <div class="karaktarer-card-back">
-                <p>
-                  Rizas hemliga grotta fylld med hennes fantasirika skatter. Här
-                  förvaras allt från skimrande stenar till andra skatter man kan
-                  hitta i glitterdalen som en gammal stövel.
-                </p>
-              </div>
+        <!-- Regnbågsgrottan Flip Card -->
+        <div class="karaktarer-card" onclick="toggleCard(this)">
+          <div class="karaktarer-card-inner">
+            <!-- Front -->
+            <div class="karaktarer-card-front">
+              <h3 class="char-name">Regnbågsgrottan</h3>
+              <img
+                src="/public/regnbagsgrottan.png"
+                alt="Regnbågsgrottan - Skattkammaren nära Molnfloden"
+              />
+              <div class="tagline">Grottan nära molnfloden</div>
+            </div>
+            <!-- Back -->
+            <div class="karaktarer-card-back">
+              <p>
+                Rizas hemliga grotta fylld med hennes fantasirika skatter. Här
+                förvaras allt från skimrande stenar till andra skatter man kan
+                hitta i glitterdalen som en gammal stövel.
+              </p>
             </div>
           </div>
+        </div>
 
-          <!-- Vindklippan Flip Card -->
-          <div class="karaktarer-card" onclick="toggleCard(this)">
-            <div class="karaktarer-card-inner">
-              <!-- Front -->
-              <div class="karaktarer-card-front">
-                <h3 class="char-name">Vindklippan</h3>
-                <img
-                  src="/public/vindklippan.png"
-                  alt="Vindklippan - Den majestätiska utsiktsplatsen"
-                />
-                <div class="tagline">Den majestätiska klippan</div>
-              </div>
-              <!-- Back -->
-              <div class="karaktarer-card-back">
-                <p>
-                  En vidsträckt klippavsats med utsikt över hela Glitterdalen.
-                  Här bor Lumi, och vinden sprider hennes stjärnstoft över hela
-                  glitterdalen.
-                </p>
-              </div>
+        <!-- Vindklippan Flip Card -->
+        <div class="karaktarer-card" onclick="toggleCard(this)">
+          <div class="karaktarer-card-inner">
+            <!-- Front -->
+            <div class="karaktarer-card-front">
+              <h3 class="char-name">Vindklippan</h3>
+              <img
+                src="/public/vindklippan.png"
+                alt="Vindklippan - Den majestätiska utsiktsplatsen"
+              />
+              <div class="tagline">Den majestätiska klippan</div>
+            </div>
+            <!-- Back -->
+            <div class="karaktarer-card-back">
+              <p>
+                En vidsträckt klippavsats med utsikt över hela Glitterdalen.
+                Här bor Lumi, och vinden sprider hennes stjärnstoft över hela
+                glitterdalen.
+              </p>
             </div>
           </div>
         </div>
@@ -527,6 +523,7 @@
         const infoDiv = document.getElementById(infoId);
         infoDiv.classList.toggle("hidden");
       }
+
       // ------- Flip Card on Mobile -------
       function toggleCard(card) {
         // Remove active state from all other cards
@@ -542,105 +539,121 @@
         card.classList.toggle("active");
       }
 
-      // Grab nodes, sections, and the current location marker
-      const nodes = document.querySelectorAll(".node, .nav-item");
-      const sections = document.querySelectorAll(".section");
-      const currentLocation = document.getElementById("current-location");
-      let isScrollingManually = false; // Flag to track manual scrolling
+      // Add intersection observer for animation
+      document.addEventListener("DOMContentLoaded", function() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, {
+          threshold: 0.1
+        });
 
-      // Function to activate a node and move the marker
-      const setActiveNode = (targetId) => {
-        if (isScrollingManually) return; // Prevent updates during manual scrolling
+        document.querySelectorAll('.section').forEach(section => {
+          observer.observe(section);
+        });
 
+        // Grab nodes, sections, and the current location marker
+        const nodes = document.querySelectorAll(".node, .nav-item");
+        const sections = document.querySelectorAll(".section");
+        const currentLocation = document.getElementById("current-location");
+        let isScrollingManually = false; // Flag to track manual scrolling
+
+        // Function to activate a node and move the marker
+        const setActiveNode = (targetId) => {
+          if (isScrollingManually) return; // Prevent updates during manual scrolling
+
+          nodes.forEach((node) => {
+            const isActive = node.dataset.target === targetId;
+            node.classList.toggle("active", isActive);
+
+            if (isActive && currentLocation) {
+              const nodeRect = node.getBoundingClientRect();
+              const navigationRect = document
+                .getElementById("desktop-nav")
+                .getBoundingClientRect();
+
+              // Calculate the new top position for the marker
+              const newTop =
+                nodeRect.top -
+                navigationRect.top +
+                nodeRect.height / 2 -
+                currentLocation.offsetHeight / 2;
+
+              currentLocation.style.top = `${newTop}px`;
+            }
+          });
+        };
+
+        // Function to update the active section on scroll
+        const updateActiveSection = () => {
+          if (isScrollingManually) return; // Ignore updates during manual scrolling
+
+          let currentSection = "";
+
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const scrollPosition = window.scrollY + window.innerHeight / 3; // Adjusted for better accuracy
+
+            // Check if the scroll position is within the section
+            if (
+              scrollPosition >= sectionTop - sectionHeight / 4 &&
+              scrollPosition < sectionTop + sectionHeight - sectionHeight / 4
+            ) {
+              currentSection = section.id;
+            }
+          });
+
+          if (currentSection) {
+            setActiveNode(currentSection);
+          }
+        };
+
+        // Smooth scrolling on node click
         nodes.forEach((node) => {
-          const isActive = node.dataset.target === targetId;
-          node.classList.toggle("active", isActive);
+          node.addEventListener("click", (e) => {
+            e.preventDefault(); // Prevent default anchor behavior
+            const targetId = node.dataset.target;
+            const targetSection = document.getElementById(targetId);
 
-          if (isActive && currentLocation) {
-            const nodeRect = node.getBoundingClientRect();
-            const navigationRect = document
-              .getElementById("desktop-nav")
-              .getBoundingClientRect();
+            if (targetSection) {
+              isScrollingManually = true; // Set flag to disable scroll event logic
+              targetSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start", // Start aligns with the top of the section
+              });
 
-            // Calculate the new top position for the marker
-            const newTop =
-              nodeRect.top -
-              navigationRect.top +
-              nodeRect.height / 2 -
-              currentLocation.offsetHeight / 2;
+              // Timeout to reset the manual scroll flag
+              const scrollDuration = parseFloat(
+                getComputedStyle(document.documentElement).scrollBehavior === "smooth"
+                  ? getComputedStyle(document.documentElement).getPropertyValue("--scroll-duration") || 800
+                  : 0
+              );
 
-            currentLocation.style.top = `${newTop}px`;
-          }
-        });
-      };
-
-      // Function to update the active section on scroll
-      const updateActiveSection = () => {
-        if (isScrollingManually) return; // Ignore updates during manual scrolling
-
-        let currentSection = "";
-
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-          const scrollPosition = window.scrollY + window.innerHeight / 3; // Adjusted for better accuracy
-
-          // Check if the scroll position is within the section
-          if (
-            scrollPosition >= sectionTop - sectionHeight / 4 &&
-            scrollPosition < sectionTop + sectionHeight - sectionHeight / 4
-          ) {
-            currentSection = section.id;
-          }
+              setTimeout(() => {
+                isScrollingManually = false; // Reset flag after scroll completes
+                setActiveNode(targetId); // Ensure correct active node after scrolling
+              }, scrollDuration); // Match this timeout with your scroll animation duration
+            }
+          });
         });
 
-        if (currentSection) {
-          setActiveNode(currentSection);
-        }
-      };
+        // Update active node on scroll
+        window.addEventListener("scroll", updateActiveSection);
 
-      // Smooth scrolling on node click
-      nodes.forEach((node) => {
-        node.addEventListener("click", (e) => {
-          e.preventDefault(); // Prevent default anchor behavior
-          const targetId = node.dataset.target;
-          const targetSection = document.getElementById(targetId);
-
-          if (targetSection) {
-            isScrollingManually = true; // Set flag to disable scroll event logic
-            targetSection.scrollIntoView({
-              behavior: "smooth",
-              block: "start", // Start aligns with the top of the section
-            });
-
-            // Timeout to reset the manual scroll flag
-            const scrollDuration = parseFloat(
-              getComputedStyle(document.documentElement).scrollBehavior === "smooth"
-                ? getComputedStyle(document.documentElement).getPropertyValue("--scroll-duration") || 800
-                : 0
-            );
-
-            setTimeout(() => {
-              isScrollingManually = false; // Reset flag after scroll completes
-              setActiveNode(targetId); // Ensure correct active node after scrolling
-            }, scrollDuration); // Match this timeout with your scroll animation duration
-          }
+        // Initial setup on page load
+        document.addEventListener("DOMContentLoaded", () => {
+          updateActiveSection();
         });
-      });
 
-      // Update active node on scroll
-      window.addEventListener("scroll", updateActiveSection);
-
-      // Initial setup on page load
-      document.addEventListener("DOMContentLoaded", () => {
-        updateActiveSection();
-      });
-
-      // Ensure smooth behavior on resize
-      window.addEventListener("resize", () => {
-        updateActiveSection(); // Recalculate active section on resize
+        // Ensure smooth behavior on resize
+        window.addEventListener("resize", () => {
+          updateActiveSection(); // Recalculate active section on resize
+        });
       });
     </script>
   </body>
-  
 </html>

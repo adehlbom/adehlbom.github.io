@@ -47,6 +47,8 @@ body {
   );
   text-align: center;
   overflow-x: hidden; /* Prevent horizontal scrolling */
+  color: #4a4a4a;
+  line-height: 1.6;
 }
 
 /* Center Container */
@@ -55,6 +57,18 @@ body {
   margin: 0 auto;
   padding: 20px;
   overflow-x: hidden; /* Prevent content overflow */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Hidden Success Section och liknande */
@@ -68,13 +82,25 @@ body {
 .logo-container {
   background: #ffffff;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 18px;
   margin-bottom: 30px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
 }
+
+.logo-container:hover {
+  transform: translateY(-5px);
+}
+
 .logo-container img {
   max-width: 60%;
   margin: 0 auto 20px;
   display: block;
+  transition: transform 0.5s ease;
+}
+
+.logo-container img:hover {
+  transform: scale(1.02);
 }
 
 /* ---------------------------------
@@ -90,7 +116,7 @@ body {
   align-items: flex-start; /* Align items to the left */
   gap: 15px; /* Space between navigation items */
   padding: 20px 10px;
-  background-color: #f9f9f9; /* Light gray for the sidebar */
+  background-color: rgba(249, 249, 249, 0.95); /* Light gray with transparency */
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1),
@@ -99,38 +125,39 @@ body {
   width: 150px; /* Sidebar width */
   margin: 10px;
   scale: 1.2;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
 }
 
 /* Sidebar Items (Nodes) */
 .node {
   width: 100%;
-  padding: 10px 15px;
+  padding: 12px 15px;
   font-family: "Fredoka", sans-serif;
   font-size: 16px;
   text-align: left;
   color: #5e432a; /* Neutral brown text */
-  background-color: #f9f9f9; /* Match sidebar background */
+  background-color: transparent; /* Match sidebar background */
   transition: all 0.3s ease; /* Smooth hover/active transitions */
   cursor: pointer;
+  border-radius: 8px;
 }
 
 /* Hover Effect */
 .node:hover {
   background-color: #ffffff; /* Bright white on hover */
-  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset,
-    -10px -10px 10px white inset;
-  color: #5e432a; /* Keep text neutral brown on hover */
-  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  color: #b39ddb; /* Purple on hover */
+  transform: translateX(5px);
 }
 
 /* Active Node */
 .node.active {
   background-color: #ffffff; /* Active state has white background */
   color: #b39ddb; /* Text changes to purple when active */
-  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset,
-    -10px -10px 10px white inset;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transform: translateX(5px); /* Slight horizontal movement for active node */
-  border-radius: 5px;
+  border-left: 3px solid #b39ddb; /* Left border indicator */
 }
 
 /* Text and Icon Alignment */
@@ -183,17 +210,40 @@ body {
 .section {
   max-width: 1000px;
   min-height: 200px; /* Ensures all sections have enough height */
-  margin: 20px auto;
+  margin: 40px auto; /* Increased margin for better spacing */
   text-align: center;
-  padding: 15px 20px; /* Increased padding for more spacing */
+  padding: 30px; /* Increased padding for more spacing */
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* Headline Styling for All Sections */
 .section h2 {
   font-family: "Fredoka", sans-serif;
-  font-size: 2rem;
+  font-size: 2.2rem; /* Slightly larger */
   color: #4a4a4a;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #f5a9c3, #b8a8d1);
+  border-radius: 3px;
 }
 
 /* Paragraph Styling for All Sections */
@@ -201,8 +251,11 @@ body {
   font-family: "Quicksand", sans-serif;
   font-size: 1.2rem;
   color: #4a4a4a;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  line-height: 1.8; /* Increased line height for readability */
+  margin-bottom: 25px;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ---------------------------------
@@ -244,19 +297,20 @@ body {
 .karaktarer-card {
   position: relative;
   width: 240px;
-  height: 320px;
-  border-radius: 8px; /* Matchar knappens rundning */
+  height: 340px; /* Slightly taller */
+  border-radius: 16px; /* More rounded corners */
   overflow: hidden;
   cursor: pointer;
   background-color: #ffffff; /* Vit bakgrund */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtil skugga */
-  transition: border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); /* Enhanced shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .karaktarer-card:hover {
-  border: 2px solid #b8a8d1; /* Lila border */
-  transform: translateY(-2px); /* Lyft kortet vid hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Förstärk skuggan vid hover */
+  transform: translateY(-10px) scale(1.02); /* More noticeable lift effect */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12); /* Stronger shadow on hover */
+  border-color: #b8a8d1;
 }
 
 .karaktarer-card .karaktarer-card-front {
@@ -363,21 +417,20 @@ body {
 ---------------------------------- */
 /* signup Section Modifications */
 .signup {
-  border: 1px solid #f5a9c3; /* Adds border for signup section */
+  border: none; /* Remove previous border */
   max-width: 90%; /* Prevents exceeding body width */
   border-radius: 25px;
-  box-shadow: 0 5px 15px rgba(255, 179, 193, 0.5); /* Pink Glow */
+  box-shadow: 0 10px 25px rgba(245, 169, 195, 0.15); /* Softer shadow */
+  background: linear-gradient(to bottom right, #fff, #fff9fb); /* Subtle gradient */
 }
 
 .signup h2 {
   color: #4a4a4a;
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.signup form {
-  display: flex;
-  flex-direction: column; /* Stacks elements on mobile */
-  gap: 15px;
-}
 .signup form {
   display: flex;
   flex-direction: column; /* Stacks elements on mobile */
@@ -386,29 +439,40 @@ body {
 
 .signup input[type="email"] {
   width: 100%;
-  padding: 12px;
-  border: 2px solid #f5a9c3;
-  border-radius: 5px;
+  padding: 15px;
+  border: 2px solid rgba(245, 169, 195, 0.3);
+  border-radius: 10px;
   font-size: 1rem;
   font-family: "Quicksand", sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+}
+
+.signup input[type="email"]:focus {
+  border-color: #f5a9c3;
+  box-shadow: 0 4px 12px rgba(245, 169, 195, 0.2);
+  outline: none;
 }
 
 .signup button {
   width: 100%;
-  background-color: #f5a9c3;
+  background: linear-gradient(to right, #f5a9c3, #f8b7cb);
   color: #fff;
   border: none;
-  padding: 12px;
-  border-radius: 8px;
+  padding: 15px;
+  border-radius: 10px;
   font-size: 1.2rem;
+  font-weight: bold;
   font-family: "Fredoka", sans-serif;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(245, 169, 195, 0.3);
 }
 
 .signup button:hover {
-  background-color: #b8a8d1;
-  transform: translateY(-2px);
+  background: linear-gradient(to right, #b8a8d1, #c9bddb);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(184, 168, 209, 0.4);
 }
 
 .signup .privacy-note {
@@ -513,70 +577,57 @@ body {
 ---------------------------------- */
 .cookie-banner {
   position: fixed;
-  bottom: 0px;
-  left: 0;
-  width: 100%;
-  background-color: #a7ecee;
-  color: black;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #4a4a4a;
   text-align: center;
-  padding: 15px;
+  padding: 20px;
   z-index: 1000;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
   display: none; /* Initially hidden */
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(245, 169, 195, 0.3);
 }
 
 .cookie-banner p {
-  margin: 0 0 10px;
-  font-size: 0.9rem;
-}
-#accept-cookies {
-  background-color: #fff; /* Bright background */
-  color: #f5a9c3; /* Accent color */
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-}
-#accept-cookies:hover {
-  background-color: #b39ddb; /* Change background to accent color */
-  color: #fff; /* White text */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow */
-}
-
-#decline-cookies {
-  background-color: #fff; /* Bright background */
-  color: #f5a9c3;
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-}
-#decline-cookies:hover {
-  background-color: #b39ddb; /* Subtle hover background */
-  color: #fff; /* Maintain text color */
-  border: 1px solid #f5a9c3; /* Add a border on hover */
+  margin: 0 0 15px;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .cookie-btn {
-  background-color: white;
-  color: #f5a9c3;
+  background: linear-gradient(to right, #f5a9c3, #f8b7cb);
+  color: white;
   border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
+  padding: 10px 20px;
+  border-radius: 10px;
   margin: 0 5px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cookie-btn:hover {
-  background-color: #e09db3;
-  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.cookie-link {
-  color: white;
-  text-decoration: underline;
-  font-size: 0.9rem;
+#decline-cookies {
+  background: transparent;
+  color: #4a4a4a;
+  border: 1px solid #ccc;
+}
+
+#decline-cookies:hover {
+  background-color: #f1f1f1;
+  border-color: #999;
 }
 
 /* ---------------------------------
@@ -590,6 +641,13 @@ body {
     padding: 0;
     overflow-x: hidden;
   }
+
+  .section {
+    width: 90%;
+    margin: 30px auto;
+    border-radius: 15px;
+  }
+
   .hem {
     width: 100%;
     padding: 20px;
@@ -643,7 +701,8 @@ body {
     height: 300px;
   }
   .cookie-banner {
-   bottom: 83px;
+    bottom: 100px;
+    width: 85%;
   }
 }
 
@@ -676,15 +735,16 @@ body {
     left: 0;
     width: 100%; /* Full screen width */
     height: 80px; /* Slightly taller for better touch targets */
-    background-color: #f9f9f9; /* Light background */
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: rgba(249, 249, 249, 0.95); /* Light background with transparency */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.08); /* Enhanced shadow */
     display: flex;
     justify-content: space-around; /* Space out items evenly */
     align-items: center;
     z-index: 1000;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    backdrop-filter: blur(10px);
   }
 
   /* Individual Nav Items */
@@ -699,27 +759,21 @@ body {
     font-weight: bold;
     color: #5e432a; /* Neutral brown text */
     cursor: pointer;
-    padding: 5px; /* Extra padding for touch targets */
+    padding: 8px 5px; /* Extra padding for touch targets */
     border-radius: 10px; /* Rounded corners */
     transition: all 0.3s ease; /* Smooth hover/active transitions */
     height: 90%;
-  }
-
-  /* Icons */
-  .nav-item i {
-    font-size: 20px; /* Adjust icon size for mobile */
-    color: inherit; /* Inherit color from nav item */
+    margin: 0 2px;
   }
 
   /* Active State */
   .nav-item.active {
     background-color: #ffffff; /* White background */
     color: #b39ddb; /* Highlight active item with purple text */
-    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset,
-    -10px -10px 10px white inset;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
   }
 
-  /* karaktarer SECTION */
   .karaktarer-grid {
     flex-direction: column; /* Stack cards vertically */
     gap: 1rem; /* Reduce spacing between cards */
@@ -730,7 +784,6 @@ body {
     height: auto; /* Adjust height dynamically */
   }
 
-  /* signup SECTION */
   .hem {
     width: 100%;
     padding: 20px;
@@ -768,7 +821,6 @@ body {
     padding: 15px;
   }
 
-  /* SOCIAL SECTION */
   .social {
     padding: 20px;
     margin: 20px auto;
@@ -788,7 +840,6 @@ body {
     padding: 15px;
   }
 
-  /* musik SECTION */
   .musik {
     padding: 20px;
     margin: 20px auto;
@@ -802,7 +853,6 @@ body {
     width: 100%;
   }
 
-  /* FOOTER */
   .footer {
     width: 100%;
     padding: 20px 0;
@@ -811,6 +861,8 @@ body {
     border-top: 1px solid #f5a9c3;
     margin-top: 20px;
     bottom: 90px;
+    margin-bottom: 80px; /* Add space for mobile navigation */
+    padding-bottom: 30px;
   }
 
   .footer-content {
@@ -842,5 +894,17 @@ body {
   .social-buttons .btn:hover {
     background-color: #b8a8d1;
     transform: translateY(-2px);
+  }
+
+  .cookie-banner {
+    bottom: 90px;
+    width: 90%;
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .cookie-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 }
