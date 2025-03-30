@@ -46,6 +46,7 @@
     />
     <meta name="author" content="Glitterdalen Team" />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#f7c4d8" />
 
     <!-- Open Graph Metadata -->
     <meta property="og:title" content="Glitterdalen - En Magisk Värld" />
@@ -69,19 +70,18 @@
     <link rel="shortcut icon" href="/favicon.ico" />
 
     <!-- Preconnect & Load Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Varela+Round&display=swap" rel="stylesheet">
 
-    <!-- Länk till extern CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="animations.css" />
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       rel="stylesheet"
     />
+    
     <!-- Meta Pixel Code -->
     <script>
       !function(f,b,e,v,n,t,s)
@@ -101,557 +101,677 @@
     <!-- End Meta Pixel Code -->
   </head>
   <body>
-    <!-- Cookie Banner -->
+    <!-- Cookie Consent -->
     <div id="cookie-banner" class="cookie-banner">
-      <p>
-        Vi använder cookies för att analysera trafik och förbättra din
-        upplevelse. Genom att klicka på "Acceptera" godkänner du användningen av
-        cookies.
-      </p>
-      <div class="cookie-buttons">
-        <button id="accept-cookies" class="cookie-btn" autofocus>Acceptera</button>
-        <button id="decline-cookies" class="cookie-btn">Avvisa</button>
+      <div class="cookie-content">
+        <div class="cookie-icon">
+          <i class="fas fa-cookie-bite"></i>
+        </div>
+        <p>
+          Vi använder cookies för att analysera trafik och förbättra din
+          upplevelse. Genom att klicka på "Acceptera" godkänner du användningen av
+          cookies.
+        </p>
+        <div class="cookie-buttons">
+          <button id="accept-cookies" class="btn btn-primary" autofocus>Acceptera</button>
+          <button id="decline-cookies" class="btn btn-outline">Avvisa</button>
+        </div>
       </div>
     </div>
 
-    <div class="landing-container">
-      <!-- Logo -->
-      <div class="logo-container">
-        <img src="glitterdalen_logo.png" alt="Glitterdalen Logo" class="logo" />
+    <!-- Header with Navigation -->
+    <header class="site-header">
+      <div class="container">
+        <div class="logo">
+          <a href="#hem">
+            <img src="glitterdalen_logo.png" alt="Glitterdalen Logo" />
+          </a>
+        </div>
+        <nav class="main-nav">
+          <button class="menu-toggle" aria-label="Öppna menyn">
+            <span class="hamburger"></span>
+          </button>
+          <ul class="nav-list">
+            <li><a href="#hem" class="active"><i class="fas fa-house"></i> Hem</a></li>
+            <li><a href="#karaktarer"><i class="fas fa-hat-wizard"></i> Karaktärer</a></li>
+            <li><a href="#platser"><i class="fas fa-map-location-dot"></i> Platser</a></li>
+            <li><a href="#musik"><i class="fas fa-music"></i> Musik</a></li>
+            <li><a href="#signup" class="btn btn-nav"><i class="fas fa-envelope"></i> Följ oss</a></li>
+          </ul>
+        </nav>
       </div>
-      <!-- Desktop Sidebar -->
-      <div id="desktop-nav">
-        <div class="node" data-target="hem">
-          <i class="fas fa-house"></i> Hem
-        </div>
-        <div class="node" data-target="signup">
-          <i class="fas fa-heart"></i> Följ oss
-        </div>
-        <div class="node" data-target="musik">
-          <i class="fas fa-guitar"></i> Musik
-        </div>
-        <div class="node" data-target="karaktarer">
-          <i class="fas fa-hat-wizard"></i> Karaktärer
-        </div>
-        <div class="node" data-target="platser">
-          <i class="fas fa-map"></i> Platser
-        </div>
-      </div>
+    </header>
 
-      <div id="mobile-nav">
-        <div class="nav-item active" data-target="hem">
-          <i class="fas fa-house"></i> Hem
+    <main>
+      <!-- Hero Section -->
+      <section id="hem" class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title animate-fade-in">Välkommen till Glitterdalen!</h1>
+            <p class="hero-text animate-fade-in-delay-1">
+              En magisk värld fylld med äventyr, musik och fantasi — skapad för barn i alla åldrar (och nyfikna vuxna!).
+            </p>
+            <div class="hero-cta animate-fade-in-delay-2">
+              <a href="#karaktarer" class="btn btn-primary btn-lg">Möt våra karaktärer</a>
+              <a href="#musik" class="btn btn-outline btn-lg">Upptäck vår musik</a>
+            </div>
+          </div>
+          <div class="hero-image animate-float">
+            <img src="public/lumi.png" alt="Lumi från Glitterdalen" class="hero-character" />
+          </div>
         </div>
-        <div class="nav-item" data-target="signup">
-          <i class="fas fa-heart"></i>
-          Följ oss
+        <div class="hero-wave">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,165.3C672,171,768,213,864,218.7C960,224,1056,192,1152,176C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
         </div>
-        <div class="nav-item" data-target="musik">
-          <i class="fas fa-guitar"></i>
-          Musik
-        </div>
-        <div class="nav-item" data-target="karaktarer">
-          <i class="fas fa-hat-wizard"></i>
-          Karaktärer
-        </div>
-        <div class="nav-item" data-target="platser">
-          <i class="fas fa-map"></i>
-          Platser
-        </div>
-      </div>
+      </section>
 
-      <!-- HEM Section -->
-      <div id="hem" class="hem section fade-in">
-        <h2>Välkommen till Glitterdalen!</h2>
-        <p>
-          Glitterdalen är en magisk värld fylld av musik, lek och fantasi —
-          skapad för barn i alla åldrar (och nyfikna vuxna!). <br /><br />
-          Möt våra karaktärer: <strong>Lumi</strong> (den
-          glittrande kaninen), <strong>Zippy</strong> (den
-          uppfinningsrika flugan med astronautdrömmar),
-          <strong>Illian</strong> (den envisa illern) och
-          <strong>Riza</strong> (den äventyrslystna räven) —
-          som tillsammans lockar till skratt, dans och äventyr!
-        </p>
-        <p>
-          Upptäck nya <strong>låtar</strong>, följ
-          <strong>spännande berättelser</strong> och låt din fantasi ta fart —
-          här i Glitterdalen!
-        </p>
-      </div>
-      <!-- signup Section -->
-      <div id="signup" class="signup section">
-        <h2>Gå med i Glitterdalen för att få senaste nyheterna och exklusiva erbjudanden – direkt till din inkorg!
-        </h2>
-        <form
-          id="signup-form"
-          action="https://assets.mailerlite.com/jsonp/1255993/forms/142396205183272375/subscribe"
-          method="post"
-        >
-          <input
-            id="email"
-            type="email"
-            name="fields[email]"
-            placeholder="Skriv in din e-postadress"
-            required
-          />
-          <button type="submit">Anmäl dig nu</button>
-        </form>
-        <p class="privacy-note">
-          <em
-          >Vi samlar endast in din e-postadress för att kunna skicka nyheter
-          och information om Glitterdalen. Vi delar aldrig din information med
-          tredje part. Du kan när som helst avregistrera dig från våra utskick
-          via länken i e-postmeddelandet.</em
-          >
-        </p>
-      </div>
+      <!-- Characters Introduction -->
+      <section id="intro" class="intro-section">
+        <div class="container">
+          <div class="intro-content">
+            <h2 class="section-title">Träffa karaktärerna i Glitterdalen</h2>
+            <p class="section-text">
+              Vår magiska värld är full av spännande karaktärer som tillsammans skapar äventyr, musik och berättelser. Möt våra huvudkaraktärer:
+            </p>
+            <div class="character-preview">
+              <div class="preview-item animate-slide-up">
+                <div class="preview-icon">
+                  <img src="public/lumi.png" alt="Lumi" class="preview-img" />
+                </div>
+                <h3>Lumi</h3>
+                <p>Den glittrande kaninen</p>
+              </div>
+              <div class="preview-item animate-slide-up-delay-1">
+                <div class="preview-icon">
+                  <img src="public/zippy.png" alt="Zippy" class="preview-img" />
+                </div>
+                <h3>Zippy</h3>
+                <p>Den uppfinningsrika flugan</p>
+              </div>
+              <div class="preview-item animate-slide-up-delay-2">
+                <div class="preview-icon">
+                  <img src="public/riza.png" alt="Riza" class="preview-img" />
+                </div>
+                <h3>Riza</h3>
+                <p>Den äventyrslystna räven</p>
+              </div>
+              <div class="preview-item animate-slide-up-delay-3">
+                <div class="preview-icon">
+                  <img src="public/illian.png" alt="Illian" class="preview-img" />
+                </div>
+                <h3>Illian</h3>
+                <p>Den envisa illern</p>
+              </div>
+            </div>
+            <div class="intro-cta">
+              <a href="#karaktarer" class="btn btn-secondary">Läs mer om karaktärerna</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <!-- Success Section (Hidden Initially) -->
-      <div id="success" class="section signup hidden">
-        <h2>Tack!</h2>
-        <p>
-          Din e-postadress är nu registrerad för nyheter från Glitterdalen. 
-        </p>
-      </div>
-      <div id="sociala-medier" class="section">
-        <h2>Sociala medier</h2>
-        <div class="social-buttons">
-          <div class="social-item">
-            <a
-              class="social-btn"
-              href="https://www.instagram.com/glitterdalen/"
-              target="_blank"
-              aria-label="Instagram"
-            >
+      <!-- Characters Section -->
+      <section id="karaktarer" class="karaktarer-section">
+        <div class="container">
+          <h2 class="section-title">Möt karaktärerna</h2>
+          <p class="section-text">Klicka på korten för att lära känna dem bättre</p>
+          
+          <div class="karaktarer-grid">
+            <!-- Lumi Card -->
+            <div class="character-card" data-character="lumi">
+              <div class="card-front">
+                <div class="card-image">
+                  <img src="public/lumi.png" alt="Lumi - Den glittrande kaninen" />
+                </div>
+                <div class="card-content">
+                  <h3>Lumi</h3>
+                  <p>Den glittrande kaninen</p>
+                  <span class="card-more">Läs mer <i class="fas fa-arrow-right"></i></span>
+                </div>
+              </div>
+              <div class="card-back">
+                <div class="card-back-content">
+                  <h3>Lumi</h3>
+                  <p>
+                    När Lumi skrattar sprider hon ett magiskt glitter som får hela
+                    Glitterdalen att skimra. Hon bor på Vindklippan och håller
+                    dalen levande med sin glittrande energi!
+                  </p>
+                  <span class="card-back-btn">Tillbaka</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Riza Card -->
+            <div class="character-card" data-character="riza">
+              <div class="card-front">
+                <div class="card-image">
+                  <img src="public/riza.png" alt="Riza - Den äventyrslystna räven" />
+                </div>
+                <div class="card-content">
+                  <h3>Riza</h3>
+                  <p>Den äventyrslystna räven</p>
+                  <span class="card-more">Läs mer <i class="fas fa-arrow-right"></i></span>
+                </div>
+              </div>
+              <div class="card-back">
+                <div class="card-back-content">
+                  <h3>Riza</h3>
+                  <p>
+                    Hon älskar att gå på skattjakt och bor i Regnbågsgrottan
+                    tillsammans med alla skatter hon samlat. Riza tvekar aldrig
+                    när det vankas nya äventyr och mystiska kartor.
+                  </p>
+                  <span class="card-back-btn">Tillbaka</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Zippy Card -->
+            <div class="character-card" data-character="zippy">
+              <div class="card-front">
+                <div class="card-image">
+                  <img src="public/zippy.png" alt="Zippy - Den uppfinningsrika flugan" />
+                </div>
+                <div class="card-content">
+                  <h3>Zippy</h3>
+                  <p>Den uppfinningsrika flugan</p>
+                  <span class="card-more">Läs mer <i class="fas fa-arrow-right"></i></span>
+                </div>
+              </div>
+              <div class="card-back">
+                <div class="card-back-content">
+                  <h3>Zippy</h3>
+                  <p>
+                    Eftersom han inte kan flyga på egen hand, bygger han
+                    rymdraketer och drömmer om att bli astronaut som Christer
+                    Fuglesang. Han bor vid kanten av Molnfloden och hoppas en dag
+                    lyfta mot stjärnorna!
+                  </p>
+                  <span class="card-back-btn">Tillbaka</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Illian Card -->
+            <div class="character-card" data-character="illian">
+              <div class="card-front">
+                <div class="card-image">
+                  <img src="public/illian.png" alt="Illian - Den envisa illern" />
+                </div>
+                <div class="card-content">
+                  <h3>Illian</h3>
+                  <p>Den envisa illern</p>
+                  <span class="card-more">Läs mer <i class="fas fa-arrow-right"></i></span>
+                </div>
+              </div>
+              <div class="card-back">
+                <div class="card-back-content">
+                  <h3>Illian</h3>
+                  <p>
+                    Han är lite missförstådd men trivs bra för sig själv i den
+                    tysta skogen. När andra djur kommer dit och väsnas eller
+                    sprider glitter blir han sur, men kanske är han inte så avig
+                    innerst inne?
+                  </p>
+                  <span class="card-back-btn">Tillbaka</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Places Section -->
+      <section id="platser" class="platser-section">
+        <div class="container">
+          <h2 class="section-title">Magiska platser i Glitterdalen</h2>
+          <p class="section-text">Utforska de spännande platserna i Glitterdalen</p>
+          
+          <div class="platser-slider">
+            <!-- Flugsvampsskogen -->
+            <div class="plats-card">
+              <div class="plats-image">
+                <img src="/public/flugsvampsskogen.png" alt="Flugsvampsskogen" />
+              </div>
+              <div class="plats-content">
+                <h3>Flugsvampsskogen</h3>
+                <p class="plats-description">Den förtrollade skogen</p>
+                <p class="plats-text">
+                  En mystisk skog med skimrande svampar som lyser i olika
+                  färger. Här slingrar sig stigar till magiska gömställen och
+                  spännande äventyr, men skogen kräver respekt och försiktighet.
+                </p>
+              </div>
+            </div>
+
+            <!-- Regnbågsgrottan -->
+            <div class="plats-card">
+              <div class="plats-image">
+                <img src="/public/regnbagsgrottan.png" alt="Regnbågsgrottan" />
+              </div>
+              <div class="plats-content">
+                <h3>Regnbågsgrottan</h3>
+                <p class="plats-description">Grottan nära molnfloden</p>
+                <p class="plats-text">
+                  Rizas hemliga grotta fylld med hennes fantasirika skatter. Här
+                  förvaras allt från skimrande stenar till andra skatter man kan
+                  hitta i glitterdalen som en gammal stövel.
+                </p>
+              </div>
+            </div>
+
+            <!-- Vindklippan -->
+            <div class="plats-card">
+              <div class="plats-image">
+                <img src="/public/vindklippan.png" alt="Vindklippan" />
+              </div>
+              <div class="plats-content">
+                <h3>Vindklippan</h3>
+                <p class="plats-description">Den majestätiska klippan</p>
+                <p class="plats-text">
+                  En vidsträckt klippavsats med utsikt över hela Glitterdalen.
+                  Här bor Lumi, och vinden sprider hennes stjärnstoft över hela
+                  glitterdalen.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="slider-controls">
+            <button class="slider-btn prev-btn" aria-label="Föregående plats">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="slider-dots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+              <span class="dot" data-index="2"></span>
+            </div>
+            <button class="slider-btn next-btn" aria-label="Nästa plats">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Music Section -->
+      <section id="musik" class="musik-section">
+        <div class="container">
+          <h2 class="section-title">Lyssna på vår musik</h2>
+          <p class="section-text">Dansa och sjung med till Glitterdalens magiska musik</p>
+          
+          <div class="musik-player">
+            <iframe
+              style="border-radius: 12px"
+              src="https://open.spotify.com/embed/artist/35x1x7RZaz5GPlIS4axyCd?utm_source=generator"
+              width="100%"
+              height="352"
+              frameborder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+          </div>
+          
+          <div class="musik-cta">
+            <a href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd" target="_blank" class="btn btn-spotify">
+              <i class="fab fa-spotify"></i> Följ oss på Spotify
+            </a>
+            <a href="https://www.youtube.com/@Glitterdalen" target="_blank" class="btn btn-youtube">
+              <i class="fab fa-youtube"></i> Titta på YouTube
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter Section -->
+      <section id="signup" class="signup-section">
+        <div class="container">
+          <div class="signup-content">
+            <div class="signup-image animate-float">
+              <img src="glitterdalen_logo.png" alt="Glitterdalen nyhetsbrev" />
+            </div>
+            <div class="signup-form-container">
+              <h2 class="section-title">Häng med på äventyret!</h2>
+              <p class="section-text">
+                Prenumerera på vårt nyhetsbrev för att få de senaste nyheterna, exklusiva erbjudanden och roliga överraskningar från Glitterdalen!
+              </p>
+              
+              <form
+                id="signup-form"
+                action="https://assets.mailerlite.com/jsonp/1255993/forms/142396205183272375/subscribe"
+                method="post"
+                class="signup-form"
+              >
+                <div class="form-group">
+                  <label for="email" class="visually-hidden">E-postadress</label>
+                  <div class="input-icon-wrapper">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input
+                      id="email"
+                      type="email"
+                      name="fields[email]"
+                      placeholder="Din e-postadress"
+                      required
+                      class="form-input"
+                    />
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-fullwidth">
+                  <span>Prenumerera nu</span>
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </form>
+              
+              <p class="privacy-note">
+                Vi samlar endast in din e-postadress för att kunna skicka nyheter
+                och information om Glitterdalen. Vi delar aldrig din information med
+                tredje part. Du kan när som helst avregistrera dig från våra utskick
+                via länken i e-postmeddelandet.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div id="success" class="success-message hidden">
+          <div class="success-content">
+            <div class="success-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Tack för din anmälan!</h3>
+            <p>Din e-postadress är nu registrerad för nyheter från Glitterdalen.</p>
+            <button class="btn btn-secondary close-success">Stäng</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Social Media Section -->
+      <section id="social" class="social-section">
+        <div class="container">
+          <h2 class="section-title">Följ oss på sociala medier</h2>
+          <p class="section-text">Häng med oss för mer Glitterdalen-magi!</p>
+          
+          <div class="social-links">
+            <a href="https://www.instagram.com/glitterdalen/" target="_blank" class="social-link instagram">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+            <a href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd?si=d26c7821aa654469" target="_blank" class="social-link spotify">
+              <i class="fab fa-spotify"></i>
+              <span>Spotify</span>
+            </a>
+            <a href="https://www.youtube.com/@Glitterdalen" target="_blank" class="social-link youtube">
+              <i class="fab fa-youtube"></i>
+              <span>YouTube</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="glitterdalen_logo.png" alt="Glitterdalen" width="120" />
+          </div>
+          <div class="footer-links">
+            <a href="#hem">Hem</a>
+            <a href="#karaktarer">Karaktärer</a>
+            <a href="#platser">Platser</a>
+            <a href="#musik">Musik</a>
+            <a href="#signup">Följ oss</a>
+          </div>
+          <div class="footer-contact">
+            <a href="mailto:info@glitterdalen.se" class="contact-link">
+              <i class="fas fa-envelope"></i> info@glitterdalen.se
+            </a>
+          </div>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/glitterdalen/" target="_blank" aria-label="Instagram">
               <i class="fab fa-instagram"></i>
             </a>
-            <p>Instagram</p>
-          </div>
-          <div class="social-item">
-            <a
-              class="social-btn"
-              href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd?si=d26c7821aa654469"
-              target="_blank"
-              aria-label="Spotify"
-            >
+            <a href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd" target="_blank" aria-label="Spotify">
               <i class="fab fa-spotify"></i>
             </a>
-            <p>Spotify</p>
-          </div>
-          <div class="social-item">
-            <a
-              class="social-btn"
-              href="https://www.youtube.com/@Glitterdalen"
-              target="_blank"
-              aria-label="YouTube"
-            >
+            <a href="https://www.youtube.com/@Glitterdalen" target="_blank" aria-label="YouTube">
               <i class="fab fa-youtube"></i>
             </a>
-            <p>YouTube</p>
           </div>
         </div>
-      </div>
-    </div>
-    <!-- musik Section -->
-    <div id="musik" class="section musik fade-in">
-      <h2>Lyssna på musiken</h2>
-      <div class="iframe-wrapper">
-        <iframe
-          style="border-radius: 12px"
-          src="https://open.spotify.com/embed/artist/35x1x7RZaz5GPlIS4axyCd?utm_source=generator"
-          width="100%"
-          height="352"
-          frameborder="0"
-          allowfullscreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        ></iframe>
-      </div>
-    </div>
-
-    <!-- karaktarer Section -->
-    <div id="karaktarer" class="karaktarer section">
-      <h2>Möt karaktärerna</h2>
-      <p>Klicka/håll över varje kort för att få veta mer</p>
-
-      <div class="karaktarer-grid">
-        <!-- Lumi Flip Card -->
-        <div class="karaktarer-card" onclick="toggleCard(this)">
-          <div class="karaktarer-card-inner">
-            <!-- Front -->
-            <div class="karaktarer-card-front">
-              <h3 class="char-name">Lumi</h3>
-              <img
-                src="public/lumi.png"
-                alt="Lumi - den glittrande kaninen"
-              />
-              <div class="tagline">Den glittrande kaninen</div>
-            </div>
-            <!-- Back -->
-            <div class="karaktarer-card-back">
-              <p>
-                När Lumi skrattar sprider hon ett magiskt glitter som får hela
-                Glitterdalen att skimra. Hon bor på Vindklippan och håller
-                dalen levande med sin glittrande energi!
-              </p>
-            </div>
-          </div>
+        <div class="footer-bottom">
+          <p>© 2025 Glitterdalen. Alla rättigheter förbehållna.</p>
+          <button id="manage-cookies" class="btn-link">Hantera Cookies</button>
         </div>
-
-        <!-- Riza Flip Card -->
-        <div class="karaktarer-card" onclick="toggleCard(this)">
-          <div class="karaktarer-card-inner">
-            <!-- Front -->
-            <div class="karaktarer-card-front">
-              <h3 class="char-name">Riza</h3>
-              <img
-                src="public/riza.png"
-                alt="Riza - Den äventyrslystna räven"
-              />
-              <div class="tagline">Den äventyrslystna räven</div>
-            </div>
-            <!-- Back -->
-            <div class="karaktarer-card-back">
-              <p>
-                Hon älskar att gå på skattjakt och bor i Regnbågsgrottan
-                tillsammans med alla skatter hon samlat. Riza tvekar aldrig
-                när det vankas nya äventyr och mystiska kartor.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- Zippy Flip Card -->
-        <div class="karaktarer-card" onclick="toggleCard(this)">
-          <div class="karaktarer-card-inner">
-            <!-- Front -->
-            <div class="karaktarer-card-front">
-              <h3 class="char-name">Zippy</h3>
-              <img
-                src="public/zippy.png"
-                alt="Zippy - Den uppfinningsrika flugan"
-              />
-              <div class="tagline">Den uppfinningsrika flugan</div>
-            </div>
-            <!-- Back -->
-            <div class="karaktarer-card-back">
-              <p>
-                Eftersom han inte kan flyga på egen hand, bygger han
-                rymdraketer och drömmer om att bli astronaut som Christer
-                Fuglesang. Han bor vid kanten av Molnfloden och hoppas en dag
-                lyfta mot stjärnorna!
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- Illian Flip Card -->
-        <div class="karaktarer-card" onclick="toggleCard(this)">
-          <div class="karaktarer-card-inner">
-            <!-- Front -->
-            <div class="karaktarer-card-front">
-              <h3 class="char-name">Illian</h3>
-              <img
-                src="public/illian.png"
-                alt="Illian - Den mystiske enslingen"
-              />
-              <div class="tagline">Den envisa illern</div>
-            </div>
-            <!-- Back -->
-            <div class="karaktarer-card-back">
-              <p>
-                Han är lite missförstådd men trivs bra för sig själv i den
-                tysta skogen. När andra djur kommer dit och väsnas eller
-                sprider glitter blir han sur, men kanske är han inte så avig
-                innerst inne?
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- platser Section -->
-    <div id="platser" class="platser section">
-      <h2>Besök platserna</h2>
-      <p>Klicka/håll över varje kort för att få veta mer</p>
-
-      <div class="karaktarer-grid">
-        <!-- Flugsvampsskogen Flip Card -->
-        <div class="karaktarer-card" onclick="toggleCard(this)">
-          <div class="karaktarer-card-inner">
-            <!-- Front -->
-            <div class="karaktarer-card-front">
-              <h3 class="char-name">Flugsvampsskogen</h3>
-              <img
-                src="/public/flugsvampsskogen.png"
-                alt="Flugsvampsskogen - Den förtrollade skogen"
-              />
-              <div class="tagline">Den förtrollade skogen</div>
-            </div>
-            <!-- Back -->
-            <div class="karaktarer-card-back">
-              <p>
-                En mystisk skog med skimrande svampar som lyser i olika
-                färger. Här slingrar sig stigar till magiska gömställen och
-                spännande äventyr, men skogen kräver respekt och försiktighet.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Regnbågsgrottan Flip Card -->
-        <div class="karaktarer-card" onclick="toggleCard(this)">
-          <div class="karaktarer-card-inner">
-            <!-- Front -->
-            <div class="karaktarer-card-front">
-              <h3 class="char-name">Regnbågsgrottan</h3>
-              <img
-                src="/public/regnbagsgrottan.png"
-                alt="Regnbågsgrottan - Skattkammaren nära Molnfloden"
-              />
-              <div class="tagline">Grottan nära molnfloden</div>
-            </div>
-            <!-- Back -->
-            <div class="karaktarer-card-back">
-              <p>
-                Rizas hemliga grotta fylld med hennes fantasirika skatter. Här
-                förvaras allt från skimrande stenar till andra skatter man kan
-                hitta i glitterdalen som en gammal stövel.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Vindklippan Flip Card -->
-        <div class="karaktarer-card" onclick="toggleCard(this)">
-          <div class="karaktarer-card-inner">
-            <!-- Front -->
-            <div class="karaktarer-card-front">
-              <h3 class="char-name">Vindklippan</h3>
-              <img
-                src="/public/vindklippan.png"
-                alt="Vindklippan - Den majestätiska utsiktsplatsen"
-              />
-              <div class="tagline">Den majestätiska klippan</div>
-            </div>
-            <!-- Back -->
-            <div class="karaktarer-card-back">
-              <p>
-                En vidsträckt klippavsats med utsikt över hela Glitterdalen.
-                Här bor Lumi, och vinden sprider hennes stjärnstoft över hela
-                glitterdalen.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <footer class="footer">
-      <div class="footer-content">
-        <a href="#" id="manage-cookies" class="footer-btn">Hantera Cookies</a>
-        <strong>//</strong>
-        <a href="mailto:info@glitterdalen.se">info@glitterdalen.se</a>
-        <p>© 2025 Glitterdalen. Alla rättigheter förbehållna.</p>
       </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Tillbaka till toppen">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
     <!-- JavaScript -->
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const cookieBanner = document.getElementById("cookie-banner");
-        const consent = localStorage.getItem("cookie-consent");
-
-        if (!consent) {
-          cookieBanner.style.display = "block";
-        }
-
-        document
-          .getElementById("accept-cookies")
-          .addEventListener("click", () => {
-            localStorage.setItem("cookie-consent", "accepted");
-            cookieBanner.style.display = "none";
-            initializeGoogleAnalytics();
+      document.addEventListener("DOMContentLoaded", function() {
+        // ===== Mobile Menu Toggle =====
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
+        
+        menuToggle.addEventListener('click', function() {
+          this.classList.toggle('active');
+          navList.classList.toggle('active');
+          document.body.classList.toggle('menu-open');
+        });
+        
+        // Close menu when clicking on links
+        document.querySelectorAll('.nav-list a').forEach(link => {
+          link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navList.classList.remove('active');
+            document.body.classList.remove('menu-open');
           });
+        });
 
-        document
-          .getElementById("decline-cookies")
-          .addEventListener("click", () => {
-            localStorage.setItem("cookie-consent", "declined");
-            cookieBanner.style.display = "none";
-          });
-      });
-
-      // ------- Form Submit to MailerLite -------
-      document
-        .getElementById("signup-form")
-        .addEventListener("submit", async function (e) {
-          e.preventDefault();
-          const email = document.getElementById("email").value;
-
-          try {
-            const response = await fetch(this.action, {
-              method: "POST",
-              headers: { "Content-Type": "application/x-www-form-urlencoded" },
-              body: new URLSearchParams({
-                "fields[email]": email,
-                "ml-submit": "1",
-              }),
-            });
-
-            const result = await response.json();
-            if (result.success) {
-              document.getElementById("signup").classList.add("hidden");
-              document
-                .getElementById("success")
-                .classList.remove("hidden");
-            } else {
-              alert("Något gick fel. Försök igen.");
+        // ===== Smooth Scrolling =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+              // Get the header height for offset
+              const headerHeight = document.querySelector('.site-header').offsetHeight;
+              const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+              
+              window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+              });
+              
+              // Update active nav link
+              document.querySelectorAll('.nav-list a').forEach(link => {
+                link.classList.remove('active');
+              });
+              this.classList.add('active');
             }
-          } catch {
-            alert("Något gick fel. Försök igen.");
+          });
+        });
+
+        // ===== Scroll Spy =====
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-list a');
+        
+        function scrollSpy() {
+          const scrollPosition = window.scrollY + document.querySelector('.site-header').offsetHeight + 100;
+          
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+              navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + sectionId) {
+                  link.classList.add('active');
+                }
+              });
+            }
+          });
+        }
+        
+        window.addEventListener('scroll', scrollSpy);
+
+        // ===== Back to Top Button =====
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('show');
+          } else {
+            backToTopButton.classList.remove('show');
           }
         });
-
-      // ------- Cookies Banner -------
-      document
-        .getElementById("manage-cookies")
-        .addEventListener("click", () => {
-          localStorage.removeItem("cookie-consent");
-          document.getElementById("cookie-banner").style.display = "block";
+        
+        backToTopButton.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
         });
 
-      // ------- Expand/Collapse karaktarer -------
-      function toggleExpand(infoId) {
-        const infoDiv = document.getElementById(infoId);
-        infoDiv.classList.toggle("hidden");
-      }
-
-      // ------- Flip Card on Mobile -------
-      function toggleCard(card) {
-        // Remove active state from all other cards
-        document
-          .querySelectorAll(".karaktarer-card.active")
-          .forEach((activeCard) => {
-            if (activeCard !== card) {
-              activeCard.classList.remove("active");
-            }
+        // ===== Character Cards Flip =====
+        document.querySelectorAll('.character-card').forEach(card => {
+          card.addEventListener('click', function() {
+            this.classList.toggle('flipped');
           });
+        });
+        
+        // ===== Places Slider =====
+        const slider = document.querySelector('.platser-slider');
+        const slides = document.querySelectorAll('.plats-card');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentIndex = 0;
+        
+        function updateSlider() {
+          slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+          
+          // Update dots
+          dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+          });
+          
+          // Update buttons visibility
+          prevBtn.disabled = currentIndex === 0;
+          nextBtn.disabled = currentIndex === slides.length - 1;
+        }
+        
+        prevBtn.addEventListener('click', () => {
+          if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+          }
+        });
+        
+        nextBtn.addEventListener('click', () => {
+          if (currentIndex < slides.length - 1) {
+            currentIndex++;
+            updateSlider();
+          }
+        });
+        
+        dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateSlider();
+          });
+        });
+        
+        // Initialize slider
+        updateSlider();
 
-        // Toggle active state on the clicked card
-        card.classList.toggle("active");
-      }
+        // ===== Form Submission =====
+        document.getElementById('signup-form').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const email = document.getElementById('email').value;
+          
+          try {
+            const response = await fetch(this.action, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: new URLSearchParams({
+                'fields[email]': email,
+                'ml-submit': '1'
+              })
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+              document.getElementById('success').classList.remove('hidden');
+            } else {
+              alert('Något gick fel. Försök igen.');
+            }
+          } catch (error) {
+            alert('Något gick fel. Försök igen.');
+          }
+        });
+        
+        // Close success message
+        document.querySelector('.close-success').addEventListener('click', () => {
+          document.getElementById('success').classList.add('hidden');
+          document.getElementById('email').value = '';
+        });
 
-      // Add intersection observer for animation
-      document.addEventListener("DOMContentLoaded", function() {
+        // ===== Cookie Consent =====
+        const cookieBanner = document.getElementById('cookie-banner');
+        const acceptCookies = document.getElementById('accept-cookies');
+        const declineCookies = document.getElementById('decline-cookies');
+        const manageCookies = document.getElementById('manage-cookies');
+        
+        // Check if user has already set cookie preference
+        const cookieConsent = localStorage.getItem('cookie-consent');
+        
+        if (!cookieConsent) {
+          cookieBanner.classList.add('show');
+        }
+        
+        acceptCookies.addEventListener('click', () => {
+          localStorage.setItem('cookie-consent', 'accepted');
+          cookieBanner.classList.remove('show');
+          initializeGoogleAnalytics();
+        });
+        
+        declineCookies.addEventListener('click', () => {
+          localStorage.setItem('cookie-consent', 'declined');
+          cookieBanner.classList.remove('show');
+        });
+        
+        manageCookies.addEventListener('click', () => {
+          localStorage.removeItem('cookie-consent');
+          cookieBanner.classList.add('show');
+        });
+
+        // ===== Animation on Scroll =====
+        const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-slide-up, .animate-fade-in-delay-1, .animate-fade-in-delay-2, .animate-slide-up-delay-1, .animate-slide-up-delay-2, .animate-slide-up-delay-3');
+        
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
+              entry.target.classList.add('animated');
             }
           });
         }, {
           threshold: 0.1
         });
-
-        document.querySelectorAll('.section').forEach(section => {
-          observer.observe(section);
-        });
-
-        // Grab nodes, sections, and the current location marker
-        const nodes = document.querySelectorAll(".node, .nav-item");
-        const sections = document.querySelectorAll(".section");
-        const currentLocation = document.getElementById("current-location");
-        let isScrollingManually = false; // Flag to track manual scrolling
-
-        // Function to activate a node and move the marker
-        const setActiveNode = (targetId) => {
-          if (isScrollingManually) return; // Prevent updates during manual scrolling
-
-          nodes.forEach((node) => {
-            const isActive = node.dataset.target === targetId;
-            node.classList.toggle("active", isActive);
-
-            if (isActive && currentLocation) {
-              const nodeRect = node.getBoundingClientRect();
-              const navigationRect = document
-                .getElementById("desktop-nav")
-                .getBoundingClientRect();
-
-              // Calculate the new top position for the marker
-              const newTop =
-                nodeRect.top -
-                navigationRect.top +
-                nodeRect.height / 2 -
-                currentLocation.offsetHeight / 2;
-
-              currentLocation.style.top = `${newTop}px`;
-            }
-          });
-        };
-
-        // Function to update the active section on scroll
-        const updateActiveSection = () => {
-          if (isScrollingManually) return; // Ignore updates during manual scrolling
-
-          let currentSection = "";
-
-          sections.forEach((section) => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const scrollPosition = window.scrollY + window.innerHeight / 3; // Adjusted for better accuracy
-
-            // Check if the scroll position is within the section
-            if (
-              scrollPosition >= sectionTop - sectionHeight / 4 &&
-              scrollPosition < sectionTop + sectionHeight - sectionHeight / 4
-            ) {
-              currentSection = section.id;
-            }
-          });
-
-          if (currentSection) {
-            setActiveNode(currentSection);
-          }
-        };
-
-        // Smooth scrolling on node click
-        nodes.forEach((node) => {
-          node.addEventListener("click", (e) => {
-            e.preventDefault(); // Prevent default anchor behavior
-            const targetId = node.dataset.target;
-            const targetSection = document.getElementById(targetId);
-
-            if (targetSection) {
-              isScrollingManually = true; // Set flag to disable scroll event logic
-              targetSection.scrollIntoView({
-                behavior: "smooth",
-                block: "start", // Start aligns with the top of the section
-              });
-
-              // Timeout to reset the manual scroll flag
-              const scrollDuration = parseFloat(
-                getComputedStyle(document.documentElement).scrollBehavior === "smooth"
-                  ? getComputedStyle(document.documentElement).getPropertyValue("--scroll-duration") || 800
-                  : 0
-              );
-
-              setTimeout(() => {
-                isScrollingManually = false; // Reset flag after scroll completes
-                setActiveNode(targetId); // Ensure correct active node after scrolling
-              }, scrollDuration); // Match this timeout with your scroll animation duration
-            }
-          });
-        });
-
-        // Update active node on scroll
-        window.addEventListener("scroll", updateActiveSection);
-
-        // Initial setup on page load
-        document.addEventListener("DOMContentLoaded", () => {
-          updateActiveSection();
-        });
-
-        // Ensure smooth behavior on resize
-        window.addEventListener("resize", () => {
-          updateActiveSection(); // Recalculate active section on resize
+        
+        animatedElements.forEach(element => {
+          observer.observe(element);
         });
       });
     </script>
