@@ -254,35 +254,79 @@ p {
 .nav-list {
   display: flex;
   gap: var(--spacing-lg);
+  align-items: center;
 }
 
 .nav-list a {
   position: relative;
-  color: var(--text-color);
+  color: var(--white);
   font-weight: 600;
-  padding: var(--spacing-xs) 0;
-  transition: color var(--transition-normal);
+  padding: var(--spacing-sm) var(--spacing-md);
+  transition: all var(--transition-normal);
+  border-radius: var(--radius-full);
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transform-origin: center;
+  margin: 0 2px;
+}
+
+.nav-list a i {
+  font-size: 1.2em;
+  transition: transform var(--transition-bounce);
 }
 
 .nav-list a:hover,
 .nav-list a.active {
-  color: var(--primary-color);
+  color: var(--white);
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg), 0 0 10px var(--primary-light);
 }
 
-.nav-list a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
+.nav-list a:hover i,
+.nav-list a.active i {
+  transform: scale(1.3);
+}
+
+.nav-list a:nth-child(1) {
   background-color: var(--primary-color);
-  transition: width var(--transition-normal);
 }
 
-.nav-list a:hover::after,
-.nav-list a.active::after {
-  width: 100%;
+.nav-list a:nth-child(2) {
+  background-color: var(--secondary-color);
+}
+
+.nav-list a:nth-child(3) {
+  background-color: var(--accent-color);
+}
+
+.nav-list a:nth-child(4) {
+  background-color: var(--tertiary-color);
+  color: var(--text-color);
+}
+
+.nav-list a:nth-child(1):hover {
+  background-color: var(--primary-dark);
+  box-shadow: var(--shadow-lg), 0 0 10px var(--primary-light);
+}
+
+.nav-list a:nth-child(2):hover {
+  background-color: var(--secondary-dark);
+  box-shadow: var(--shadow-lg), 0 0 10px var(--secondary-light);
+}
+
+.nav-list a:nth-child(3):hover {
+  background-color: var(--accent-dark);
+  box-shadow: var(--shadow-lg), 0 0 10px var(--accent-light);
+}
+
+.nav-list a:nth-child(4):hover {
+  background-color: var(--tertiary-dark);
+  box-shadow: var(--shadow-lg), 0 0 10px var(--tertiary-light);
 }
 
 .menu-toggle {
