@@ -87,16 +87,33 @@
     
     <!-- Meta Pixel Code -->
     <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '2354277181586934');
-      fbq('track', 'PageView');
+      // Define Facebook Pixel function
+      function initializeFacebookPixel() {
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2354277181586934');
+        fbq('track', 'PageView');
+      }
+      
+      // Check for consent before initializing
+      document.addEventListener("DOMContentLoaded", () => {
+        let consent;
+        try {
+          consent = localStorage.getItem("cookie-consent");
+        } catch (e) {
+          consent = null;
+        }
+
+        if (consent === "accepted") {
+          initializeFacebookPixel();
+        }
+      });
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=2354277181586934&ev=PageView&noscript=1"
@@ -589,46 +606,54 @@
         const slider = document.querySelector('.platser-slider');
         const slides = document.querySelectorAll('.plats-card');
         const dots = document.querySelectorAll('.dot');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
-        let currentIndex = 0;
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
         
-        function updateSlider() {
-          slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        // Only run slider code if all elements exist
+        if (slider && slides.length > 0 && prevBtn && nextBtn) {
+          let currentIndex = 0;
           
-          // Update dots
-          dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
+          function updateSlider() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Update dots
+            if (dots.length > 0) {
+              dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+              });
+            }
+            
+            // Update buttons visibility
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === slides.length - 1;
+          }
+          
+          prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+              currentIndex--;
+              updateSlider();
+            }
           });
           
-          // Update buttons visibility
-          prevBtn.disabled = currentIndex === 0;
-          nextBtn.disabled = currentIndex === slides.length - 1;
+          nextBtn.addEventListener('click', () => {
+            if (currentIndex < slides.length - 1) {
+              currentIndex++;
+              updateSlider();
+            }
+          });
+          
+          if (dots.length > 0) {
+            dots.forEach((dot, index) => {
+              dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateSlider();
+              });
+            });
+          }
+          
+          // Initialize slider
+          updateSlider();
         }
-        
-        prevBtn.addEventListener('click', () => {
-          if (currentIndex > 0) {
-            currentIndex--;
-            updateSlider();
-          }
-        });
-        
-        nextBtn.addEventListener('click', () => {
-          if (currentIndex < slides.length - 1) {
-            currentIndex++;
-            updateSlider();
-          }
-        });
-        
-        dots.forEach((dot, index) => {
-          dot.addEventListener('click', () => {
-            currentIndex = index;
-            updateSlider();
-          });
-        });
-        
-        // Initialize slider
-        updateSlider();
 
         // ===== Form Submission =====
         document.getElementById('signup-form').addEventListener('submit', async function(e) {
@@ -669,28 +694,60 @@
         const declineCookies = document.getElementById('decline-cookies');
         const manageCookies = document.getElementById('manage-cookies');
         
-        // Check if user has already set cookie preference
-        const cookieConsent = localStorage.getItem('cookie-consent');
-        
-        if (!cookieConsent) {
+        // Force show cookie banner on page load for testing - FIXED RECURSIVE EVENT ISSUE
+        setTimeout(function() {
+          cookieBanner.style.display = 'block';
+          cookieBanner.style.bottom = '0';
           cookieBanner.classList.add('show');
+          console.log('Cookie banner forced to show');
+        }, 1000);
+        
+        // Enhanced event listeners with direct style manipulation
+        acceptCookies.addEventListener('click', function(e) {
+          e.preventDefault();
+          try {
+            localStorage.setItem('cookie-consent', 'accepted');
+          } catch(e) {
+            console.log('Error saving to localStorage:', e);
+          }
+          cookieBanner.style.bottom = '-100%';
+          cookieBanner.classList.remove('show');
+          try {
+            initializeGoogleAnalytics();
+          } catch(e) {
+            console.log('Error initializing analytics:', e);
+          }
+        });
+        
+        declineCookies.addEventListener('click', function(e) {
+          e.preventDefault();
+          try {
+            localStorage.setItem('cookie-consent', 'declined');
+          } catch(e) {
+            console.log('Error saving to localStorage:', e);
+          }
+          cookieBanner.style.bottom = '-100%';
+          cookieBanner.classList.remove('show');
+        });
+        
+        // Make sure the manage cookies button works
+        if (manageCookies) {
+          console.log('Manage cookies button found:', manageCookies);
+          manageCookies.addEventListener('click', function(e) {
+            console.log('Manage cookies button clicked');
+            e.preventDefault();
+            try {
+              localStorage.removeItem('cookie-consent');
+            } catch(e) {
+              console.log('Error removing from localStorage:', e);
+            }
+            cookieBanner.style.display = 'block';
+            cookieBanner.style.bottom = '0';
+            cookieBanner.classList.add('show');
+          });
+        } else {
+          console.error('Manage cookies button not found!');
         }
-        
-        acceptCookies.addEventListener('click', () => {
-          localStorage.setItem('cookie-consent', 'accepted');
-          cookieBanner.classList.remove('show');
-          initializeGoogleAnalytics();
-        });
-        
-        declineCookies.addEventListener('click', () => {
-          localStorage.setItem('cookie-consent', 'declined');
-          cookieBanner.classList.remove('show');
-        });
-        
-        manageCookies.addEventListener('click', () => {
-          localStorage.removeItem('cookie-consent');
-          cookieBanner.classList.add('show');
-        });
 
         // ===== Animation on Scroll =====
         const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-slide-up, .animate-fade-in-delay-1, .animate-fade-in-delay-2, .animate-slide-up-delay-1, .animate-slide-up-delay-2, .animate-slide-up-delay-3');

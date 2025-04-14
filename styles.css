@@ -998,7 +998,65 @@ section {
   font-size: 1rem;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-normal);
-  z-index: 5;
+}
+
+/* ===== COOKIE CONSENT BANNER ===== */
+.cookie-banner {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: var(--white);
+  border-top: 3px solid var(--primary-color);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 9999; /* Explicitly high z-index to ensure visibility */
+  transition: bottom 0.5s ease-in-out;
+}
+
+.cookie-banner.show {
+  bottom: 0;
+}
+
+.cookie-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cookie-icon {
+  font-size: 2rem;
+  color: var(--tertiary-color);
+}
+
+.cookie-banner p {
+  flex: 1;
+  margin: 0;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .cookie-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .cookie-icon {
+    margin-bottom: 0.5rem;
+  }
+  
+  .cookie-buttons {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .place-card.reveal .place-info-toggle {
@@ -1216,42 +1274,6 @@ section {
   align-items: center;
   padding-top: var(--spacing-lg);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* ===== COOKIE BANNER ===== */
-.cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--white);
-  box-shadow: var(--shadow-lg);
-  z-index: var(--z-modal);
-  display: none;
-}
-
-.cookie-banner.show {
-  display: flex;
-}
-
-.cookie-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--spacing-lg);
-  gap: var(--spacing-lg);
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.cookie-icon {
-  font-size: 2rem;
-  color: var(--tertiary-color);
-}
-
-.cookie-buttons {
-  display: flex;
-  gap: var(--spacing-md);
 }
 
 /* ===== BACK TO TOP BUTTON ===== */
