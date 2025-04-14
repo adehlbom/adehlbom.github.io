@@ -66,7 +66,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <link rel="shortcut icon" href="/favicon.ico" />
 
     <!-- Preconnect & Load Fonts -->
@@ -75,8 +75,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Varela+Round&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="animations.css" />
+    <link rel="stylesheet" href="/styles.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       rel="stylesheet"
@@ -124,197 +123,150 @@
       <div class="container">
         <div class="logo">
           <a href="#hem">
-            <img src="glitterdalen_logo.png" alt="Glitterdalen Logo" />
+            <img src="/glitterdalen_logo.png" alt="Glitterdalen Logo" />
           </a>
         </div>
         <nav class="main-nav">
           <button class="menu-toggle" aria-label="Öppna menyn">
             <span class="hamburger"></span>
           </button>
-          <ul class="nav-list">
-            <li><a href="#hem" class="active"><i class="fas fa-house"></i> Hem</a></li>
-            <li><a href="#karaktarer"><i class="fas fa-hat-wizard"></i> Karaktärer</a></li>
-            <li><a href="#platser"><i class="fas fa-map-location-dot"></i> Platser</a></li>
-            <li><a href="#musik"><i class="fas fa-music"></i> Musik</a></li>
-            <li><a href="#signup" class="btn btn-nav"><i class="fas fa-envelope"></i> Följ oss</a></li>
+          <ul class="nav-list cartoon-nav">
+            <li><a href="#hem" class="active cartoon-btn"><i class="fas fa-house"></i> Hem</a></li>
+            <li><a href="#karaktarer" class="cartoon-btn"><i class="fas fa-hat-wizard"></i> Karaktärer</a></li>
+            <li><a href="#platser" class="cartoon-btn"><i class="fas fa-map-location-dot"></i> Platser</a></li>
+            <li><a href="#musik" class="cartoon-btn"><i class="fas fa-music"></i> Musik</a></li>
+            <li><a href="#signup" class="btn-nav cartoon-bubble-sm"><i class="fas fa-envelope"></i> Följ oss</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
     <main>
+      <!-- Background accents -->
+      <div class="bg-accent accent-1"></div>
+      <div class="bg-accent accent-2"></div>
+      <div class="bg-accent accent-3"></div>
+      
       <!-- Hero Section -->
       <section id="hem" class="hero-section">
+        <!-- Glitter Elements -->
+        <div class="cartoon-elements">
+          <div class="glitter-particle p1 animate-float"></div>
+          <div class="glitter-particle p2 animate-float-delay-1"></div>
+          <div class="glitter-particle p3 animate-float-delay-2"></div>
+          <div class="glitter-particle p4 animate-pulse"></div>
+          <div class="glitter-particle p5 animate-pulse-slow"></div>
+          <div class="glitter-particle p6 animate-float"></div>
+          <div class="glitter-particle p7 animate-float-delay-1"></div>
+          <div class="glitter-particle p8 animate-pulse"></div>
+          <div class="cartoon-star star-1 animate-pulse"></div>
+          <div class="cartoon-star star-2 animate-pulse-slow"></div>
+          <div class="cartoon-star star-3 animate-pulse"></div>
+        </div>
+        
         <div class="container">
           <div class="hero-content">
-            <h1 class="hero-title animate-fade-in">Välkommen till Glitterdalen!</h1>
+            <h1 class="hero-title animate-fade-in cartoon-text">Välkommen till Glitterdalen!</h1>
             <p class="hero-text animate-fade-in-delay-1">
               En magisk värld fylld med äventyr, musik och fantasi — skapad för barn i alla åldrar (och nyfikna vuxna!).
             </p>
             <div class="hero-cta animate-fade-in-delay-2">
-              <a href="#karaktarer" class="btn btn-primary btn-lg">Möt våra karaktärer</a>
-              <a href="#musik" class="btn btn-outline btn-lg">Upptäck vår musik</a>
+              <a href="#karaktarer" class="btn btn-primary btn-lg cartoon-bubble">Möt våra karaktärer</a>
+              <a href="#musik" class="btn btn-outline btn-lg cartoon-outline">Upptäck vår musik</a>
             </div>
           </div>
           <div class="hero-image animate-float">
-            <img src="public/lumi.png" alt="Lumi från Glitterdalen" class="hero-character" />
+            <div class="character-spotlight">
+              <img src="/public/riza_headshot.png" alt="Räven Riza" class="hero-character" />
+            </div>
           </div>
         </div>
         <div class="hero-wave">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,165.3C672,171,768,213,864,218.7C960,224,1056,192,1152,176C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
         </div>
-      </section>
 
-      <!-- Characters Introduction -->
-      <section id="intro" class="intro-section">
-        <div class="container">
-          <div class="intro-content">
-            <h2 class="section-title">Träffa karaktärerna i Glitterdalen</h2>
-            <p class="section-text">
-              Vår magiska värld är full av spännande karaktärer som tillsammans skapar äventyr, musik och berättelser. Möt våra huvudkaraktärer:
-            </p>
-            <div class="character-preview">
-              <div class="preview-item animate-slide-up">
-                <div class="preview-icon">
-                  <img src="public/lumi.png" alt="Lumi" class="preview-img" />
-                </div>
-                <h3>Lumi</h3>
-                <p>Den glittrande kaninen</p>
-              </div>
-              <div class="preview-item animate-slide-up-delay-1">
-                <div class="preview-icon">
-                  <img src="public/zippy.png" alt="Zippy" class="preview-img" />
-                </div>
-                <h3>Zippy</h3>
-                <p>Den uppfinningsrika flugan</p>
-              </div>
-              <div class="preview-item animate-slide-up-delay-2">
-                <div class="preview-icon">
-                  <img src="public/riza.png" alt="Riza" class="preview-img" />
-                </div>
-                <h3>Riza</h3>
-                <p>Den äventyrslystna räven</p>
-              </div>
-              <div class="preview-item animate-slide-up-delay-3">
-                <div class="preview-icon">
-                  <img src="public/illian.png" alt="Illian" class="preview-img" />
-                </div>
-                <h3>Illian</h3>
-                <p>Den envisa illern</p>
-              </div>
-            </div>
-            <div class="intro-cta">
-              <a href="#karaktarer" class="btn btn-secondary">Läs mer om karaktärerna</a>
-            </div>
-          </div>
-        </div>
       </section>
 
       <!-- Characters Section -->
       <section id="karaktarer" class="karaktarer-section">
         <div class="container">
-          <h2 class="section-title">Möt karaktärerna</h2>
-          <p class="section-text">Klicka på korten för att lära känna dem bättre</p>
+          <h2 class="section-title">Träffa karaktärerna i Glitterdalen</h2>
+          <p class="section-text">
+            Vår magiska värld är full av spännande karaktärer som tillsammans skapar äventyr, musik och berättelser.
+          </p>
           
+          <!-- Character Detailed Cards -->
           <div class="karaktarer-grid">
             <!-- Lumi Card -->
-            <div class="character-card" data-character="lumi">
+            <div id="lumi-card" class="character-card horizontal-card" data-character="lumi">
               <div class="card-front">
                 <div class="card-image">
-                  <img src="public/lumi.png" alt="Lumi - Den glittrande kaninen" />
+                  <img src="/public/lumi.png" alt="Lumi - Den glittrande kaninen" />
                 </div>
                 <div class="card-content">
                   <h3>Lumi</h3>
-                  <p>Den glittrande kaninen</p>
-                  <span class="card-more">Läs mer <i class="fas fa-arrow-right"></i></span>
-                </div>
-              </div>
-              <div class="card-back">
-                <div class="card-back-content">
-                  <h3>Lumi</h3>
+                  <p class="character-type">Den glittrande kaninen</p>
                   <p>
                     När Lumi skrattar sprider hon ett magiskt glitter som får hela
                     Glitterdalen att skimra. Hon bor på Vindklippan och håller
                     dalen levande med sin glittrande energi!
                   </p>
-                  <span class="card-back-btn">Tillbaka</span>
                 </div>
               </div>
             </div>
 
             <!-- Riza Card -->
-            <div class="character-card" data-character="riza">
+            <div id="riza-card" class="character-card horizontal-card" data-character="riza">
               <div class="card-front">
                 <div class="card-image">
-                  <img src="public/riza.png" alt="Riza - Den äventyrslystna räven" />
+                  <img src="/public/riza.png" alt="Riza - Den äventyrslystna räven" />
                 </div>
                 <div class="card-content">
                   <h3>Riza</h3>
-                  <p>Den äventyrslystna räven</p>
-                  <span class="card-more">Läs mer <i class="fas fa-arrow-right"></i></span>
-                </div>
-              </div>
-              <div class="card-back">
-                <div class="card-back-content">
-                  <h3>Riza</h3>
+                  <p class="character-type">Den äventyrslystna räven</p>
                   <p>
                     Hon älskar att gå på skattjakt och bor i Regnbågsgrottan
                     tillsammans med alla skatter hon samlat. Riza tvekar aldrig
                     när det vankas nya äventyr och mystiska kartor.
                   </p>
-                  <span class="card-back-btn">Tillbaka</span>
                 </div>
               </div>
             </div>
 
             <!-- Zippy Card -->
-            <div class="character-card" data-character="zippy">
+            <div id="zippy-card" class="character-card horizontal-card" data-character="zippy">
               <div class="card-front">
                 <div class="card-image">
-                  <img src="public/zippy.png" alt="Zippy - Den uppfinningsrika flugan" />
+                  <img src="/public/zippy.png" alt="Zippy - Den uppfinningsrika flugan" />
                 </div>
                 <div class="card-content">
                   <h3>Zippy</h3>
-                  <p>Den uppfinningsrika flugan</p>
-                  <span class="card-more">Läs mer <i class="fas fa-arrow-right"></i></span>
-                </div>
-              </div>
-              <div class="card-back">
-                <div class="card-back-content">
-                  <h3>Zippy</h3>
+                  <p class="character-type">Den uppfinningsrika flugan</p>
                   <p>
                     Eftersom han inte kan flyga på egen hand, bygger han
                     rymdraketer och drömmer om att bli astronaut som Christer
                     Fuglesang. Han bor vid kanten av Molnfloden och hoppas en dag
                     lyfta mot stjärnorna!
                   </p>
-                  <span class="card-back-btn">Tillbaka</span>
                 </div>
               </div>
             </div>
 
             <!-- Illian Card -->
-            <div class="character-card" data-character="illian">
+            <div id="illian-card" class="character-card horizontal-card" data-character="illian">
               <div class="card-front">
                 <div class="card-image">
-                  <img src="public/illian.png" alt="Illian - Den envisa illern" />
+                  <img src="/public/illian.png" alt="Illian - Den envisa illern" />
                 </div>
                 <div class="card-content">
                   <h3>Illian</h3>
-                  <p>Den envisa illern</p>
-                  <span class="card-more">Läs mer <i class="fas fa-arrow-right"></i></span>
-                </div>
-              </div>
-              <div class="card-back">
-                <div class="card-back-content">
-                  <h3>Illian</h3>
+                  <p class="character-type">Den envisa illern</p>
                   <p>
                     Han är lite missförstådd men trivs bra för sig själv i den
                     tysta skogen. När andra djur kommer dit och väsnas eller
                     sprider glitter blir han sur, men kanske är han inte så avig
                     innerst inne?
                   </p>
-                  <span class="card-back-btn">Tillbaka</span>
                 </div>
               </div>
             </div>
@@ -328,16 +280,16 @@
           <h2 class="section-title">Magiska platser i Glitterdalen</h2>
           <p class="section-text">Utforska de spännande platserna i Glitterdalen</p>
           
-          <div class="platser-slider">
-            <!-- Flugsvampsskogen -->
-            <div class="plats-card">
-              <div class="plats-image">
+          <div class="platser-grid">
+            <!-- Flugsvampsskogen Card -->
+            <div class="place-card">
+              <div class="card-image">
                 <img src="/public/flugsvampsskogen.png" alt="Flugsvampsskogen" />
               </div>
-              <div class="plats-content">
+              <div class="card-content">
                 <h3>Flugsvampsskogen</h3>
-                <p class="plats-description">Den förtrollade skogen</p>
-                <p class="plats-text">
+                <p class="place-type">Den förtrollade skogen</p>
+                <p class="place-text">
                   En mystisk skog med skimrande svampar som lyser i olika
                   färger. Här slingrar sig stigar till magiska gömställen och
                   spännande äventyr, men skogen kräver respekt och försiktighet.
@@ -345,15 +297,15 @@
               </div>
             </div>
 
-            <!-- Regnbågsgrottan -->
-            <div class="plats-card">
-              <div class="plats-image">
+            <!-- Regnbågsgrottan Card -->
+            <div class="place-card">
+              <div class="card-image">
                 <img src="/public/regnbagsgrottan.png" alt="Regnbågsgrottan" />
               </div>
-              <div class="plats-content">
+              <div class="card-content">
                 <h3>Regnbågsgrottan</h3>
-                <p class="plats-description">Grottan nära molnfloden</p>
-                <p class="plats-text">
+                <p class="place-type">Grottan nära molnfloden</p>
+                <p class="place-text">
                   Rizas hemliga grotta fylld med hennes fantasirika skatter. Här
                   förvaras allt från skimrande stenar till andra skatter man kan
                   hitta i glitterdalen som en gammal stövel.
@@ -361,35 +313,21 @@
               </div>
             </div>
 
-            <!-- Vindklippan -->
-            <div class="plats-card">
-              <div class="plats-image">
+            <!-- Vindklippan Card -->
+            <div class="place-card">
+              <div class="card-image">
                 <img src="/public/vindklippan.png" alt="Vindklippan" />
               </div>
-              <div class="plats-content">
+              <div class="card-content">
                 <h3>Vindklippan</h3>
-                <p class="plats-description">Den majestätiska klippan</p>
-                <p class="plats-text">
+                <p class="place-type">Den majestätiska klippan</p>
+                <p class="place-text">
                   En vidsträckt klippavsats med utsikt över hela Glitterdalen.
                   Här bor Lumi, och vinden sprider hennes stjärnstoft över hela
                   glitterdalen.
                 </p>
               </div>
             </div>
-          </div>
-          
-          <div class="slider-controls">
-            <button class="slider-btn prev-btn" aria-label="Föregående plats">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <div class="slider-dots">
-              <span class="dot active" data-index="0"></span>
-              <span class="dot" data-index="1"></span>
-              <span class="dot" data-index="2"></span>
-            </div>
-            <button class="slider-btn next-btn" aria-label="Nästa plats">
-              <i class="fas fa-chevron-right"></i>
-            </button>
           </div>
         </div>
       </section>
@@ -429,7 +367,7 @@
         <div class="container">
           <div class="signup-content">
             <div class="signup-image animate-float">
-              <img src="glitterdalen_logo.png" alt="Glitterdalen nyhetsbrev" />
+              <img src="/public/zippy_newsletter.png" alt="Glitterdalen nyhetsbrev" />
             </div>
             <div class="signup-form-container">
               <h2 class="section-title">Häng med på äventyret!</h2>
@@ -441,7 +379,7 @@
                 id="signup-form"
                 action="https://assets.mailerlite.com/jsonp/1255993/forms/142396205183272375/subscribe"
                 method="post"
-                class="signup-form"
+                class="signup-form cartoon-form"
               >
                 <div class="form-group">
                   <label for="email" class="visually-hidden">E-postadress</label>
@@ -453,11 +391,11 @@
                       name="fields[email]"
                       placeholder="Din e-postadress"
                       required
-                      class="form-input"
+                      class="form-input cartoon-input"
                     />
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-fullwidth">
+                <button type="submit" class="btn btn-primary btn-fullwidth cartoon-bubble animate-pulse-slow">
                   <span>Prenumerera nu</span>
                   <i class="fas fa-paper-plane"></i>
                 </button>
@@ -474,13 +412,13 @@
         </div>
         
         <div id="success" class="success-message hidden">
-          <div class="success-content">
-            <div class="success-icon">
+          <div class="success-content cartoon-bubble">
+            <div class="success-icon animate-tada">
               <i class="fas fa-check-circle"></i>
             </div>
             <h3>Tack för din anmälan!</h3>
             <p>Din e-postadress är nu registrerad för nyheter från Glitterdalen.</p>
-            <button class="btn btn-secondary close-success">Stäng</button>
+            <button class="btn btn-secondary close-success cartoon-bubble">Stäng</button>
           </div>
         </div>
       </section>
@@ -492,15 +430,15 @@
           <p class="section-text">Häng med oss för mer Glitterdalen-magi!</p>
           
           <div class="social-links">
-            <a href="https://www.instagram.com/glitterdalen/" target="_blank" class="social-link instagram">
+            <a href="https://www.instagram.com/glitterdalen/" target="_blank" class="social-link instagram cartoon-card">
               <i class="fab fa-instagram"></i>
               <span>Instagram</span>
             </a>
-            <a href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd?si=d26c7821aa654469" target="_blank" class="social-link spotify">
+            <a href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd?si=d26c7821aa654469" target="_blank" class="social-link spotify cartoon-card">
               <i class="fab fa-spotify"></i>
               <span>Spotify</span>
             </a>
-            <a href="https://www.youtube.com/@Glitterdalen" target="_blank" class="social-link youtube">
+            <a href="https://www.youtube.com/@Glitterdalen" target="_blank" class="social-link youtube cartoon-card">
               <i class="fab fa-youtube"></i>
               <span>YouTube</span>
             </a>
@@ -513,7 +451,7 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-logo">
-            <img src="glitterdalen_logo.png" alt="Glitterdalen" width="120" />
+            <img src="/glitterdalen_logo.png" alt="Glitterdalen" width="120" />
           </div>
           <div class="footer-links">
             <a href="#hem">Hem</a>
@@ -528,13 +466,13 @@
             </a>
           </div>
           <div class="footer-social">
-            <a href="https://www.instagram.com/glitterdalen/" target="_blank" aria-label="Instagram">
+            <a href="https://www.instagram.com/glitterdalen/" target="_blank" aria-label="Instagram" class="animate-float">
               <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd" target="_blank" aria-label="Spotify">
+            <a href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd" target="_blank" aria-label="Spotify" class="animate-float-delay-1">
               <i class="fab fa-spotify"></i>
             </a>
-            <a href="https://www.youtube.com/@Glitterdalen" target="_blank" aria-label="YouTube">
+            <a href="https://www.youtube.com/@Glitterdalen" target="_blank" aria-label="YouTube" class="animate-float-delay-2">
               <i class="fab fa-youtube"></i>
             </a>
           </div>
@@ -547,7 +485,7 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top" aria-label="Tillbaka till toppen">
+    <button id="back-to-top" class="back-to-top cartoon-bubble" aria-label="Tillbaka till toppen">
       <i class="fas fa-chevron-up"></i>
     </button>
 
@@ -643,13 +581,6 @@
           });
         });
 
-        // ===== Character Cards Flip =====
-        document.querySelectorAll('.character-card').forEach(card => {
-          card.addEventListener('click', function() {
-            this.classList.toggle('flipped');
-          });
-        });
-        
         // ===== Places Slider =====
         const slider = document.querySelector('.platser-slider');
         const slides = document.querySelectorAll('.plats-card');
