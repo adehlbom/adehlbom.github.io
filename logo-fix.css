@@ -1,0 +1,19 @@
+/* Mobile logo positioning fix */
+@media (max-width: 768px) {
+  .site-header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .site-header .logo {
+    position: relative;
+    top: -20px;
+    width: auto; /* Preserve original size */
+    max-width: none; /* Prevent size constraints */
+  }
+  
+  .site-header .main-nav {
+    width: 100%;
+  }
+}

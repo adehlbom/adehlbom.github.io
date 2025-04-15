@@ -1,0 +1,65 @@
+/* Improved mobile navigation fix */
+@media (max-width: 768px) {
+  /* Center the logo */
+  .site-header .logo {
+    margin: 0 auto;
+    max-width: none;
+  }
+  
+  /* Make nav items always visible */
+  .nav-list {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--white);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    border-top: 2px solid var(--primary-color);
+    transform: none !important;
+    opacity: 1 !important;
+    z-index: 1000;
+  }
+  
+  /* Style the bottom nav items */
+  .nav-list li {
+    margin: 0;
+    width: auto;
+  }
+  
+  .nav-list a {
+    padding: 8px 5px;
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .nav-list a i {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+  }
+  
+  /* Hide the hamburger menu since we always show nav */
+  .menu-toggle {
+    display: none;
+  }
+  
+  /* Add padding to bottom of body */
+  body {
+    padding-bottom: 65px;
+  }
+  
+  /* Adjust other elements to accommodate bottom nav */
+  #back-to-top {
+    bottom: 75px;
+  }
+  
+  .cookie-banner {
+    bottom: 65px;
+  }
+}

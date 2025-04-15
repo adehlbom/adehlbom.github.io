@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="sv-SE">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
+    <!-- Google tag (gtag.js) -    <!-- CSS -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/safari-bottom-nav.css" />
+    <link rel="stylesheet" href="/cookie-fixes.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    /><script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-7JHKJS027S"
     ></script>
@@ -76,6 +82,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/mobile-logo-center.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       rel="stylesheet"
@@ -84,6 +91,8 @@
     <!-- JavaScript -->
     <script src="/navigation.js" defer></script>
     <script src="/card-interactions.js" defer></script>
+    <script src="/cookie-consent.js" defer></script>
+    <script src="/form-handling.js" defer></script>
     
     <!-- Meta Pixel Code -->
     <script>
@@ -478,17 +487,6 @@
               <i class="fas fa-envelope"></i> info@glitterdalen.se
             </a>
           </div>
-          <div class="footer-social">
-            <a href="https://www.instagram.com/glitterdalen/" target="_blank" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd" target="_blank" aria-label="Spotify">
-              <i class="fab fa-spotify"></i>
-            </a>
-            <a href="https://www.youtube.com/@Glitterdalen" target="_blank" aria-label="YouTube">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </div>
         </div>
         <div class="footer-bottom">
           <p>© 2025 Glitterdalen. Alla rättigheter förbehållna.</p>
@@ -686,16 +684,27 @@
         const declineCookies = document.getElementById('decline-cookies');
         const manageCookies = document.getElementById('manage-cookies');
         
-        // Always force show cookie banner on page load for testing
-        document.addEventListener('DOMContentLoaded', function() {
-          // Small delay to ensure everything is loaded
-          setTimeout(function() {
+        // Check if user has already made a cookie choice
+        // Small delay to ensure everything is loaded
+        setTimeout(function() {
+          const cookieConsent = localStorage.getItem('cookie-consent');
+          // Only show the banner if no choice has been made yet
+          if (!cookieConsent) {
             cookieBanner.style.display = 'block';
             cookieBanner.style.bottom = '0';
             cookieBanner.classList.add('show');
-            console.log('Cookie banner forced to show');
-          }, 1000);
-        });
+            console.log('Cookie banner shown - no previous choice found');
+          } else {
+            console.log('Cookie consent already set:', cookieConsent);
+            if (cookieConsent === 'accepted') {
+              try {
+                initializeGoogleAnalytics();
+              } catch(e) {
+                console.log('Error initializing analytics:', e);
+              }
+            }
+          }
+        }, 1000);
         
         // Enhanced event listeners with direct style manipulation
         acceptCookies.addEventListener('click', function(e) {

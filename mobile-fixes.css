@@ -1,0 +1,70 @@
+/* Mobile navigation fixes */
+@media (max-width: 768px) {
+  /* Header and logo fixes */
+  .site-header {
+    padding: 0.75rem 0;
+    align-items: center;
+    height: auto;
+    min-height: 60px;
+  }
+  
+  .logo {
+    max-width: 60px; /* Further reduce logo size on mobile */
+    display: flex;
+    align-items: center;
+    margin: 0 auto; /* Center the logo */
+    position: relative;
+    top: -20px; /* Move logo up by 20px */
+  }
+  
+  .logo img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50px;
+    object-fit: contain;
+  }
+  
+  /* Improved mobile menu positioning */
+  .menu-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .nav-list {
+    top: 100%; /* Position below the header exactly */
+  }
+  
+  /* Make sure the menu dropdown doesn't push content down */
+  .main-nav {
+    position: relative;
+  }
+  
+  /* Better spacing for mobile menu items */
+  .nav-list.active {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .nav-list li {
+    margin: 0.5rem 0;
+  }
+  
+  /* Character and places cards on mobile */
+  .platser-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Footer adjustments */
+  .footer-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

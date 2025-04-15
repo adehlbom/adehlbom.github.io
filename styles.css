@@ -1055,12 +1055,19 @@ section {
   border-top: 3px solid var(--primary-color);
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
   padding: 1rem;
-  z-index: 9999; /* Explicitly high z-index to ensure visibility */
+  z-index: 2147483647; /* Maximum z-index value to ensure it's above everything */
   transition: bottom 0.5s ease-in-out;
+  display: none; /* Hidden by default */
+  transform: translateZ(0); /* Force hardware acceleration */
+  will-change: transform; /* Hint to the browser about the element changing */
+  touch-action: manipulation; /* Optimize for touch */
+  pointer-events: auto !important; /* Ensure pointer events work */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1); /* Give visual feedback on tap */
 }
 
 .cookie-banner.show {
-  bottom: 0;
+  bottom: 0 !important;
+  display: block !important;
 }
 
 .cookie-content {
@@ -1099,6 +1106,28 @@ section {
   
   .cookie-buttons {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .cookie-buttons button {
+    flex: 1;
+    padding: 12px 5px; /* Taller buttons are easier to tap */
+    min-height: 44px; /* Apple's recommended minimum tap target size */
+    font-size: 16px; /* Larger text */
+    border-radius: 8px;
+    cursor: pointer;
+    -webkit-appearance: none; /* Fix for iOS buttons */
+    -webkit-touch-callout: none; /* Prevent iOS callout */
+    user-select: none; /* Prevent text selection */
+  }
+  
+  /* Position cookie banner above the mobile bottom navigation */
+  .cookie-banner.show {
+    bottom: 80px !important;
+  }
     justify-content: center;
   }
 }
@@ -1628,4 +1657,143 @@ section {
 .character-card:hover img,
 .place-card:hover img {
   transform: scale(1.05);
+}
+
+/* ===== SAFARI-STYLE BOTTOM NAVIGATION ===== */
+@media (max-width: 768px) {
+  /* Add space at bottom of page for navigation */
+  body {
+    padding-bottom: 70px !important;
+  }
+  
+  /* Center logo in header */
+  .site-header .container {
+    justify-content: center !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  .site-header .logo {
+    margin: 0 auto;
+    max-width: none;
+    position: relative;
+    top: -20px;
+    width: auto; /* Preserve original size */
+    max-width: none; /* Prevent size constraints */
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  
+  /* Preserve original logo size */
+  .site-header .logo img {
+    max-height: 110px;
+    width: auto;
+  }
+  
+  .site-header .main-nav {
+    width: 100%;
+  }
+  
+  /* COMPLETELY remove hamburger menu */
+  .menu-toggle, 
+  button.menu-toggle {
+    display: none !important;
+  }
+  
+  /* Safari-style fixed bottom navigation */
+  .main-nav {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1) !important;
+    z-index: 9999 !important;
+    padding: 0 !important;
+  }
+  
+  /* Always show navigation list */
+  .nav-list,
+  .nav-list.active,
+  ul.nav-list {
+    display: flex !important;
+    position: static !important;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    width: 100% !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 8px 0 !important;
+    border-top: 1px solid rgba(0,0,0,0.1) !important;
+  }
+  
+  /* Icon-based navigation items */
+  .nav-list li {
+    width: 20% !important;
+    margin: 0 !important;
+    text-align: center !important;
+    list-style: none !important;
+  }
+  
+  .nav-list a,
+  .nav-list a.active,
+  .nav-list a:hover {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 5px 0 !important;
+    background: transparent !important;
+    font-size: 11px !important;
+    color: var(--text-color) !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  
+  .nav-list a.active {
+    color: var(--primary-color) !important;
+    font-weight: bold !important;
+  }
+  
+  /* Make icons larger than text */
+  .nav-list a i {
+    font-size: 22px !important;
+    margin-bottom: 4px !important;
+    display: block !important;
+    color: var(--primary-color) !important;
+    opacity: 0.8 !important;
+    transition: transform 0.2s ease, opacity 0.2s ease !important;
+  }
+  
+  .nav-list a:active i,
+  .nav-list a.active i {
+    opacity: 1 !important;
+    transform: translateY(-2px) !important;
+  }
+  
+  /* Fix special styled nav button */
+  .nav-list a.btn-nav,
+  .nav-list a.cartoon-bubble-sm {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: var(--text-color) !important;
+  }
+  
+  /* Adjust sticky elements to respect bottom bar */
+  #back-to-top {
+    bottom: 80px !important;
+  }
 }
