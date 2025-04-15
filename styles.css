@@ -1299,14 +1299,15 @@ section {
 .site-footer {
   background-color: var(--text-color);
   color: var(--white);
-  padding: var(--spacing-xl) 0 var(--spacing-lg);
+  padding: var(--spacing-md) 0; /* Reduced padding */
 }
 
 .footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--spacing-xl);
-  margin-bottom: var(--spacing-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-sm); /* Reduced margin */
 }
 
 .footer-logo {
@@ -1314,23 +1315,16 @@ section {
   align-items: center;
 }
 
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
+.footer-logo img {
+  width: 80px; /* Smaller logo */
+  height: auto;
 }
 
-.footer-links a {
-  color: var(--white);
-}
-
-.footer-links a:hover {
-  color: var(--primary-light);
-}
+/* Removed footer-links styling as we're removing the navigation links */
 
 .footer-contact {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: var(--spacing-md);
 }
 
@@ -1345,35 +1339,37 @@ section {
   color: var(--primary-light);
 }
 
-.footer-social {
+.footer-bottom {
   display: flex;
-  gap: var(--spacing-md);
+  justify-content: center; /* Center content */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: var(--spacing-md); /* Space between items */
+  align-items: center;
+  padding-top: var(--spacing-sm); /* Reduced padding */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center; /* Center text */
+  font-size: 0.9rem; /* Smaller text */
 }
 
-.footer-social a {
+.cookie-settings-btn {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
   background-color: rgba(255, 255, 255, 0.1);
-  color: var(--white);
-  border-radius: 50%;
   transition: all var(--transition-normal);
 }
 
-.footer-social a:hover {
+.cookie-settings-btn:hover {
   background-color: var(--primary-color);
-  color: var(--white);
   transform: translateY(-3px);
-}
-
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: var(--spacing-lg);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* ===== BACK TO TOP BUTTON ===== */
