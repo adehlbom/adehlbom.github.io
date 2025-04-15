@@ -239,7 +239,7 @@ p {
 }
 
 .logo img {
-  max-height: 240px; /* Reverted to a more reasonable size */
+  max-height: 120px; /* Reduced size for better layout */
   width: auto;
   display: block;
 }
@@ -1128,7 +1128,34 @@ section {
   .cookie-banner.show {
     bottom: 80px !important;
   }
+  
+  .cookie-icon {
+    margin-bottom: 0.5rem;
+  }
+  
+  .cookie-buttons {
+    width: 100%;
+    display: flex;
     justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .cookie-buttons button {
+    flex: 1;
+    padding: 12px 5px; /* Taller buttons are easier to tap */
+    min-height: 44px; /* Apple's recommended minimum tap target size */
+    font-size: 16px; /* Larger text */
+    border-radius: 8px;
+    cursor: pointer;
+    -webkit-appearance: none; /* Fix for iOS buttons */
+    -webkit-touch-callout: none; /* Prevent iOS callout */
+    user-select: none; /* Prevent text selection */
+  }
+  
+  /* Position cookie banner above the mobile bottom navigation */
+  .cookie-banner.show {
+    bottom: 80px !important;
   }
 }
 
@@ -1435,73 +1462,13 @@ section {
     margin-bottom: var(--spacing-md);
   }
   
-  .menu-toggle {
-    display: block;
-    position: absolute;
-    top: var(--spacing-md);
-    right: var(--spacing-lg);
-    width: 30px;
-    height: 24px;
-  }
-  
-  .hamburger, 
-  .hamburger::before,
-  .hamburger::after {
-    content: '';
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background-color: var(--text-color);
-    transition: all var(--transition-normal);
-  }
-  
-  .hamburger {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  .hamburger::before {
-    top: -8px;
-  }
-  
-  .hamburger::after {
-    bottom: -8px;
-  }
-  
-  .menu-toggle.active .hamburger {
-    background-color: transparent;
-  }
-  
-  .menu-toggle.active .hamburger::before {
-    transform: rotate(45deg);
-    top: 0;
-  }
-  
-  .menu-toggle.active .hamburger::after {
-    transform: rotate(-45deg);
-    bottom: 0;
-  }
-  
   .nav-list {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
+    display: flex;
     flex-direction: column;
+    width: 100%;
     background-color: var(--white);
-    box-shadow: var(--shadow-md);
     padding: var(--spacing-md);
     z-index: var(--z-dropdown);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all var(--transition-normal);
-  }
-  
-  .nav-list.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
   }
   
   /* Layout */
@@ -1667,40 +1634,44 @@ section {
   }
   
   /* Center logo in header */
+  .site-header {
+    height: auto !important;
+    padding: 15px 0 !important;
+  }
+  
   .site-header .container {
     justify-content: center !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    position: relative !important;
+    height: auto !important;
   }
   
   .site-header .logo {
-    margin: 0 auto;
-    max-width: none;
-    position: relative;
-    top: -20px;
-    width: auto; /* Preserve original size */
-    max-width: none; /* Prevent size constraints */
-    left: 50%;
-    transform: translateX(-50%) translateY(-20px);
+    margin: 0 auto !important;
+    position: relative !important;
+    width: auto !important;
+    max-width: none !important;
+    transform: none !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 10 !important;
   }
   
   /* Preserve original logo size */
   .site-header .logo img {
-    max-height: 110px;
-    width: auto;
+    max-height: 85px !important;
+    width: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
   }
   
   .site-header .main-nav {
     width: 100%;
   }
   
-  /* COMPLETELY remove hamburger menu */
-  .menu-toggle, 
-  button.menu-toggle {
-    display: none !important;
-  }
+  /* No hamburger menu - we've removed it completely */
   
   /* Safari-style fixed bottom navigation */
   .main-nav {
