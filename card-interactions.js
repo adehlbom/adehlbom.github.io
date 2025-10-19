@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
   placeCards.forEach(card => {
     const cardContent = card.querySelector('.card-content');
     
-    if (cardContent) {
+    if (cardContent && !card.querySelector('.place-title')) {
       // Create the title label that's always visible
       const placeName = cardContent.querySelector('h3').textContent;
       const placeType = cardContent.querySelector('.place-type').textContent;
@@ -76,21 +76,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Create the info toggle button
-    const infoToggle = document.createElement('button');
-    infoToggle.className = 'place-info-toggle';
-    infoToggle.setAttribute('aria-label', 'Visa mer information');
-    infoToggle.innerHTML = '<i class="fas fa-info"></i>';
-    card.appendChild(infoToggle);
+    let infoToggle = card.querySelector('.place-info-toggle');
+    if (!infoToggle) {
+      infoToggle = document.createElement('button');
+      infoToggle.type = 'button';
+      infoToggle.className = 'place-info-toggle';
+      infoToggle.setAttribute('aria-label', 'Visa mer information');
+      infoToggle.innerHTML = '<i class="fas fa-info"></i>';
+      card.appendChild(infoToggle);
+    }
+    
+    if (!card.hasAttribute('tabindex')) {
+      card.setAttribute('tabindex', '0');
+    }
+    if (!card.hasAttribute('role')) {
+      card.setAttribute('role', 'button');
+    }
+    card.setAttribute('aria-expanded', 'false');
+    
+    const toggleCard = () => {
+      const isOpen = card.classList.toggle('reveal');
+      card.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    };
     
     // Toggle content reveal on button click
     infoToggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      card.classList.toggle('reveal');
+      toggleCard();
     });
     
     // Also toggle on card click
     card.addEventListener('click', () => {
-      card.classList.toggle('reveal');
+      toggleCard();
+    });
+    
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleCard();
+      }
     });
   });
 });

@@ -3,80 +3,98 @@ document.addEventListener("DOMContentLoaded", function() {
   const cookieBanner = document.getElementById('cookie-banner');
   const acceptCookies = document.getElementById('accept-cookies');
   const declineCookies = document.getElementById('decline-cookies');
-  const manageCookies = document.getElementById('manage-cookies');
+  const manageCookiesFooter = document.getElementById('manage-cookies');
+  const manageCookiesBanner = document.getElementById('manage-cookies-banner');
   
-  // Check if user has already made a cookie choice
-  // Small delay to ensure everything is loaded
-  setTimeout(function() {
-    const cookieConsent = localStorage.getItem('cookie-consent');
-    // Only show the banner if no choice has been made yet
-    if (!cookieConsent) {
-      cookieBanner.style.display = 'block';
-      cookieBanner.style.bottom = '0';
-      cookieBanner.classList.add('show');
-      console.log('Cookie banner shown - no previous choice found');
-    } else {
-      console.log('Cookie consent already set:', cookieConsent);
-      if (cookieConsent === 'accepted') {
-        try {
-          initializeGoogleAnalytics();
-          if (typeof initializeFacebookPixel === 'function') {
-            initializeFacebookPixel();
-          }
-        } catch(e) {
-          console.log('Error initializing analytics:', e);
-        }
-      }
-    }
-  }, 1000);
+  if (!cookieBanner || !acceptCookies || !declineCookies) {
+    return;
+  }
   
-  // Enhanced event listeners with direct style manipulation
-  acceptCookies.addEventListener('click', function(e) {
-    e.preventDefault();
-    try {
-      localStorage.setItem('cookie-consent', 'accepted');
-    } catch(e) {
-      console.log('Error saving to localStorage:', e);
-    }
+  const hideBanner = () => {
     cookieBanner.style.bottom = '-100%';
     cookieBanner.classList.remove('show');
-    try {
-      initializeGoogleAnalytics();
-      if (typeof initializeFacebookPixel === 'function') {
-        initializeFacebookPixel();
-      }
-    } catch(e) {
-      console.log('Error initializing analytics:', e);
-    }
-  });
+    setTimeout(() => {
+      cookieBanner.style.display = 'none';
+    }, 400);
+  };
   
-  declineCookies.addEventListener('click', function(e) {
-    e.preventDefault();
-    try {
-      localStorage.setItem('cookie-consent', 'declined');
-    } catch(e) {
-      console.log('Error saving to localStorage:', e);
-    }
-    cookieBanner.style.bottom = '-100%';
-    cookieBanner.classList.remove('show');
-  });
-  
-  // Make sure the manage cookies button works
-  if (manageCookies) {
-    console.log('Manage cookies button found:', manageCookies);
-    manageCookies.addEventListener('click', function(e) {
-      console.log('Manage cookies button clicked');
-      e.preventDefault();
-      try {
-        localStorage.removeItem('cookie-consent');
-      } catch(e) {
-        console.log('Error removing from localStorage:', e);
-      }
-      cookieBanner.style.display = 'block';
+  const showBanner = () => {
+    cookieBanner.style.display = 'block';
+    requestAnimationFrame(() => {
       cookieBanner.style.bottom = '0';
       cookieBanner.classList.add('show');
     });
-  } else {
-    console.error('Manage cookies button not found!');
-  }
+  };
+  
+  const enableAnalytics = () => {
+    try {
+      if (typeof initializeGoogleAnalytics === 'function') {
+        initializeGoogleAnalytics();
+      }
+      if (typeof initializeFacebookPixel === 'function') {
+        initializeFacebookPixel();
+      }
+    } catch (error) {
+      console.log('Error initializing analytics:', error);
+    }
+  };
+  
+  const getConsent = () => {
+    try {
+      return localStorage.getItem('cookie-consent');
+    } catch (error) {
+      console.log('Error reading from localStorage:', error);
+      return null;
+    }
+  };
+  
+  const setConsent = (value) => {
+    try {
+      localStorage.setItem('cookie-consent', value);
+    } catch (error) {
+      console.log('Error writing to localStorage:', error);
+    }
+  };
+  
+  const clearConsent = () => {
+    try {
+      localStorage.removeItem('cookie-consent');
+    } catch (error) {
+      console.log('Error removing from localStorage:', error);
+    }
+  };
+  
+  setTimeout(() => {
+    const consent = getConsent();
+    if (!consent) {
+      showBanner();
+    } else if (consent === 'accepted') {
+      enableAnalytics();
+    }
+  }, 800);
+  
+  acceptCookies.addEventListener('click', (event) => {
+    event.preventDefault();
+    setConsent('accepted');
+    enableAnalytics();
+    hideBanner();
+  });
+  
+  declineCookies.addEventListener('click', (event) => {
+    event.preventDefault();
+    setConsent('declined');
+    hideBanner();
+  });
+  
+  const attachManageHandler = (element) => {
+    if (!element) return;
+    element.addEventListener('click', (event) => {
+      event.preventDefault();
+      clearConsent();
+      showBanner();
+    });
+  };
+  
+  attachManageHandler(manageCookiesFooter);
+  attachManageHandler(manageCookiesBanner);
 });

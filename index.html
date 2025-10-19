@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="sv-SE">
   <head>
-    <!-- Google tag (gtag.js) -    <!-- CSS -->
-    <link rel="stylesheet" href="/styles.css" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      rel="stylesheet"
-    /><script
+    <!-- Google tag (gtag.js) -->
+    <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-7JHKJS027S"
     ></script>
@@ -135,12 +131,13 @@
         </div>
         <p>
           Vi använder cookies för att analysera trafik och förbättra din
-          upplevelse. Genom att klicka på "Acceptera" godkänner du användningen av
-          cookies.
+          upplevelse. Läs mer i vår <a href="/integritetspolicy.html" class="cookie-policy-link">integritetspolicy</a>.
+          Du kan alltid ändra ditt val.
         </p>
         <div class="cookie-buttons">
-          <button id="accept-cookies" class="btn btn-primary" autofocus>Acceptera</button>
-          <button id="decline-cookies" class="btn btn-outline">Avvisa</button>
+          <button id="accept-cookies" class="btn btn-primary" autofocus>Acceptera alla</button>
+          <button id="decline-cookies" class="btn btn-outline">Endast nödvändiga</button>
+          <button id="manage-cookies-banner" class="btn btn-ghost">Hantera inställningar</button>
         </div>
       </div>
     </div>
@@ -214,6 +211,19 @@
 
       </section>
 
+      <section class="intro-section" aria-labelledby="intro-title">
+        <div class="container">
+          <h2 id="intro-title">Vad är Glitterdalen?</h2>
+          <p>
+            Glitterdalen är ett universum med karaktärer, musik och berättelser som växer för varje vecka.
+            Här hittar barn äventyr att förlora sig i samtidigt som vuxna får trygg vägledning om hur innehållet kan användas hemma eller i skolan.
+          </p>
+          <p>
+            Utforska våra figurer och platser nedan, lyssna på musiken eller skriv upp dig på nyhetsbrevet för att få material, tips och bakom kulisserna-historier först av alla.
+          </p>
+        </div>
+      </section>
+
       <!-- Characters Section -->
       <section id="karaktarer" class="platser-section">
         <div class="container">
@@ -225,9 +235,9 @@
           <!-- Character Detailed Cards -->
           <div class="platser-grid">
             <!-- Lumi Card -->
-            <div id="lumi-card" class="place-card" data-character="lumi">
+            <div id="lumi-card" class="place-card" data-character="lumi" role="button" tabindex="0" aria-expanded="false">
               <div class="card-image">
-                <img src="/public/lumi.png" alt="Lumi - Den glittrande kaninen" />
+                <img src="/public/lumi.png" alt="Lumi - Den glittrande kaninen" loading="lazy" />
               </div>
               <div class="card-content">
                 <h3>Lumi</h3>
@@ -241,9 +251,9 @@
             </div>
 
             <!-- Riza Card -->
-            <div id="riza-card" class="place-card" data-character="riza">
+            <div id="riza-card" class="place-card" data-character="riza" role="button" tabindex="0" aria-expanded="false">
               <div class="card-image">
-                <img src="/public/riza.png" alt="Riza - Den äventyrslystna räven" />
+                <img src="/public/riza.png" alt="Riza - Den äventyrslystna räven" loading="lazy" />
               </div>
               <div class="card-content">
                 <h3>Riza</h3>
@@ -257,9 +267,9 @@
             </div>
 
             <!-- Zippy Card -->
-            <div id="zippy-card" class="place-card" data-character="zippy">
+            <div id="zippy-card" class="place-card" data-character="zippy" role="button" tabindex="0" aria-expanded="false">
               <div class="card-image">
-                <img src="/public/zippy.png" alt="Zippy - Den uppfinningsrika flugan" />
+                <img src="/public/zippy.png" alt="Zippy - Den uppfinningsrika flugan" loading="lazy" />
               </div>
               <div class="card-content">
                 <h3>Zippy</h3>
@@ -274,9 +284,9 @@
             </div>
 
             <!-- Illian Card -->
-            <div id="illian-card" class="place-card" data-character="illian">
+            <div id="illian-card" class="place-card" data-character="illian" role="button" tabindex="0" aria-expanded="false">
               <div class="card-image">
-                <img src="/public/illian.png" alt="Illian - Den envisa illern" />
+                <img src="/public/illian.png" alt="Illian - Den envisa illern" loading="lazy" />
               </div>
               <div class="card-content">
                 <h3>Illian</h3>
@@ -301,9 +311,9 @@
           
           <div class="platser-grid">
             <!-- Flugsvampsskogen Card -->
-            <div class="place-card" data-place="flugsvampsskogen">
+            <div class="place-card" data-place="flugsvampsskogen" role="button" tabindex="0" aria-expanded="false">
               <div class="card-image">
-                <img src="/public/flugsvampsskogen.png" alt="Flugsvampsskogen" />
+                <img src="/public/flugsvampsskogen.png" alt="Flugsvampsskogen" loading="lazy" />
               </div>
               <div class="card-content">
                 <h3>Flugsvampsskogen</h3>
@@ -317,9 +327,9 @@
             </div>
 
             <!-- Regnbågsgrottan Card -->
-            <div class="place-card" data-place="regnbagsgrottan">
+            <div class="place-card" data-place="regnbagsgrottan" role="button" tabindex="0" aria-expanded="false">
               <div class="card-image">
-                <img src="/public/regnbagsgrottan.png" alt="Regnbågsgrottan" />
+                <img src="/public/regnbagsgrottan.png" alt="Regnbågsgrottan" loading="lazy" />
               </div>
               <div class="card-content">
                 <h3>Regnbågsgrottan</h3>
@@ -333,9 +343,9 @@
             </div>
 
             <!-- Vindklippan Card -->
-            <div class="place-card" data-place="vindklippan">
+            <div class="place-card" data-place="vindklippan" role="button" tabindex="0" aria-expanded="false">
               <div class="card-image">
-                <img src="/public/vindklippan.png" alt="Vindklippan" />
+                <img src="/public/vindklippan.png" alt="Vindklippan" loading="lazy" />
               </div>
               <div class="card-content">
                 <h3>Vindklippan</h3>
@@ -386,7 +396,7 @@
         <div class="container">
           <div class="signup-content">
             <div class="signup-image animate-float">
-              <img src="/public/zippy_newsletter.png" alt="Glitterdalen nyhetsbrev" />
+              <img src="/public/zippy_newsletter.png" alt="Glitterdalen nyhetsbrev" loading="lazy" />
             </div>
             <div class="signup-form-container">
               <h2 class="section-title">Häng med på äventyret!</h2>
@@ -423,14 +433,14 @@
               <p class="privacy-note">
                 Vi samlar endast in din e-postadress för att kunna skicka nyheter
                 och information om Glitterdalen. Vi delar aldrig din information med
-                tredje part. Du kan när som helst avregistrera dig från våra utskick
-                via länken i e-postmeddelandet.
+                tredje part och skickar högst två utskick per månad. Du kan när som helst
+                avregistrera dig via länken i e-postmeddelandet.
               </p>
             </div>
           </div>
         </div>
         
-        <div id="success" class="success-message hidden">
+        <div id="success" class="success-message hidden" role="status" aria-live="polite" tabindex="-1">
           <div class="success-content cartoon-bubble">
             <div class="success-icon animate-tada">
               <i class="fas fa-check-circle"></i>
@@ -470,7 +480,7 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-logo">
-            <img src="/glitterdalen_logo.png" alt="Glitterdalen" width="80" />
+            <img src="/glitterdalen_logo.png" alt="Glitterdalen" width="80" loading="lazy" />
           </div>
           <div class="footer-contact">
             <a href="mailto:info@glitterdalen.se" class="contact-link">
@@ -492,276 +502,5 @@
       <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- JavaScript -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        // ===== Mobile Menu Toggle =====
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navList = document.querySelector('.nav-list');
-        
-        menuToggle.addEventListener('click', function() {
-          this.classList.toggle('active');
-          navList.classList.toggle('active');
-          document.body.classList.toggle('menu-open');
-        });
-        
-        // Close menu when clicking on links
-        document.querySelectorAll('.nav-list a').forEach(link => {
-          link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
-            navList.classList.remove('active');
-            document.body.classList.remove('menu-open');
-          });
-        });
-
-        // ===== Smooth Scrolling =====
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-              // Get the header height for offset
-              const headerHeight = document.querySelector('.site-header').offsetHeight;
-              const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-              
-              window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-              });
-              
-              // Update active nav link
-              document.querySelectorAll('.nav-list a').forEach(link => {
-                link.classList.remove('active');
-              });
-              this.classList.add('active');
-            }
-          });
-        });
-
-        // ===== Scroll Spy =====
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-list a');
-        
-        function scrollSpy() {
-          const scrollPosition = window.scrollY + document.querySelector('.site-header').offsetHeight + 100;
-          
-          sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-              navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + sectionId) {
-                  link.classList.add('active');
-                }
-              });
-            }
-          });
-        }
-        
-        window.addEventListener('scroll', scrollSpy);
-
-        // ===== Back to Top Button =====
-        const backToTopButton = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', () => {
-          if (window.pageYOffset > 300) {
-            backToTopButton.classList.add('show');
-          } else {
-            backToTopButton.classList.remove('show');
-          }
-        });
-        
-        backToTopButton.addEventListener('click', () => {
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
-        });
-
-        // ===== Places Slider =====
-        const slider = document.querySelector('.platser-slider');
-        const slides = document.querySelectorAll('.plats-card');
-        const dots = document.querySelectorAll('.dot');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        
-        // Only run slider code if all elements exist
-        if (slider && slides.length > 0 && prevBtn && nextBtn) {
-          let currentIndex = 0;
-          
-          function updateSlider() {
-            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-            
-            // Update dots
-            if (dots.length > 0) {
-              dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndex);
-              });
-            }
-            
-            // Update buttons visibility
-            prevBtn.disabled = currentIndex === 0;
-            nextBtn.disabled = currentIndex === slides.length - 1;
-          }
-          
-          prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-              currentIndex--;
-              updateSlider();
-            }
-          });
-          
-          nextBtn.addEventListener('click', () => {
-            if (currentIndex < slides.length - 1) {
-              currentIndex++;
-              updateSlider();
-            }
-          });
-          
-          if (dots.length > 0) {
-            dots.forEach((dot, index) => {
-              dot.addEventListener('click', () => {
-                currentIndex = index;
-                updateSlider();
-              });
-            });
-          }
-          
-          // Initialize slider
-          updateSlider();
-        }
-
-        // ===== Form Submission =====
-        document.getElementById('signup-form').addEventListener('submit', async function(e) {
-          e.preventDefault();
-          const email = document.getElementById('email').value;
-          
-          try {
-            const response = await fetch(this.action, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-              body: new URLSearchParams({
-                'fields[email]': email,
-                'ml-submit': '1'
-              })
-            });
-            
-            const result = await response.json();
-            
-            if (result.success) {
-              document.getElementById('success').classList.remove('hidden');
-            } else {
-              alert('Något gick fel. Försök igen.');
-            }
-          } catch (error) {
-            alert('Något gick fel. Försök igen.');
-          }
-        });
-        
-        // Close success message
-        document.querySelector('.close-success').addEventListener('click', () => {
-          document.getElementById('success').classList.add('hidden');
-          document.getElementById('email').value = '';
-        });
-
-        // ===== Cookie Consent =====
-        const cookieBanner = document.getElementById('cookie-banner');
-        const acceptCookies = document.getElementById('accept-cookies');
-        const declineCookies = document.getElementById('decline-cookies');
-        const manageCookies = document.getElementById('manage-cookies');
-        
-        // Check if user has already made a cookie choice
-        // Small delay to ensure everything is loaded
-        setTimeout(function() {
-          const cookieConsent = localStorage.getItem('cookie-consent');
-          // Only show the banner if no choice has been made yet
-          if (!cookieConsent) {
-            cookieBanner.style.display = 'block';
-            cookieBanner.style.bottom = '0';
-            cookieBanner.classList.add('show');
-            console.log('Cookie banner shown - no previous choice found');
-          } else {
-            console.log('Cookie consent already set:', cookieConsent);
-            if (cookieConsent === 'accepted') {
-              try {
-                initializeGoogleAnalytics();
-              } catch(e) {
-                console.log('Error initializing analytics:', e);
-              }
-            }
-          }
-        }, 1000);
-        
-        // Enhanced event listeners with direct style manipulation
-        acceptCookies.addEventListener('click', function(e) {
-          e.preventDefault();
-          try {
-            localStorage.setItem('cookie-consent', 'accepted');
-          } catch(e) {
-            console.log('Error saving to localStorage:', e);
-          }
-          cookieBanner.style.bottom = '-100%';
-          cookieBanner.classList.remove('show');
-          try {
-            initializeGoogleAnalytics();
-          } catch(e) {
-            console.log('Error initializing analytics:', e);
-          }
-        });
-        
-        declineCookies.addEventListener('click', function(e) {
-          e.preventDefault();
-          try {
-            localStorage.setItem('cookie-consent', 'declined');
-          } catch(e) {
-            console.log('Error saving to localStorage:', e);
-          }
-          cookieBanner.style.bottom = '-100%';
-          cookieBanner.classList.remove('show');
-        });
-        
-        // Make sure the manage cookies button works
-        if (manageCookies) {
-          console.log('Manage cookies button found:', manageCookies);
-          manageCookies.addEventListener('click', function(e) {
-            console.log('Manage cookies button clicked');
-            e.preventDefault();
-            try {
-              localStorage.removeItem('cookie-consent');
-            } catch(e) {
-              console.log('Error removing from localStorage:', e);
-            }
-            cookieBanner.style.display = 'block';
-            cookieBanner.style.bottom = '0';
-            cookieBanner.classList.add('show');
-          });
-        } else {
-          console.error('Manage cookies button not found!');
-        }
-
-        // ===== Animation on Scroll =====
-        const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-slide-up, .animate-fade-in-delay-1, .animate-fade-in-delay-2, .animate-slide-up-delay-1, .animate-slide-up-delay-2, .animate-slide-up-delay-3');
-        
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animated');
-            }
-          });
-        }, {
-          threshold: 0.1
-        });
-        
-        animatedElements.forEach(element => {
-          observer.observe(element);
-        });
-      });
-    </script>
   </body>
 </html>
