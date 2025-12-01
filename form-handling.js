@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const closeNewsletterButton = document.querySelector('.newsletter-modal__close');
   const modalContent = newsletterModal ? newsletterModal.querySelector('.newsletter-modal__content') : null;
   const primaryEmailInput = document.querySelector('#signup-form [data-email-input]');
+  const openNewsletterTrigger = document.getElementById('newsletter-trigger');
   const modalDismissKey = 'newsletter-modal-dismissed';
   const popupDelayMs = 3500;
   const scrollThreshold = 250;
@@ -54,17 +55,31 @@ document.addEventListener('DOMContentLoaded', function() {
   const hasDismissedModal = () => getFromStorage(modalDismissKey) === 'true';
   const markModalDismissed = () => setInStorage(modalDismissKey, 'true');
   
+  const showTrigger = () => {
+    if (openNewsletterTrigger) {
+      openNewsletterTrigger.classList.remove('hidden');
+    }
+  };
+  
+  const hideTrigger = () => {
+    if (openNewsletterTrigger) {
+      openNewsletterTrigger.classList.add('hidden');
+    }
+  };
+  
   const hideNewsletterModal = () => {
     if (!newsletterModal) return;
     newsletterModal.classList.add('hidden');
     document.body.classList.remove('modal-open');
     markModalDismissed();
+    showTrigger();
   };
   
-  const showNewsletterModal = () => {
-    if (!newsletterModal || hasDismissedModal()) return;
+  const showNewsletterModal = (force = false) => {
+    if (!newsletterModal || (!force && hasDismissedModal())) return;
     newsletterModal.classList.remove('hidden');
     document.body.classList.add('modal-open');
+    hideTrigger();
     if (modalContent) {
       modalContent.focus();
     }
@@ -105,6 +120,10 @@ document.addEventListener('DOMContentLoaded', function() {
         hideNewsletterModal();
       }
     });
+  }
+  
+  if (openNewsletterTrigger) {
+    openNewsletterTrigger.addEventListener('click', () => showNewsletterModal(true));
   }
   
   const handleSuccess = () => {
