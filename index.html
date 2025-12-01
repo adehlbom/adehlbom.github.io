@@ -415,6 +415,7 @@
               
               <form
                 id="signup-form"
+                data-signup-form
                 action="https://assets.mailerlite.com/jsonp/1255993/forms/142396205183272375/subscribe"
                 method="post"
                 class="signup-form cartoon-form"
@@ -430,6 +431,7 @@
                       placeholder="Din e-postadress"
                       required
                       class="form-input cartoon-input"
+                      data-email-input
                     />
                   </div>
                 </div>
@@ -458,6 +460,67 @@
           </div>
         </div>
       </section>
+
+      <!-- Newsletter Modal -->
+      <div
+        id="newsletter-modal"
+        class="newsletter-modal hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="newsletter-modal-title"
+        aria-describedby="newsletter-modal-description"
+      >
+        <div class="newsletter-modal__content cartoon-bubble" tabindex="-1">
+          <button class="newsletter-modal__close" type="button" aria-label="Stäng nyhetsbrevet">
+            <i class="fas fa-times"></i>
+          </button>
+          <div class="newsletter-modal__body">
+            <div class="newsletter-modal__image animate-float">
+              <img src="/public/zippy_newsletter.png" alt="Glitterdalen nyhetsbrev" loading="lazy" />
+              <div class="newsletter-modal__badge">
+                <i class="fas fa-envelope-open-text"></i>
+                <span>Nyhetsbrev</span>
+              </div>
+            </div>
+            <div class="newsletter-modal__copy">
+              <h3 id="newsletter-modal-title">Få nya låtar och sagor i din inbox</h3>
+              <p id="newsletter-modal-description">
+                Scrolla lugnt! Vi pingar dig bara när nya Glitterdalen-låtar, sagor eller videos landar. Ingen spam, lovar.
+              </p>
+              <form
+                id="signup-modal-form"
+                data-signup-form
+                action="https://assets.mailerlite.com/jsonp/1255993/forms/142396205183272375/subscribe"
+                method="post"
+                class="signup-form cartoon-form"
+              >
+                <div class="form-group">
+                  <label for="modal-email" class="visually-hidden">E-postadress</label>
+                  <div class="input-icon-wrapper">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input
+                      id="modal-email"
+                      type="email"
+                      name="fields[email]"
+                      placeholder="Din e-postadress"
+                      required
+                      class="form-input cartoon-input"
+                      data-email-input
+                    />
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-fullwidth cartoon-bubble">
+                  <span>Prenumerera</span>
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+                <p class="privacy-note newsletter-modal__note">
+                  Vi hör av oss när vi har något nytt att berätta. Du kan avregistrera dig när som helst.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Social Media Section -->
       <section id="social" class="social-section">

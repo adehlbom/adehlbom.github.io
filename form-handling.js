@@ -1,14 +1,18 @@
-// Form submission handling
+// Form submission handling + timed newsletter popup
 document.addEventListener('DOMContentLoaded', function() {
-  const signupForm = document.getElementById('signup-form');
-  if (!signupForm) {
-    return;
-  }
-  
-  const emailInput = signupForm.querySelector('#email');
-  const submitButton = signupForm.querySelector('button[type="submit"]');
+  const signupForms = Array.from(document.querySelectorAll('[data-signup-form]'));
   const successMessage = document.getElementById('success');
   const closeSuccessButton = document.querySelector('.close-success');
+  const newsletterModal = document.getElementById('newsletter-modal');
+  const closeNewsletterButton = document.querySelector('.newsletter-modal__close');
+  const modalContent = newsletterModal ? newsletterModal.querySelector('.newsletter-modal__content') : null;
+  const primaryEmailInput = document.querySelector('#signup-form [data-email-input]');
+  const modalDismissKey = 'newsletter-modal-dismissed';
+  const popupDelayMs = 3500;
+  const scrollThreshold = 250;
+  let popupTimer = null;
+  let popupScheduled = false;
+  let lastSubmittedInput = null;
   
   if (successMessage && !successMessage.hasAttribute('tabindex')) {
     successMessage.setAttribute('tabindex', '-1');
@@ -31,70 +35,167 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
   
-  signupForm.addEventListener('submit', async function(e) {
-    e.preventDefault();
+  const getFromStorage = (key) => {
+    try {
+      return localStorage.getItem(key);
+    } catch (error) {
+      return null;
+    }
+  };
+  
+  const setInStorage = (key, value) => {
+    try {
+      localStorage.setItem(key, value);
+    } catch (error) {
+      // Ignore storage issues (private mode, disabled storage, etc.)
+    }
+  };
+  
+  const hasDismissedModal = () => getFromStorage(modalDismissKey) === 'true';
+  const markModalDismissed = () => setInStorage(modalDismissKey, 'true');
+  
+  const hideNewsletterModal = () => {
+    if (!newsletterModal) return;
+    newsletterModal.classList.add('hidden');
+    document.body.classList.remove('modal-open');
+    markModalDismissed();
+  };
+  
+  const showNewsletterModal = () => {
+    if (!newsletterModal || hasDismissedModal()) return;
+    newsletterModal.classList.remove('hidden');
+    document.body.classList.add('modal-open');
+    if (modalContent) {
+      modalContent.focus();
+    }
+  };
+  
+  const schedulePopup = () => {
+    if (popupScheduled || hasDismissedModal() || !newsletterModal) {
+      return;
+    }
+    popupScheduled = true;
+    popupTimer = setTimeout(() => {
+      if (!hasDismissedModal()) {
+        showNewsletterModal();
+      }
+      popupTimer = null;
+    }, popupDelayMs);
+  };
+  
+  if (newsletterModal) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > scrollThreshold) {
+        schedulePopup();
+      }
+    }, { passive: true });
+    
+    if (closeNewsletterButton) {
+      closeNewsletterButton.addEventListener('click', hideNewsletterModal);
+    }
+    
+    newsletterModal.addEventListener('click', (event) => {
+      if (event.target === newsletterModal) {
+        hideNewsletterModal();
+      }
+    });
+    
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !newsletterModal.classList.contains('hidden')) {
+        hideNewsletterModal();
+      }
+    });
+  }
+  
+  const handleSuccess = () => {
+    hideNewsletterModal();
+    if (successMessage) {
+      successMessage.classList.remove('hidden');
+      successMessage.focus();
+    }
+  };
+  
+  const resetInputs = () => {
+    signupForms.forEach((form) => {
+      const emailField = form.querySelector('[data-email-input]');
+      if (emailField) {
+        emailField.value = '';
+      }
+    });
+  };
+  
+  const focusDefaultInput = () => {
+    if (primaryEmailInput) {
+      primaryEmailInput.focus();
+    } else if (lastSubmittedInput) {
+      lastSubmittedInput.focus();
+    }
+  };
+  
+  signupForms.forEach((form) => {
+    const emailInput = form.querySelector('[data-email-input]');
+    const submitButton = form.querySelector('button[type="submit"]');
     
     if (!emailInput || !submitButton) {
       return;
     }
     
-    submitButton.disabled = true;
-    submitButton.setAttribute('aria-busy', 'true');
-    
-    const formData = new URLSearchParams({
-      'fields[email]': emailInput.value,
-      'ml-submit': '1'
-    });
-    
-    try {
-      const response = await fetch(this.action, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: formData
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      submitButton.disabled = true;
+      submitButton.setAttribute('aria-busy', 'true');
+      lastSubmittedInput = emailInput;
+      
+      const formData = new URLSearchParams({
+        'fields[email]': emailInput.value,
+        'ml-submit': '1'
       });
       
-      if (!response.ok) {
-        throw new Error(`MailerLite returned status ${response.status}`);
-      }
-      
-      const result = await parseMailerLiteResponse(response);
-      
-      if (result && result.success) {
-        if (successMessage) {
-          successMessage.classList.remove('hidden');
-          successMessage.focus();
+      try {
+        const response = await fetch(this.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: formData
+        });
+        
+        if (!response.ok) {
+          throw new Error(`MailerLite returned status ${response.status}`);
         }
-      } else {
-        throw new Error('Unexpected response from MailerLite.');
-      }
-    } catch (error) {
-      console.error('Signup failed:', error);
-      alert('Något gick fel. Försök igen eller kontakta oss på info@glitterdalen.se.');
-    } finally {
-      submitButton.disabled = false;
-      submitButton.removeAttribute('aria-busy');
-    }
-  });
-  
-  if (closeSuccessButton) {
-    closeSuccessButton.addEventListener('click', () => {
-      if (successMessage) {
-        successMessage.classList.add('hidden');
-      }
-      if (emailInput) {
-        emailInput.value = '';
-        emailInput.focus();
+        
+        const result = await parseMailerLiteResponse(response);
+        
+        if (result && result.success) {
+          handleSuccess();
+        } else {
+          throw new Error('Unexpected response from MailerLite.');
+        }
+      } catch (error) {
+        console.error('Signup failed:', error);
+        alert('Något gick fel. Försök igen eller kontakta oss på info@glitterdalen.se.');
+      } finally {
+        submitButton.disabled = false;
+        submitButton.removeAttribute('aria-busy');
       }
     });
+  });
+  
+  const closeSuccess = () => {
+    if (successMessage) {
+      successMessage.classList.add('hidden');
+    }
+    resetInputs();
+    focusDefaultInput();
+  };
+  
+  if (closeSuccessButton) {
+    closeSuccessButton.addEventListener('click', closeSuccess);
   }
     
   if (successMessage) {
     successMessage.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') {
-        successMessage.classList.add('hidden');
-        if (emailInput) {
-          emailInput.focus();
-        }
+        closeSuccess();
       }
     });
   }
