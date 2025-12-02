@@ -1752,7 +1752,7 @@ body.modal-open {
 @media (max-width: 600px) {
   .newsletter-modal {
     padding: var(--spacing-md);
-    padding-top: calc(var(--spacing-lg) + env(safe-area-inset-top, 20px));
+    padding-top: calc(var(--spacing-xl) + env(safe-area-inset-top, 20px));
     padding-bottom: calc(var(--spacing-md) + env(safe-area-inset-bottom, 0px));
     align-items: flex-start;
     justify-content: center;
@@ -1760,9 +1760,8 @@ body.modal-open {
 
   .newsletter-modal__content {
     padding: var(--spacing-md);
-    max-height: calc(100dvh - var(--spacing-xl) - env(safe-area-inset-top, 20px) - env(safe-area-inset-bottom, 0px));
-    margin-top: 0;
-    margin-bottom: 0;
+    max-height: calc(100dvh - var(--spacing-xxl) - env(safe-area-inset-top, 20px) - env(safe-area-inset-bottom, 0px));
+    margin: 0 auto;
     width: calc(100% - var(--spacing-md));
   }
   
@@ -1794,7 +1793,7 @@ body.modal-open {
 
 .newsletter-trigger {
   position: fixed;
-  right: 95px;
+  left: var(--spacing-lg);
   bottom: 38px;
   display: inline-flex;
   align-items: center;
@@ -1832,7 +1831,6 @@ body.modal-open {
 
 @media (max-width: 600px) {
   .newsletter-trigger {
-    right: auto;
     left: var(--spacing-md);
     bottom: 96px;
     padding: 0.65rem 0.9rem;
