@@ -1751,22 +1751,42 @@ body.modal-open {
 
 @media (max-width: 600px) {
   .newsletter-modal {
-    padding: calc(var(--spacing-md) + env(safe-area-inset-top, 0px)) var(--spacing-md) var(--spacing-md);
+    padding: var(--spacing-sm);
+    padding-top: calc(var(--spacing-sm) + env(safe-area-inset-top, 0px));
+    padding-bottom: calc(var(--spacing-sm) + env(safe-area-inset-bottom, 0px));
+    align-items: center;
   }
 
   .newsletter-modal__content {
-    padding: var(--spacing-lg);
-    max-height: calc(100vh - var(--spacing-md) - env(safe-area-inset-top, 0px));
-    margin: calc(var(--spacing-lg) + env(safe-area-inset-top, 0px)) auto var(--spacing-md);
+    padding: var(--spacing-md);
+    max-height: calc(100dvh - var(--spacing-lg) - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+    margin: 0 auto;
+    width: calc(100% - var(--spacing-md));
+  }
+  
+  .newsletter-modal__image {
+    padding: var(--spacing-sm);
   }
   
   .newsletter-modal__image img {
-    max-width: 150px;
+    max-width: 120px;
   }
   
   .newsletter-modal__badge {
-    font-size: 0.8rem;
-    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .newsletter-modal__copy h3 {
+    font-size: 1.1rem;
+  }
+  
+  .newsletter-modal__copy p {
+    font-size: 0.9rem;
+  }
+  
+  .newsletter-modal__body {
+    gap: var(--spacing-md);
   }
 }
 
