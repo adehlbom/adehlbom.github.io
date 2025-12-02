@@ -1751,16 +1751,18 @@ body.modal-open {
 
 @media (max-width: 600px) {
   .newsletter-modal {
-    padding: var(--spacing-sm);
-    padding-top: calc(var(--spacing-sm) + env(safe-area-inset-top, 0px));
-    padding-bottom: calc(var(--spacing-sm) + env(safe-area-inset-bottom, 0px));
-    align-items: center;
+    padding: var(--spacing-md);
+    padding-top: calc(var(--spacing-lg) + env(safe-area-inset-top, 20px));
+    padding-bottom: calc(var(--spacing-md) + env(safe-area-inset-bottom, 0px));
+    align-items: flex-start;
+    justify-content: center;
   }
 
   .newsletter-modal__content {
     padding: var(--spacing-md);
-    max-height: calc(100dvh - var(--spacing-lg) - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
-    margin: 0 auto;
+    max-height: calc(100dvh - var(--spacing-xl) - env(safe-area-inset-top, 20px) - env(safe-area-inset-bottom, 0px));
+    margin-top: 0;
+    margin-bottom: 0;
     width: calc(100% - var(--spacing-md));
   }
   
