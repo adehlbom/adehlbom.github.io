@@ -126,6 +126,10 @@ document.addEventListener('DOMContentLoaded', function() {
     openNewsletterTrigger.addEventListener('click', () => showNewsletterModal(true));
   }
   
+  if (hasDismissedModal()) {
+    showTrigger();
+  }
+  
   const handleSuccess = () => {
     hideNewsletterModal();
     if (successMessage) {
