@@ -24,7 +24,7 @@
         </style>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
-        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&amp;family=Work+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
       </head>
       <body>
         <h1>Glitterdalen sitemap</h1>
