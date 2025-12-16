@@ -141,6 +141,23 @@
           <button id="decline-cookies" class="btn btn-outline">Endast nödvändiga</button>
           <button id="manage-cookies-banner" class="btn btn-ghost">Hantera inställningar</button>
         </div>
+        <div class="cookie-preferences" id="cookie-preferences" aria-label="Hantera cookie-inställningar">
+          <div class="cookie-preference-row">
+            <div>
+              <strong>Analys &amp; prestanda</strong>
+              <p>Hjälper oss förbättra sajten. Ingen personlig data sparas.</p>
+            </div>
+            <label class="cookie-toggle">
+              <span class="visually-hidden">Tillåt analys-cookies</span>
+              <input type="checkbox" id="analytics-toggle" />
+              <span class="cookie-toggle__track" aria-hidden="true"></span>
+            </label>
+          </div>
+          <div class="cookie-preference-actions">
+            <button id="save-cookie-preferences" class="btn btn-primary">Spara val</button>
+            <button id="cancel-cookie-preferences" class="btn btn-outline">Avbryt</button>
+          </div>
+        </div>
       </div>
     </div>
 

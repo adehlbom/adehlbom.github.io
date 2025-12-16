@@ -188,7 +188,10 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.7rem); }
 
 .btn-primary { background: var(--yellow); }
 .btn-secondary { background: var(--plum-light); color: var(--ink); }
-.btn-outline { background: transparent; border-color: rgba(8, 59, 77, 0.4); box-shadow: none; }
+.btn-outline { background: rgba(255, 255, 255, 0.18); border-color: rgba(8, 59, 77, 0.45); color: var(--ink); box-shadow: 0 8px 0 rgba(15, 47, 59, 0.12); }
+.btn-ghost { background: transparent; border-color: rgba(8, 59, 77, 0.28); color: var(--ink); box-shadow: none; }
+.cookie-banner .btn-outline { background: rgba(255, 255, 255, 0.14); color: var(--white); border-color: rgba(255, 255, 255, 0.7); box-shadow: 0 10px 0 rgba(0, 0, 0, 0.24); }
+.cookie-banner .btn-ghost { color: rgba(255, 255, 255, 0.92); border-color: rgba(255, 255, 255, 0.5); }
 .btn-spotify { background: var(--green-light); }
 .btn-youtube { background: var(--orange-light); }
 .btn-lg { padding: var(--space-md) var(--space-xl); font-size: 1.05rem; }
@@ -762,7 +765,26 @@ body.modal-open { overflow: hidden; }
 .newsletter-modal__close { position: absolute; top: var(--space-sm); right: var(--space-sm); width: 46px; height: 46px; border-radius: 50%; border: 2px solid rgba(15, 47, 59, 0.2); background: #fff; display: grid; place-items: center; cursor: pointer; transition: transform 160ms ease, box-shadow 160ms ease; }
 .newsletter-modal__close:hover { transform: rotate(-6deg) translateY(-2px); box-shadow: 0 14px 0 rgba(0, 0, 0, 0.12); }
 
-.newsletter-trigger { position: fixed; left: var(--space-lg); bottom: 38px; display: inline-flex; align-items: center; gap: 0.5rem; background: var(--green); color: var(--white); border-radius: 999px; padding: 0.65rem 1rem; border: 2px solid rgba(255, 255, 255, 0.7); box-shadow: var(--shadow-strong); cursor: pointer; z-index: 30; }
+.newsletter-trigger {
+  position: fixed;
+  left: var(--space-lg);
+  bottom: 38px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--green);
+  color: var(--white);
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: var(--shadow-strong);
+  cursor: pointer;
+  z-index: 30;
+  font-family: var(--heading-font);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
 
 /* Social */
 .social-section { text-align: center; }
@@ -780,7 +802,28 @@ body.modal-open { overflow: hidden; }
 .footer-content { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); flex-wrap: wrap; }
 .footer-logo img { width: 80px; }
 .footer-contact { display: flex; align-items: center; gap: var(--space-md); }
-.contact-link { color: var(--white); display: inline-flex; align-items: center; gap: var(--space-xs); }
+.contact-link {
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 160ms ease, transform 160ms ease;
+}
+.contact-link:hover,
+.contact-link:focus-visible { color: var(--yellow); transform: translateY(-2px); }
+.cookie-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  cursor: pointer;
+}
 .footer-bottom { margin-top: var(--space-sm); font-size: 0.95rem; color: rgba(255, 255, 255, 0.82); }
 
 /* Cookie banner */
@@ -790,6 +833,19 @@ body.modal-open { overflow: hidden; }
 .cookie-buttons { display: flex; gap: var(--space-xs); flex-wrap: wrap; }
 .cookie-icon { font-size: 1.8rem; color: var(--yellow); }
 .cookie-policy-link { color: var(--yellow); text-decoration: underline; }
+.cookie-preferences { display: none; width: 100%; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: var(--radius-md); padding: var(--space-sm); gap: var(--space-sm); margin-top: var(--space-xs); }
+.cookie-preference-row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); }
+.cookie-preference-row strong { color: var(--white); }
+.cookie-preference-row p { margin: 0; color: rgba(255, 255, 255, 0.82); line-height: 1.5; }
+.cookie-preference-actions { display: flex; gap: var(--space-xs); flex-wrap: wrap; }
+.cookie-banner.show-preferences .cookie-preferences { display: grid; }
+.cookie-banner.show-preferences .cookie-buttons { display: none; }
+.cookie-toggle { position: relative; width: 56px; height: 30px; }
+.cookie-toggle input { opacity: 0; width: 0; height: 0; position: absolute; inset: 0; }
+.cookie-toggle__track { position: absolute; inset: 0; background: rgba(255, 255, 255, 0.28); border: 1px solid rgba(255, 255, 255, 0.6); border-radius: 999px; transition: background 160ms ease, border-color 160ms ease; }
+.cookie-toggle__track::after { content: ''; position: absolute; left: 4px; top: 3px; width: 22px; height: 22px; background: var(--cloud); border-radius: 50%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); transition: transform 160ms ease; }
+.cookie-toggle input:checked + .cookie-toggle__track { background: var(--yellow); border-color: var(--ink); }
+.cookie-toggle input:checked + .cookie-toggle__track::after { transform: translateX(24px); }
 
 /* Back to top */
 .back-to-top { position: fixed; bottom: 28px; right: 28px; width: 52px; height: 52px; border-radius: 50%; border: 2px solid rgba(15, 47, 59, 0.35); background: var(--cloud); color: var(--ink); display: grid; place-items: center; box-shadow: 0 10px 0 rgba(15, 47, 59, 0.14); opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease; z-index: 25; }
@@ -866,6 +922,8 @@ body.menu-open { overflow: hidden; }
   .place-card { min-height: 0; }
   .place-card .card-content { padding: var(--space-md); }
   .cookie-banner { text-align: center; }
+  .cookie-preferences { text-align: left; }
+  .cookie-preference-row { flex-direction: column; align-items: flex-start; }
   .signup-content, .newsletter-modal__body { grid-template-columns: 1fr; text-align: center; }
   .signup-image::before { display: none; }
   .newsletter-modal {
