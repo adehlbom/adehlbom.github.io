@@ -723,10 +723,35 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.7rem); }
 /* Newsletter modal */
 body.modal-open { overflow: hidden; }
 
-.newsletter-modal { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: var(--space-lg); background: rgba(8, 24, 32, 0.65); }
+.newsletter-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: start center;
+  align-content: start;
+  padding: var(--space-lg);
+  padding-top: calc(var(--space-lg) + env(safe-area-inset-top));
+  padding-bottom: calc(var(--space-lg) + env(safe-area-inset-bottom));
+  background: rgba(8, 24, 32, 0.65);
+  overflow-y: auto;
+}
 .newsletter-modal.hidden { display: none; }
 
-.newsletter-modal__content { position: relative; width: min(880px, 94vw); background: var(--cloud); border-radius: 28px; padding: var(--space-xl); box-shadow: var(--shadow-strong); border: 3px solid rgba(15, 47, 59, 0.18); outline: none; }
+.newsletter-modal__content {
+  position: relative;
+  width: min(880px, 94vw);
+  background: var(--cloud);
+  border-radius: 28px;
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-strong);
+  border: 3px solid rgba(15, 47, 59, 0.18);
+  outline: none;
+  margin: var(--space-xl) auto;
+  max-height: calc(100vh - 2 * var(--space-lg));
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
 
 .newsletter-modal__body { display: grid; grid-template-columns: 240px 1fr; gap: var(--space-lg); align-items: center; }
 
@@ -843,8 +868,16 @@ body.menu-open { overflow: hidden; }
   .cookie-banner { text-align: center; }
   .signup-content, .newsletter-modal__body { grid-template-columns: 1fr; text-align: center; }
   .signup-image::before { display: none; }
-  .newsletter-modal { padding: var(--space-md); }
-  .newsletter-modal__content { padding: var(--space-lg); }
+  .newsletter-modal {
+    padding: var(--space-md);
+    padding-top: calc(var(--space-md) + env(safe-area-inset-top));
+    padding-bottom: calc(var(--space-md) + env(safe-area-inset-bottom));
+  }
+  .newsletter-modal__content {
+    padding: var(--space-lg) var(--space-md);
+    max-height: calc(100vh - 2 * var(--space-md));
+  }
+  .newsletter-modal__close { top: var(--space-xs); right: var(--space-xs); }
   .newsletter-trigger { left: var(--space-sm); bottom: 26px; }
 }
 
