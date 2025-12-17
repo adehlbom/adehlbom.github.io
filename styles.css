@@ -761,7 +761,7 @@ body.modal-open { overflow: hidden; }
 
 .newsletter-modal__body { display: grid; grid-template-columns: 240px 1fr; gap: var(--space-lg); align-items: center; }
 
-.newsletter-modal__image { position: relative; background: #e5f7ff; border-radius: 22px; padding: var(--space-md); z-index: 1; }
+.newsletter-modal__image { position: relative; background: transparent; border-radius: 22px; padding: var(--space-md); z-index: 1; }
 
 .newsletter-modal__badge { position: absolute; bottom: var(--space-sm); right: var(--space-sm); background: var(--yellow); color: var(--ink); padding: 0.35rem 0.7rem; border-radius: 999px; font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem; border: 2px solid var(--ink); }
 
