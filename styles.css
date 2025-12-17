@@ -47,7 +47,7 @@ body {
   overflow-x: hidden;
 }
 
-main { flex: 1; position: relative; z-index: 1; }
+main { flex: 1; position: relative; }
 
 img { max-width: 100%; height: auto; display: block; }
 
