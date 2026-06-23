@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const primaryEmailInput = document.querySelector('#signup-form [data-email-input]');
   const openNewsletterTrigger = document.getElementById('newsletter-trigger');
   const modalDismissKey = 'newsletter-modal-dismissed';
-  const popupDelayMs = 3500;
-  const scrollThreshold = 250;
+  const popupDelayMs = 18000;
+  const scrollThreshold = 800;
   let popupTimer = null;
   let popupScheduled = false;
   let lastSubmittedInput = null;

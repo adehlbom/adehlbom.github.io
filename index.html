@@ -64,6 +64,9 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="sv-SE" />
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://glitterdalen.se/" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -88,6 +91,44 @@
     <script src="/card-interactions.js" defer></script>
     <script src="/cookie-consent.js" defer></script>
     <script src="/form-handling.js" defer></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://glitterdalen.se/#website",
+          "url": "https://glitterdalen.se/",
+          "name": "Glitterdalen",
+          "description": "En magisk barnvärld fylld med musik, historier och unika karaktärer.",
+          "inLanguage": "sv-SE"
+        },
+        {
+          "@type": "MusicGroup",
+          "@id": "https://glitterdalen.se/#musicgroup",
+          "name": "Glitterdalen",
+          "url": "https://glitterdalen.se/",
+          "genre": "Barnmusik",
+          "description": "Musik, sagor och äventyr för barn. Lugna vaggvisor och lekfulla upptäckarsånger.",
+          "sameAs": [
+            "https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd",
+            "https://www.youtube.com/@Glitterdalen",
+            "https://www.instagram.com/glitterdalen/",
+            "https://www.tiktok.com/@glitterdalen"
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://glitterdalen.se/#founder",
+          "name": "Anders",
+          "description": "Skapare av Glitterdalen",
+          "url": "https://glitterdalen.se/#om-glitterdalen"
+        }
+      ]
+    }
+    </script>
     
     <!-- Meta Pixel Code -->
     <script>
@@ -119,9 +160,7 @@
         }
       });
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2354277181586934&ev=PageView&noscript=1"
-    /></noscript>
+    <!-- noscript FB pixel removed: it bypassed cookie consent -->
     <!-- End Meta Pixel Code -->
   </head>
   <body>
@@ -185,10 +224,6 @@
     </header>
 
     <main>
-      <!-- Background accents -->
-      <div class="bg-accent accent-1"></div>
-      <div class="bg-accent accent-2"></div>
-      <div class="bg-accent accent-3"></div>
       
       <!-- Hero Section -->
       <section id="hem" class="hero-section">
@@ -336,10 +371,10 @@
           </div>
           
           <div class="musik-cta">
-            <a href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd" target="_blank" class="btn btn-spotify">
+            <a href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd" target="_blank" rel="noopener noreferrer" class="btn btn-spotify">
               <i class="fab fa-spotify"></i> Följ oss på Spotify
             </a>
-            <a href="https://www.youtube.com/@Glitterdalen" target="_blank" class="btn btn-youtube">
+            <a href="https://www.youtube.com/@Glitterdalen" target="_blank" rel="noopener noreferrer" class="btn btn-youtube">
               <i class="fab fa-youtube"></i> Titta på YouTube
             </a>
           </div>
@@ -488,7 +523,7 @@
           </button>
           <div class="newsletter-modal__body">
             <div class="newsletter-modal__image animate-float">
-              <img src="/public/max_nyhetsbrev.png" alt="Glitterdalen nyhetsbrev" loading="lazy" />
+              <img src="/public/max_nyhetsbrev.png" alt="Glitterdalen nyhetsbrev" loading="lazy" width="603" height="900" />
               <div class="newsletter-modal__badge">
                 <i class="fas fa-envelope-open-text"></i>
                 <span>Nyhetsbrev</span>
@@ -545,19 +580,19 @@
           <p class="section-text">Se karaktärerna komma till liv genom illustrationer, lyssna på nya låtar och få sneak peeks från nästa äventyr.</p>
           
           <div class="social-links">
-            <a href="https://www.instagram.com/glitterdalen/" target="_blank" class="social-link instagram cartoon-card">
+            <a href="https://www.instagram.com/glitterdalen/" target="_blank" rel="noopener noreferrer" class="social-link instagram cartoon-card">
               <i class="fab fa-instagram"></i>
               <span>Instagram</span>
             </a>
-            <a href="https://www.tiktok.com/@glitterdalen" target="_blank" class="social-link tiktok cartoon-card">
+            <a href="https://www.tiktok.com/@glitterdalen" target="_blank" rel="noopener noreferrer" class="social-link tiktok cartoon-card">
               <i class="fab fa-tiktok"></i>
               <span>TikTok</span>
             </a>
-            <a href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd?si=d26c7821aa654469" target="_blank" class="social-link spotify cartoon-card">
+            <a href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd?si=d26c7821aa654469" target="_blank" rel="noopener noreferrer" class="social-link spotify cartoon-card">
               <i class="fab fa-spotify"></i>
               <span>Spotify</span>
             </a>
-            <a href="https://www.youtube.com/@Glitterdalen" target="_blank" class="social-link youtube cartoon-card">
+            <a href="https://www.youtube.com/@Glitterdalen" target="_blank" rel="noopener noreferrer" class="social-link youtube cartoon-card">
               <i class="fab fa-youtube"></i>
               <span>YouTube</span>
             </a>
@@ -570,7 +605,7 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-logo">
-            <img src="/glitterdalen_logo.png" alt="Glitterdalen" width="80" loading="lazy" />
+            <img src="/glitterdalen_logo.png" alt="Glitterdalen" width="80" height="76" loading="lazy" />
           </div>
           <div class="footer-contact">
             <a href="mailto:info@glitterdalen.se" class="contact-link">
@@ -582,7 +617,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>© 2025 Glitterdalen. Alla rättigheter förbehållna.</p>
+          <p>© 2025–2026 Glitterdalen. Alla rättigheter förbehållna.</p>
         </div>
       </div>
     </footer>
