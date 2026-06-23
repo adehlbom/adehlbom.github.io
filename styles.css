@@ -791,6 +791,92 @@ body.modal-open { overflow: hidden; }
 
 .social-link i { font-size: 1.8rem; }
 
+/* FAQ */
+.faq-section {
+  background: #fff8eb;
+  border-radius: 36px;
+  margin: var(--space-sm);
+  padding: var(--space-xxl) 0;
+  box-shadow: 0 12px 0 rgba(15, 47, 59, 0.08);
+  border: 3px solid rgba(15, 47, 59, 0.08);
+}
+
+.faq-accordion {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.faq-item {
+  background: var(--cloud);
+  border-radius: var(--radius-md);
+  border: 2px solid rgba(15, 47, 59, 0.12);
+  box-shadow: 0 6px 0 rgba(15, 47, 59, 0.08);
+  overflow: hidden;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.faq-item.active {
+  border-color: var(--teal);
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: var(--space-md) var(--space-lg);
+  font-family: var(--heading-font);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  transition: background-color 160ms ease;
+}
+
+.faq-question:hover {
+  background: rgba(17, 138, 178, 0.04);
+}
+
+.faq-question i {
+  color: var(--teal);
+  transition: transform 300ms ease;
+}
+
+.faq-question[aria-expanded="true"] i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 var(--space-lg) var(--space-md);
+  color: rgba(15, 47, 59, 0.82);
+  line-height: 1.6;
+}
+
+.faq-answer p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 720px) {
+  .faq-section {
+    margin: var(--space-xs);
+    border-radius: 28px;
+  }
+  .faq-question {
+    padding: var(--space-md);
+    font-size: 1.05rem;
+  }
+  .faq-answer {
+    padding: 0 var(--space-md) var(--space-md);
+  }
+}
+
 /* Footer */
 .site-footer { background: var(--ink); color: var(--white); padding: var(--space-lg) 0; }
 .footer-content { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); flex-wrap: wrap; }

@@ -92,6 +92,7 @@
     <script src="/animations.js" defer></script>
     <script src="/form-handling.js" defer></script>
     <script src="/carousel.js" defer></script>
+    <script src="/faq.js" defer></script>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -126,6 +127,44 @@
           "name": "Anders",
           "description": "Skapare av Glitterdalen",
           "url": "https://glitterdalen.se/#om-glitterdalen"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://glitterdalen.se/#faqpage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Vad är Glitterdalen?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Glitterdalen är en magisk barnvärld fylld med musik, historier och snälla karaktärer som Lumi, Max, Mira och Illian. Vår ambition är att skapa trygg underhållning för barn."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "För vilken ålder passar musiken och sagorna?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Musiken i Glitterdalen är framförallt riktad till barn i förskoleåldern (ca 1-6 år), men de stämningsfulla vaggvisorna och roliga melodierna uppskattas ofta av hela familjen."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Vem har skapat Glitterdalen?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Glitterdalen är skapad av Anders, en pappa som började skriva barnmusik och sagor för sin egen son. Han skriver, komponerar och producerar allt material."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Var kan man lyssna på låtarna?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Du hittar Glitterdalens låtar och vaggvisor på alla stora streamingtjänster som Spotify, Apple Music och YouTube."
+              }
+            }
+          ]
         }
       ]
     }
@@ -517,6 +556,53 @@
               </li>
             </ul>
           </article>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="faq-section">
+        <div class="container">
+          <h2 class="section-title scroll-animate fade-up">Vanliga frågor</h2>
+          <p class="section-text scroll-animate fade-up delay-1">Allt du behöver veta om vår magiska värld.</p>
+
+          <div class="faq-accordion scroll-animate fade-up delay-2">
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+                <span>Vad är Glitterdalen?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div id="faq-answer-1" class="faq-answer" hidden>
+                <p>Glitterdalen är en magisk barnvärld fylld med musik, historier och snälla karaktärer som Lumi, Max, Mira och Illian. Vår ambition är att skapa trygg underhållning och <strong>barnmusik</strong> som stimulerar fantasin, bortom skärmarna.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+                <span>För vilken ålder passar musiken och sagorna?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div id="faq-answer-2" class="faq-answer" hidden>
+                <p>Musiken och våra <strong>äventyrssagor</strong> är framförallt riktade till barn i förskoleåldern (ca 1-6 år). De stämningsfulla <strong>vaggvisorna</strong> uppskattas också mycket av bebisar och hela familjen vid läggdags.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+                <span>Vem har skapat Glitterdalen?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div id="faq-answer-3" class="faq-answer" hidden>
+                <p>Glitterdalen är skapad av Anders, en pappa som började skriva barnmusik när han väntade barn. Han komponerar och producerar allt material med utgångspunkt i vad hans egen son tycker om.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+                <span>Var kan man lyssna på låtarna?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div id="faq-answer-4" class="faq-answer" hidden>
+                <p>Du hittar Glitterdalens låtar och sagor på alla stora streamingtjänster som <strong>Spotify</strong>, Apple Music samt videos på <strong>YouTube</strong> och <strong>TikTok</strong>.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
