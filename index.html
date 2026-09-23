@@ -260,7 +260,7 @@
             <li><a href="#intro-title" class="cartoon-btn"><i class="fas fa-hat-wizard"></i> Upptäck Glitterdalen</a></li>
             <li><a href="#musik" class="cartoon-btn"><i class="fas fa-music"></i> Lyssna på musiken</a></li>
             <li><a href="#om-glitterdalen" class="cartoon-btn"><i class="fas fa-sparkles"></i> Om Glitterdalen</a></li>
-            <li><a href="#folj-oss" class="btn-nav cartoon-bubble-sm"><i class="fas fa-envelope"></i> Följ oss</a></li>
+            <li><a href="#hjalp-oss" class="btn-nav cartoon-bubble-sm"><i class="fas fa-heart"></i> Hjälp oss</a></li>
           </ul>
         </nav>
       </div>
@@ -609,130 +609,74 @@
         </div>
       </section>
 
-      <!-- Newsletter Section -->
-      <section id="folj-oss" class="signup-section">
+      <!-- Help Section -->
+      <section id="hjalp-oss" class="signup-section">
         <div class="container">
           <div class="signup-content">
             <div class="signup-image animate-float">
-              <img src="/public/max_nyhetsbrev.webp" alt="Glitterdalen nyhetsbrev" loading="lazy" width="603" height="900" />
+              <img src="/public/max_nyhetsbrev.webp" alt="Max från Glitterdalen" loading="lazy" width="603" height="900" />
             </div>
             <div class="signup-form-container">
-              <h2 class="section-title scroll-animate fade-up">Få nya låtar och sagor direkt i din inbox</h2>
+              <h2 class="section-title scroll-animate fade-up">Hjälp en liten artist att nå fler föräldrar</h2>
               <p class="section-text scroll-animate fade-up delay-1">
-                Var först med att upptäcka nya Glitterdalen-äventyr! Vi skickar ut nyhetsbrev när vi släpper nya låtar på Spotify, videos på YouTube, eller delar exklusiva bakom kulisserna-glimtar från skapandet.
+                Glitterdalen görs av en pappa från Dalarna, utan skivbolag och utan annonsbudget. Fyra saker hjälper mer än allt annat, och ingen av dem kostar något.
               </p>
-              
-              <form
-                id="signup-form"
-                data-signup-form
-                action="https://assets.mailerlite.com/jsonp/1255993/forms/142396205183272375/subscribe"
-                method="post"
-                class="signup-form cartoon-form scroll-animate fade-up delay-2"
-              >
-                <div class="form-group">
-                  <label for="email" class="visually-hidden">E-postadress</label>
-                  <div class="input-icon-wrapper">
-                    <i class="fas fa-envelope input-icon"></i>
-                    <input
-                      id="email"
-                      type="email"
-                      name="fields[email]"
-                      placeholder="Din e-postadress"
-                      required
-                      class="form-input cartoon-input"
-                      data-email-input
-                    />
+
+              <div class="help-points scroll-animate fade-up delay-2">
+                <article class="help-card">
+                  <div class="help-card__icon"><i class="fab fa-spotify"></i></div>
+                  <h3>Följ oss på Spotify</h3>
+                  <p>Då landar varje ny låt i din Release Radar av sig själv. Det är det enskilt största du kan göra.</p>
+                </article>
+                <article class="help-card">
+                  <div class="help-card__icon"><i class="fas fa-circle-plus"></i></div>
+                  <h3>Spara låtarna i dina spellistor</h3>
+                  <p>En låt som ligger i riktiga spellistor är en låt Spotify vågar visa för fler. Tryck på plusset i <a href="#musik">spelaren här ovanför</a>.</p>
+                </article>
+                <article class="help-card">
+                  <div class="help-card__icon"><i class="fas fa-share-nodes"></i></div>
+                  <h3>Skicka en låt till en vän</h3>
+                  <p>Känner du någon med små barn hemma? Ett tips från en förälder väger tyngre än all marknadsföring.</p>
+                </article>
+                <article class="help-card">
+                  <div class="help-card__icon"><i class="fas fa-hourglass-half"></i></div>
+                  <h3>Lyssna klart på låten</h3>
+                  <p>Spotify räknar en lyssning först efter trettio sekunder. Att låta låten gå ut spelar faktiskt roll.</p>
+                </article>
+              </div>
+
+              <div class="help-actions scroll-animate fade-up delay-3">
+                <a
+                  href="https://open.spotify.com/artist/35x1x7RZaz5GPlIS4axyCd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-spotify btn-lg btn-fullwidth"
+                >
+                  <i class="fab fa-spotify"></i>
+                  <span>Följ Glitterdalen på Spotify</span>
+                </a>
+
+                <div class="help-share">
+                  <p class="help-share__label">Eller skicka en låt till någon som har små barn hemma</p>
+                  <div class="help-share__row">
+                    <button id="share-native" type="button" class="btn btn-primary" hidden>
+                      <i class="fas fa-share-nodes"></i>
+                      <span>Dela</span>
+                    </button>
                   </div>
+                  <button id="share-copy" type="button" class="help-share__message">
+                    <span class="help-share__message-text" id="share-preview"></span>
+                    <span class="help-share__message-hint" id="share-hint">
+                      <i class="fas fa-copy"></i>
+                      <span>Tryck för att kopiera</span>
+                    </span>
+                  </button>
                 </div>
-                <button type="submit" class="btn btn-primary btn-fullwidth cartoon-bubble animate-pulse-slow">
-                  <span>Prenumerera nu</span>
-                  <i class="fas fa-paper-plane"></i>
-                </button>
-              </form>
-              
-              <p class="privacy-note">
-                Vi samlar endast in din e-postadress för att skicka nyheter från Glitterdalen. Du kan när som helst avregistrera dig via länken i mejlet.
-              </p>
+              </div>
             </div>
-          </div>
-        </div>
-        
-        <div id="success" class="success-message hidden" role="status" aria-live="polite" tabindex="-1">
-          <div class="success-content cartoon-bubble">
-            <div class="success-icon animate-tada">
-              <i class="fas fa-check-circle"></i>
-            </div>
-            <h3>Tack för din anmälan till Glitterdalen!</h3>
-            <p>Din e-postadress är nu registrerad för nyheter från Glitterdalen.</p>
-            <button class="btn btn-secondary close-success cartoon-bubble">Stäng</button>
           </div>
         </div>
       </section>
-
-      <!-- Newsletter Modal -->
-      <div
-        id="newsletter-modal"
-        class="newsletter-modal hidden"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="newsletter-modal-title"
-        aria-describedby="newsletter-modal-description"
-      >
-        <div class="newsletter-modal__content cartoon-bubble" tabindex="-1">
-          <button class="newsletter-modal__close" type="button" aria-label="Stäng nyhetsbrevet">
-            <i class="fas fa-times"></i>
-          </button>
-          <div class="newsletter-modal__body">
-            <div class="newsletter-modal__image animate-float">
-              <img src="/public/max_nyhetsbrev.webp" alt="Glitterdalen nyhetsbrev" loading="lazy" width="603" height="900" />
-              <div class="newsletter-modal__badge">
-                <i class="fas fa-envelope-open-text"></i>
-                <span>Nyhetsbrev</span>
-              </div>
-            </div>
-            <div class="newsletter-modal__copy">
-              <h3 id="newsletter-modal-title">Få nya låtar och sagor i din inbox</h3>
-              <p id="newsletter-modal-description">
-                Scrolla lugnt! Vi pingar dig bara när nya Glitterdalen-låtar, sagor eller videos landar. Ingen spam, lovar.
-              </p>
-              <form
-                id="signup-modal-form"
-                data-signup-form
-                action="https://assets.mailerlite.com/jsonp/1255993/forms/142396205183272375/subscribe"
-                method="post"
-                class="signup-form cartoon-form"
-              >
-                <div class="form-group">
-                  <label for="modal-email" class="visually-hidden">E-postadress</label>
-                  <div class="input-icon-wrapper">
-                    <i class="fas fa-envelope input-icon"></i>
-                    <input
-                      id="modal-email"
-                      type="email"
-                      name="fields[email]"
-                      placeholder="Din e-postadress"
-                      required
-                      class="form-input cartoon-input"
-                      data-email-input
-                    />
-                  </div>
-                </div>
-                <button type="submit" class="btn btn-primary btn-fullwidth cartoon-bubble">
-                  <span>Prenumerera</span>
-                  <i class="fas fa-paper-plane"></i>
-                </button>
-                <p class="privacy-note newsletter-modal__note">
-                  Vi hör av oss när vi har något nytt att berätta. Du kan avregistrera dig när som helst.
-                </p>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button id="newsletter-trigger" class="newsletter-trigger hidden" type="button" aria-label="Öppna nyhetsbrevet">
-        <i class="fas fa-envelope-open-text"></i>
-        <span>Nyhetsbrev</span>
-      </button>
 
       <!-- Social Media Section -->
       <section id="sociala-medier" class="social-section">
